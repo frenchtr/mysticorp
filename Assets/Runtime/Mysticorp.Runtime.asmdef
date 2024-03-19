@@ -1,6 +1,6 @@
 {
-    "name": "Mysticorp.Runtime",
-    "rootNamespace": "Mysticorp.Runtime",
+    "name": "MystiCorp.Runtime",
+    "rootNamespace": "MystiCorp.Runtime",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
