@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables
+namespace MystiCorp.Runtime.ScriptableVariables
 {
     public abstract class ScriptableVariable<TValue> : ScriptableObject
     {

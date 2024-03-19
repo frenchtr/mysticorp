@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace TravisRFrench.Common.Runtime.ScriptableEvents
+namespace MystiCorp.Runtime.ScriptableEvents
 {
     public class ScriptableEventListener : MonoBehaviour
     {

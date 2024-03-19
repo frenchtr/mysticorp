@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TravisRFrench.Common.Runtime.Registration
+namespace MystiCorp.Runtime.Registration
 {
     public class Registrar<TEntity> : IRegistrar<TEntity>
     {

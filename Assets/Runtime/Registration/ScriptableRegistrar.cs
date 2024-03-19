@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TravisRFrench.Common.Runtime.Registration
+namespace MystiCorp.Runtime.Registration
 {
     public abstract class ScriptableRegistrar<TEntity> : ScriptableObject, IRegistrar<TEntity>
     {
