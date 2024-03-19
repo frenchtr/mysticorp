@@ -7,27 +7,41 @@ namespace MystiCorp.Runtime.Character
         [SerializeField]
         private float moveSpeed;
         [SerializeField]
+        private float positionPrecision = 0.1f;
+        [SerializeField]
         private new Rigidbody2D rigidbody;
 
         private Vector2 targetPosition;
-        private bool moving;
+
+        public bool Moving { get; private set; }
 
         public void MoveTo(Vector2 position)
         {
+            if (rigidbody.position == position) return;
+
             targetPosition = position;
-            moving = true;
+            Moving = true;
         }
 
         public void Stop()
         {
-            moving = false;
+            Moving = false;
         }
 
         private void Update()
         {
-            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+            Vector2 targetDelta = targetPosition - (Vector2)transform.position;
+            Vector2 direction = targetDelta.normalized;
 
-            if (moving) rigidbody.velocity = direction * moveSpeed;
+            // if reached target
+            if (targetDelta.magnitude < positionPrecision)
+            {
+                rigidbody.MovePosition(targetPosition);
+                Moving = false;
+                rigidbody.velocity = Vector2.zero;
+            }
+
+            if (Moving) rigidbody.velocity = direction * moveSpeed;
         }
     }
 }
