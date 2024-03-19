@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using MystiCorp.Runtime.Magic.Pickup;
 using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Character.Hero
 {
     public class HeroBrain : MonoBehaviour
     {
@@ -15,11 +14,11 @@ namespace MystiCorp.Runtime
 
         private void Update()
         {
-            pickerUpper.Pickup(10);
+            this.pickerUpper.Pickup(10);
 
-            if (pickupPool.TryGetClosestPickup(transform.position, out var closestPickup))
+            if (this.pickupPool.TryGetClosestPickup(this.transform.position, out var closestPickup))
             {
-                movement.MoveTo(closestPickup.transform.position);
+                this.movement.MoveTo(closestPickup.transform.position);
             }
         }
     }
