@@ -18,8 +18,6 @@ namespace MystiCorp.Runtime
 
         private float previousMagicAmount;
 
-        public event System.Action<ValueChangedArgs<float>> MagicAmountChanged;
-
         private List<(float value, float time)> magicPerSecondValues = new();
 
         protected override void Update()

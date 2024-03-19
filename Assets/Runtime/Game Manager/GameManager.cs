@@ -10,7 +10,7 @@ using UnityEditor;
 
 namespace MystiCorp.Runtime {
 
-    [CreateAssetMenu(fileName = GameManagerResourceName, menuName = "Systems/Game Manager")]
+    [CreateAssetMenu(fileName = GameManagerResourceName, menuName = "Services/Game Manager")]
     public class GameManager : ScriptableObject {
 
         [SerializeField] private List<Manager> managers;

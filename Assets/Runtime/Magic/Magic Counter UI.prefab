@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e4374ff909c4f01b30ed77a9ca80bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magicManager: {fileID: 11400000, guid: e456b736e301e42109a5a60d99ffda50, type: 2}
+  magicAmount: {fileID: 11400000, guid: afbe7d026423f4ac099fb1573a4d5ec5, type: 2}
   amountDisplay: {fileID: 9197604243108971454}
 --- !u!1 &6764445296920204144
 GameObject:

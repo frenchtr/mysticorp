@@ -9,18 +9,18 @@ namespace MystiCorp.Runtime
     public class MagicAmountDisplay : MonoBehaviour
     {
         [SerializeField]
-        private MagicManager magicManager;
+        private FloatVariable magicAmount;
         [SerializeField]
         private TextMeshProUGUI amountDisplay;
 
         private void OnEnable()
         {
-            magicManager.MagicAmountChanged += OnMagicAmountChanged;
+            magicAmount.ValueChanged += OnMagicAmountChanged;
         }
 
         private void OnDisable()
         {
-            magicManager.MagicAmountChanged -= OnMagicAmountChanged;
+            magicAmount.ValueChanged -= OnMagicAmountChanged;
         }
 
         private void OnMagicAmountChanged(ValueChangedArgs<float> args)
