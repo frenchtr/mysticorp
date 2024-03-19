@@ -22,14 +22,14 @@ namespace MystiCorp.Runtime.Magic
 
         protected override void Update()
         {
-            float magicDelta = this.magicAmount.Value - this.previousMagicAmount;
-            this.previousMagicAmount = this.magicAmount.Value;
+            float magicDelta = magicAmount.Value - previousMagicAmount;
+            previousMagicAmount = magicAmount.Value;
 
-            this.magicPerSecondValues.Add((magicDelta, Time.time));
+            magicPerSecondValues.Add((magicDelta, Time.time));
 
-            this.magicPerSecondValues.RemoveAll(magicValue => Time.time - magicValue.time > this.magicPerSecondCalculationDuration);
+            magicPerSecondValues.RemoveAll(magicValue => Time.time - magicValue.time > magicPerSecondCalculationDuration);
 
-            this.magicPerSecond.Value = this.magicPerSecondValues.Select(value => value.value).Sum() / this.magicPerSecondValues.Count;
+            magicPerSecond.Value = magicPerSecondValues.Select(value => value.value).Sum() / magicPerSecondValues.Count;
         }
     }
 }

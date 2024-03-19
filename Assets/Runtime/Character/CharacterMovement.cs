@@ -14,20 +14,20 @@ namespace MystiCorp.Runtime.Character
 
         public void MoveTo(Vector2 position)
         {
-            this.targetPosition = position;
-            this.moving = true;
+            targetPosition = position;
+            moving = true;
         }
 
         public void Stop()
         {
-            this.moving = false;
+            moving = false;
         }
 
         private void Update()
         {
-            Vector2 direction = (this.targetPosition - (Vector2)this.transform.position).normalized;
+            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
 
-            if (this.moving) this.rigidbody.velocity = direction * this.moveSpeed;
+            if (moving) rigidbody.velocity = direction * moveSpeed;
         }
     }
 }

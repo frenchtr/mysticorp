@@ -14,17 +14,17 @@ namespace MystiCorp.Runtime.Magic
 
         private void OnEnable()
         {
-            this.magicAmount.ValueChanged += this.OnMagicAmountChanged;
+            magicAmount.ValueChanged += OnMagicAmountChanged;
         }
 
         private void OnDisable()
         {
-            this.magicAmount.ValueChanged -= this.OnMagicAmountChanged;
+            magicAmount.ValueChanged -= OnMagicAmountChanged;
         }
 
         private void OnMagicAmountChanged(ValueChangedArgs<float> args)
         {
-            this.amountDisplay.text = $"{args.To:n}";
+            amountDisplay.text = $"{args.To:n}";
         }
     }
 }

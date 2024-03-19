@@ -15,25 +15,25 @@ namespace MystiCorp.Runtime.Common.Registration
     {
         private Registrar<TEntity> registrar;
         
-        public IEnumerable<TEntity> Entities => ((IRegistrar<TEntity>)this.registrar).Entities;
+        public IEnumerable<TEntity> Entities => ((IRegistrar<TEntity>)registrar).Entities;
 
         public event Action<TEntity> Registered
         {
-            add => this.registrar.Registered += value;
-            remove => this.registrar.Registered -= value;
+            add => registrar.Registered += value;
+            remove => registrar.Registered -= value;
         }
         public event Action<TEntity> Deregistered
         {
-            add => this.registrar.Deregistered += value;
-            remove => this.registrar.Deregistered -= value;
+            add => registrar.Deregistered += value;
+            remove => registrar.Deregistered -= value;
         }
 
         public override void Setup()
         {
-            this.registrar = new Registrar<TEntity>();
+            registrar = new Registrar<TEntity>();
         }
 
-        public virtual void Register(TEntity entity) => this.registrar.Register(entity);
-        public virtual void Deregister(TEntity entity) => this.registrar.Deregister(entity);
+        public virtual void Register(TEntity entity) => registrar.Register(entity);
+        public virtual void Deregister(TEntity entity) => registrar.Deregister(entity);
     }
 }

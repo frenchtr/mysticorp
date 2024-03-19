@@ -14,11 +14,11 @@ namespace MystiCorp.Runtime.Character.Hero
 
         private void Update()
         {
-            this.pickerUpper.Pickup(10);
+            pickerUpper.Pickup(10);
 
-            if (this.pickupPool.TryGetClosestPickup(this.transform.position, out var closestPickup))
+            if (pickupPool.TryGetClosestPickup(transform.position, out var closestPickup))
             {
-                this.movement.MoveTo(closestPickup.transform.position);
+                movement.MoveTo(closestPickup.transform.position);
             }
         }
     }

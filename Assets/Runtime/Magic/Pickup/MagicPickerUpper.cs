@@ -13,35 +13,35 @@ namespace MystiCorp.Runtime.Magic.Pickup
 
         private void Awake()
         {
-            this.touchingPickups = new();
+            touchingPickups = new();
         }
 
         public void Pickup(int count)
         {
-            for (int i = 0; i > count && i < this.touchingPickups.Count; i++)
+            for (int i = 0; i > count && i < touchingPickups.Count; i++)
             {
-                var pickup = this.touchingPickups[this.touchingPickups.Count - i - 1];
+                var pickup = touchingPickups[touchingPickups.Count - i - 1];
 
-                this.magicAmount.Value += pickup.Value;
+                magicAmount.Value += pickup.Value;
                 Destroy(pickup.gameObject);
 
-                this.touchingPickups.Remove(pickup);
+                touchingPickups.Remove(pickup);
             }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out MagicPickup pickup) && !this.touchingPickups.Contains(pickup))
+            if (collision.TryGetComponent(out MagicPickup pickup) && !touchingPickups.Contains(pickup))
             {
-                this.touchingPickups.Add(pickup);
+                touchingPickups.Add(pickup);
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out MagicPickup pickup) && this.touchingPickups.Contains(pickup))
+            if (collision.TryGetComponent(out MagicPickup pickup) && touchingPickups.Contains(pickup))
             {
-                this.touchingPickups.Remove(pickup);
+                touchingPickups.Remove(pickup);
             }
         }
     }

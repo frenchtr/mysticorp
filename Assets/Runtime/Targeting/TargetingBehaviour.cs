@@ -18,27 +18,27 @@ namespace MystiCorp.Runtime.Targeting
         
         public GameObject CurrentTarget
         {
-            get => this.currentTarget;
-            private set => this.currentTarget = value;
+            get => currentTarget;
+            private set => currentTarget = value;
         }
 
         private void Update()
         {
             // Probably in the future we want to have this happen at a specified interval rather than every frame since
             // it's unlikely we'll need that level of precision.
-            this.CurrentTarget = this.GetTarget();
+            CurrentTarget = GetTarget();
         }
 
         private GameObject GetTarget()
         {
             GameObject nearest = null;
             var nearestDistance = Mathf.Infinity;
-            var thisTransform = this.transform;
+            var thisTransform = transform;
             var facingDirection = thisTransform.up;
             var from = thisTransform.position;
-            var radius = this.areaOfEffectBehaviour.Radius;
-            var fieldOfView = this.areaOfEffectBehaviour.FieldOfView;
-            var charactersToEvaluate = this.registrar.Entities
+            var radius = areaOfEffectBehaviour.Radius;
+            var fieldOfView = areaOfEffectBehaviour.FieldOfView;
+            var charactersToEvaluate = registrar.Entities
                 .Where(character => !character.CompareTag("Hero"));
 
             foreach (var character in charactersToEvaluate)

@@ -9,12 +9,12 @@ namespace MystiCorp.Runtime.Character
         
         private void OnEnable()
         {
-            this.registrar.Register(this);
+            registrar.Register(this);
         }
 
         private void OnDisable()
         {
-            this.registrar.Deregister(this);
+            registrar.Deregister(this);
         }
     }
 }

@@ -25,51 +25,52 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private GameObjectEvent cycledEvent;
 
-        public float Magnitude => this.baseMagnitude * this.MagnitudeMultiplier.ModifiedValue;
-        public float CycleTime => this.baseCycleTime * this.CycleTimeMultiplier.ModifiedValue;
+        public float Magnitude => baseMagnitude * MagnitudeMultiplier.ModifiedValue;
+        public float CycleTime => baseCycleTime * CycleTimeMultiplier.ModifiedValue;
 
         public Attribute MagnitudeMultiplier
         {
-            get => this.magnitudeMultiplier;
-            private set => this.magnitudeMultiplier = value;
+            get => magnitudeMultiplier;
+            private set => magnitudeMultiplier = value;
         }
         
         public Attribute CycleTimeMultiplier
         {
-            get => this.cycleTimeMultiplier;
-            private set => this.cycleTimeMultiplier = value;
+            get => cycleTimeMultiplier;
+            private set => cycleTimeMultiplier = value;
         }
 
         public void ForceRecalculateAll()
         {
-            this.MagnitudeMultiplier?.ForceRecalculateModifiedValue();
-            this.CycleTimeMultiplier?.ForceRecalculateModifiedValue();
+            MagnitudeMultiplier?.ForceRecalculateModifiedValue();
+            CycleTimeMultiplier?.ForceRecalculateModifiedValue();
         }
 
         private void OnEnable()
         {
-            this.StartCoroutine(this.WaitForNextCycle());
+            StartCoroutine(WaitForNextCycle());
         }
 
         private void OnDisable()
         {
-            this.StopAllCoroutines();
+            StopAllCoroutines();
         }
 
         private void OnValidate()
         {
-            this.ForceRecalculateAll();
+            ForceRecalculateAll();
         }
 
         private IEnumerator WaitForNextCycle()
         {
-            yield return new WaitForSeconds(this.CycleTime);
-            this.Cycle();
+            yield return new WaitForSeconds(CycleTime);
+            Cycle();
+            yield return WaitForNextCycle();
         }
 
         private void Cycle()
         {
-            this.cycledEvent.Raise(this.gameObject);
+            cycledEvent.Raise(gameObject);
         }
     }
 }
