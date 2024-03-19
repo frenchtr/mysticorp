@@ -9,7 +9,7 @@ using UnityEditor;
 
 namespace MystiCorp.Runtime {
 
-    [CreateAssetMenu(fileName = GameManagerResourceName, menuName = "Systems/Game Manager")]
+    [CreateAssetMenu(fileName = GameManagerResourceName, menuName = "Services/Game Manager")]
     public class GameManager : ScriptableObject {
 
         [SerializeField] private List<Manager> managers;
@@ -34,6 +34,7 @@ namespace MystiCorp.Runtime {
 
             public event Action OnStart;
             public event Action OnUpdate;
+            public event Action OnLateUpdate;
             public event Action OnFixedUpdate;
             public event Action<UScene, UScene> OnSceneChange;
             public event Action OnOnApplicationQuit;
@@ -48,6 +49,7 @@ namespace MystiCorp.Runtime {
 
             private void Start              () => OnStart               ?.Invoke();
             private void Update             () => OnUpdate              ?.Invoke();
+            private void LateUpdate         () => OnLateUpdate          ?.Invoke();
             private void FixedUpdate        () => OnFixedUpdate         ?.Invoke();
             private void OnApplicationQuit  () => OnOnApplicationQuit   ?.Invoke();
         }
@@ -60,6 +62,7 @@ namespace MystiCorp.Runtime {
 
                 inst.OnStart                    += Start;
                 inst.OnUpdate                   += Update;
+                inst.OnLateUpdate               += LateUpdate;
                 inst.OnFixedUpdate              += FixedUpdate;
                 inst.OnSceneChange              += OnSceneChange;
                 inst.OnOnApplicationQuit        += OnApplicationQuit;
@@ -72,6 +75,7 @@ namespace MystiCorp.Runtime {
             protected virtual void RuntimeInitializeOnLoad() { }
             protected virtual void Start() { }
             protected virtual void Update() { }
+            protected virtual void LateUpdate() { }
             protected virtual void FixedUpdate() { }
             protected virtual void OnSceneChange(UScene from, UScene to) { }
             protected virtual void OnApplicationQuit() { }
