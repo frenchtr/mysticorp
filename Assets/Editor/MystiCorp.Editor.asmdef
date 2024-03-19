@@ -2,6 +2,7 @@
     "name": "MystiCorp.Editor",
     "rootNamespace": "MystiCorp.Editor",
     "references": [
+        "GUID:525ef055486565e4182e7efaad384387",
         "GUID:e86ac2deb7802eb479d0efd16c6ba4f8"
     ],
     "includePlatforms": [
