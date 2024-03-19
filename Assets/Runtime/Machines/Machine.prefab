@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbeebe823284968b65f075f0d6d1441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnitude: 1
-  cycleTime: 1
+  baseMagnitude: 1
+  baseCycleTime: 1
   <MagnitudeMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1
@@ -299,7 +299,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
