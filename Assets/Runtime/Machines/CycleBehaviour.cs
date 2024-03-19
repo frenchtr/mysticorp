@@ -7,23 +7,38 @@ namespace MystiCorp.Runtime.Machines
 {
     public class CycleBehaviour : MonoBehaviour
     {
+        [Header("Magnitude")]
         [Tooltip("How potent should the effects of this entity be?")]
         [SerializeField]
         private float baseMagnitude = 1f;
+        [Tooltip("The multiplier which effects the calculated Magnitude.")]
+        [SerializeField]
+        private Attribute magnitudeMultiplier;
+        [Header("Cycle Time")]
         [Tooltip("How many times does this entity activate per second?")]
         [SerializeField]
         private float baseCycleTime = 1f;
+        [Tooltip("The multiplier which effects the calculated CylceTime.")]
+        [SerializeField]
+        private Attribute cycleTimeMultiplier;
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
-        
+
         public float Magnitude => this.baseMagnitude * this.MagnitudeMultiplier.ModifiedValue;
         public float CycleTime => this.baseCycleTime * this.CycleTimeMultiplier.ModifiedValue;
 
-        [field: SerializeField]
-        public Attribute MagnitudeMultiplier { get; private set; }
-        [field: SerializeField]
-        public Attribute CycleTimeMultiplier { get; private set; }
+        public Attribute MagnitudeMultiplier
+        {
+            get => this.magnitudeMultiplier;
+            private set => this.magnitudeMultiplier = value;
+        }
+        
+        public Attribute CycleTimeMultiplier
+        {
+            get => this.cycleTimeMultiplier;
+            private set => this.cycleTimeMultiplier = value;
+        }
 
         public void ForceRecalculateAll()
         {
