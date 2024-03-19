@@ -1,5 +1,5 @@
-using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
+using Attribute = TravisRFrench.Attributes.Runtime.Attribute;
 
 namespace MystiCorp.Runtime.Machines
 {
@@ -11,7 +11,19 @@ namespace MystiCorp.Runtime.Machines
         public Attribute TimeScale { get; private set; }
         [field: SerializeField]
         public Attribute Radius { get; private set; }
-        [field: SerializeField]
         public Attribute FieldOfView { get; private set; }
+
+        public void ForceRecalculateAll()
+        {
+            this.Magnitude.ForceRecalculateModifiedValue();
+            this.TimeScale.ForceRecalculateModifiedValue();
+            this.Radius.ForceRecalculateModifiedValue();
+            this.FieldOfView.ForceRecalculateModifiedValue();
+        }
+
+        private void OnValidate()
+        {
+            this.ForceRecalculateAll();
+        }
     }
 }
