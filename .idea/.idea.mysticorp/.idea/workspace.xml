@@ -5,21 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/MachineIdentityEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/AreaOfEffectBehaviourEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/MachineIdentityEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/AreaOfEffectBehaviourEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterIdentity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/IRegistrar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/IRegistrar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/Registrar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/Registrar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/ScriptableRegistrar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/ScriptableRegistrar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableEvents/ScriptableEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableEvents/ScriptableEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableEvents/ScriptableEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableEvents/ScriptableEventListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableVariables/FloatVariable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableVariables/FloatVariable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableVariables/ScriptableVariable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/ScriptableVariables/ScriptableVariable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Game Manager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicAmountDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicAmountDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickerUpper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickerUpper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Machine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Machine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/MachineIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/MachineIdentity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Turret.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Turret.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Modifiers/RadiusModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Modifiers/RadiusModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710821177778</updated>
       <workItem from="1710821179656" duration="1251000" />
-      <workItem from="1710878113596" duration="2870000" />
+      <workItem from="1710878113596" duration="7754000" />
     </task>
     <servers />
   </component>

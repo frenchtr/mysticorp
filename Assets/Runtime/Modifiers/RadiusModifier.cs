@@ -1,4 +1,4 @@
-using MystiCorp.Runtime.Machines;
+using MystiCorp.Runtime.Common;
 using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
 
@@ -8,23 +8,21 @@ namespace MystiCorp.Runtime.Modifiers
     {
         [SerializeField]
         private AttributeModifier modifier;
-        [Header("Component Dependencies")]
-        [SerializeField]
-        private MachineIdentity machineIdentity;
+        private AreaOfEffectBehaviour areaOfEffectBehaviour;
         
         private void OnEnable()
         {
-            if (this.machineIdentity == null)
+            if (this.areaOfEffectBehaviour == null)
             {
-                this.machineIdentity = this.GetComponentInParent<MachineIdentity>();
+                this.areaOfEffectBehaviour = this.GetComponentInParent<AreaOfEffectBehaviour>();
             }
 
-            this.machineIdentity.RadiusMultiplier.AddModifier(this.modifier);
+            this.areaOfEffectBehaviour.RadiusMultiplier.AddModifier(this.modifier);
         }
 
         private void OnDisable()
         {
-            this.machineIdentity.RadiusMultiplier.RemoveModifier(this.modifier);
+            this.areaOfEffectBehaviour.RadiusMultiplier.RemoveModifier(this.modifier);
         }
     }
 }

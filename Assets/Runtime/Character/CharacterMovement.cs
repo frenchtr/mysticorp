@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Character
 {
     public class CharacterMovement : MonoBehaviour
     {
@@ -16,20 +14,20 @@ namespace MystiCorp.Runtime
 
         public void MoveTo(Vector2 position)
         {
-            targetPosition = position;
-            moving = true;
+            this.targetPosition = position;
+            this.moving = true;
         }
 
         public void Stop()
         {
-            moving = false;
+            this.moving = false;
         }
 
         private void Update()
         {
-            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+            Vector2 direction = (this.targetPosition - (Vector2)this.transform.position).normalized;
 
-            if (moving) rigidbody.velocity = direction * moveSpeed;
+            if (this.moving) this.rigidbody.velocity = direction * this.moveSpeed;
         }
     }
 }

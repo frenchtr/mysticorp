@@ -4,7 +4,14 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Common.Registration
 {
-    public abstract class ScriptableRegistrar<TEntity> : ScriptableObject, IRegistrar<TEntity>
+    public abstract class ScriptableRegistrar : ScriptableObject
+    {
+        public virtual void Setup()
+        {
+        }
+    }
+    
+    public abstract class ScriptableRegistrar<TEntity> : ScriptableRegistrar, IRegistrar<TEntity>
     {
         private Registrar<TEntity> registrar;
         
@@ -21,7 +28,7 @@ namespace MystiCorp.Runtime.Common.Registration
             remove => this.registrar.Deregistered -= value;
         }
 
-        public void Setup()
+        public override void Setup()
         {
             this.registrar = new Registrar<TEntity>();
         }

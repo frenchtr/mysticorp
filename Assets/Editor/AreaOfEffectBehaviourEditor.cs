@@ -1,19 +1,21 @@
+using MystiCorp.Runtime;
+using MystiCorp.Runtime.Common;
 using MystiCorp.Runtime.Machines;
 using UnityEditor;
 using UnityEngine;
 
 namespace MystiCorp.Editor
 {
-    [CustomEditor(typeof(MachineIdentity))]
-    public class MachineIdentityEditor : UnityEditor.Editor
+    [CustomEditor(typeof(AreaOfEffectBehaviour))]
+    public class AreaOfEffectBehaviourEditor : UnityEditor.Editor
     {
         private void OnSceneGUI()
         {
-            var machineIdentity = (MachineIdentity)this.target;
-            var transform = machineIdentity.transform;
+            var areaOfEffectBehaviour = (AreaOfEffectBehaviour)this.target;
+            var transform = areaOfEffectBehaviour.transform;
             var position = transform.position;
-            var fieldOfView = machineIdentity.FieldOfView;
-            var radius = machineIdentity.Radius;
+            var fieldOfView = areaOfEffectBehaviour.FieldOfView;
+            var radius = areaOfEffectBehaviour.Radius;
             var direction = Quaternion.AngleAxis(-(fieldOfView / 2f), -transform.forward) * transform.up;
             var thickness = 4f;
             var color = new Color()
