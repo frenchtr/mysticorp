@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using MystiCorp.Runtime.Common;
 
 namespace MystiCorp.Runtime
 {
     public class MagicAmountDisplay : MonoBehaviour
     {
-        [SerializeField] private MagicManager magicManager;
-        [SerializeField] private TextMeshProUGUI amountDisplay;
+        [SerializeField]
+        private MagicManager magicManager;
+        [SerializeField]
+        private TextMeshProUGUI amountDisplay;
 
         private void OnEnable()
         {
@@ -20,9 +23,9 @@ namespace MystiCorp.Runtime
             magicManager.MagicAmountChanged -= OnMagicAmountChanged;
         }
 
-        private void OnMagicAmountChanged()
+        private void OnMagicAmountChanged(ValueChangedArgs<float> args)
         {
-            amountDisplay.text = $"{magicManager.MagicAmount:n}";
+            amountDisplay.text = $"{args.To:n}";
         }
     }
 }

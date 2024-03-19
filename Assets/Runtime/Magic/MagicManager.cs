@@ -1,23 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MystiCorp.Runtime.Common;
+using System.Linq;
 
 namespace MystiCorp.Runtime
 {
+    [CreateAssetMenu(menuName = "Services/Magic Manager")]
     public class MagicManager : GameManager.Manager
     {
-        private float magicAmount;
+        [SerializeField]
+        private FloatVariable magicAmount;
+        [SerializeField]
+        private FloatVariable magicPerSecond;
+        [SerializeField]
+        private float magicPerSecondCalculationDuration;
 
-        public event System.Action MagicAmountChanged;
+        private float previousMagicAmount;
 
-        public float MagicAmount
+        public event System.Action<ValueChangedArgs<float>> MagicAmountChanged;
+
+        private List<(float value, float time)> magicPerSecondValues = new();
+
+        protected override void Update()
         {
-            get => magicAmount;
-            set
-            {
-                magicAmount = value;
-                MagicAmountChanged?.Invoke();
-            }
+            float magicDelta = magicAmount.Value - previousMagicAmount;
+            previousMagicAmount = magicAmount.Value;
+
+            magicPerSecondValues.Add((magicDelta, Time.time));
+
+            magicPerSecondValues.RemoveAll(magicValue => Time.time - magicValue.time > magicPerSecondCalculationDuration);
+
+            magicPerSecond.Value = magicPerSecondValues.Select(value => value.value).Sum() / magicPerSecondValues.Count;
         }
     }
 }
