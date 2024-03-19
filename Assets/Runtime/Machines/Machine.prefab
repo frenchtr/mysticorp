@@ -167,12 +167,12 @@ MonoBehaviour:
   magnitude: 1
   cycleTime: 1
   <MagnitudeMultiplier>k__BackingField:
-    baseValue: 0
-    modifiedValue: 0
+    baseValue: 1
+    modifiedValue: 1
     modifiers: []
   <CycleTimeMultiplier>k__BackingField:
-    baseValue: 0
-    modifiedValue: 0
+    baseValue: 1
+    modifiedValue: 1
     modifiers: []
 --- !u!114 &4990155510392339685
 MonoBehaviour:
