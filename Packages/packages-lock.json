@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.travisrfrench.attributes": {
+      "version": "https://github.com/frenchtr/attributes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "84a4832a9ae4a8975fe2e695583ee9dd3c7a8476"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,
