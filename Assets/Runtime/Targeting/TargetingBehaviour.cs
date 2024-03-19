@@ -1,6 +1,6 @@
 using System.Linq;
 using MystiCorp.Runtime.Character;
-using MystiCorp.Runtime.Common;
+using MystiCorp.Runtime.Machines;
 using UnityEngine;
 
 namespace MystiCorp.Runtime.Targeting

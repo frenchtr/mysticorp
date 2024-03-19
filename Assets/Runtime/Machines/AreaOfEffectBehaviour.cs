@@ -1,7 +1,7 @@
 using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
 
-namespace MystiCorp.Runtime.Common
+namespace MystiCorp.Runtime.Machines
 {
     public class AreaOfEffectBehaviour : MonoBehaviour
     {

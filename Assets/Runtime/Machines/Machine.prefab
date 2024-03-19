@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMagnitude: 1
   baseCycleTime: 1
+  cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
   <MagnitudeMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1
