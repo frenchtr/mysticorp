@@ -2,6 +2,7 @@
     "name": "MystiCorp.Runtime",
     "rootNamespace": "MystiCorp.Runtime",
     "references": [
+        "GUID:525ef055486565e4182e7efaad384387",
         "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
