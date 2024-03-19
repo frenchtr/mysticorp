@@ -11,6 +11,7 @@ namespace MystiCorp.Runtime.Machines
         public Attribute TimeScale { get; private set; }
         [field: SerializeField]
         public Attribute Radius { get; private set; }
+        [field: SerializeField]
         public Attribute FieldOfView { get; private set; }
 
         public void ForceRecalculateAll()
