@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace MystiCorp.Runtime.ScriptableEvents
+namespace MystiCorp.Runtime.Common.ScriptableEvents
 {
     [CreateAssetMenu(menuName = "Scriptables/Events/Scriptable Event")]
     public class ScriptableEvent : ScriptableObject

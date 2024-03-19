@@ -1,7 +1,6 @@
 using UnityEngine;
-using MystiCorp.Runtime.ScriptableVariables;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Common.ScriptableVariables
 {
     [CreateAssetMenu(menuName = "Scriptables/Variables/Float")]
     public class FloatVariable : ScriptableVariable<float>

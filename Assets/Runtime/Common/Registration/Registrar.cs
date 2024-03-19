@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MystiCorp.Runtime.Registration
+namespace MystiCorp.Runtime.Common.Registration
 {
     public class Registrar<TEntity> : IRegistrar<TEntity>
     {

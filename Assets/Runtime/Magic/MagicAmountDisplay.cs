@@ -1,8 +1,9 @@
-using UnityEngine;
-using TMPro;
 using MystiCorp.Runtime.Common;
+using MystiCorp.Runtime.Common.ScriptableVariables;
+using TMPro;
+using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Magic
 {
     public class MagicAmountDisplay : MonoBehaviour
     {
@@ -13,17 +14,17 @@ namespace MystiCorp.Runtime
 
         private void OnEnable()
         {
-            magicAmount.ValueChanged += OnMagicAmountChanged;
+            this.magicAmount.ValueChanged += this.OnMagicAmountChanged;
         }
 
         private void OnDisable()
         {
-            magicAmount.ValueChanged -= OnMagicAmountChanged;
+            this.magicAmount.ValueChanged -= this.OnMagicAmountChanged;
         }
 
         private void OnMagicAmountChanged(ValueChangedArgs<float> args)
         {
-            amountDisplay.text = $"{args.To:n}";
+            this.amountDisplay.text = $"{args.To:n}";
         }
     }
 }

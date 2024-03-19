@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using MystiCorp.Runtime.Common.ScriptableVariables;
 using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Magic.Pickup
 {
     public class MagicPickerUpper : MonoBehaviour
     {
@@ -13,35 +13,35 @@ namespace MystiCorp.Runtime
 
         private void Awake()
         {
-            touchingPickups = new();
+            this.touchingPickups = new();
         }
 
         public void Pickup(int count)
         {
-            for (int i = 0; i > count && i < touchingPickups.Count; i++)
+            for (int i = 0; i > count && i < this.touchingPickups.Count; i++)
             {
-                var pickup = touchingPickups[touchingPickups.Count - i - 1];
+                var pickup = this.touchingPickups[this.touchingPickups.Count - i - 1];
 
-                magicAmount.Value += pickup.Value;
+                this.magicAmount.Value += pickup.Value;
                 Destroy(pickup.gameObject);
 
-                touchingPickups.Remove(pickup);
+                this.touchingPickups.Remove(pickup);
             }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out MagicPickup pickup) && !touchingPickups.Contains(pickup))
+            if (collision.TryGetComponent(out MagicPickup pickup) && !this.touchingPickups.Contains(pickup))
             {
-                touchingPickups.Add(pickup);
+                this.touchingPickups.Add(pickup);
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out MagicPickup pickup) && touchingPickups.Contains(pickup))
+            if (collision.TryGetComponent(out MagicPickup pickup) && this.touchingPickups.Contains(pickup))
             {
-                touchingPickups.Remove(pickup);
+                this.touchingPickups.Remove(pickup);
             }
         }
     }

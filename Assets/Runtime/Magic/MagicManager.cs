@@ -1,10 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using MystiCorp.Runtime.Common;
 using System.Linq;
+using MystiCorp.Runtime.Common.ScriptableVariables;
+using MystiCorp.Runtime.Game_Manager;
+using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Magic
 {
     [CreateAssetMenu(menuName = "Services/Magic Manager")]
     public class MagicManager : GameManager.Manager
@@ -22,14 +22,14 @@ namespace MystiCorp.Runtime
 
         protected override void Update()
         {
-            float magicDelta = magicAmount.Value - previousMagicAmount;
-            previousMagicAmount = magicAmount.Value;
+            float magicDelta = this.magicAmount.Value - this.previousMagicAmount;
+            this.previousMagicAmount = this.magicAmount.Value;
 
-            magicPerSecondValues.Add((magicDelta, Time.time));
+            this.magicPerSecondValues.Add((magicDelta, Time.time));
 
-            magicPerSecondValues.RemoveAll(magicValue => Time.time - magicValue.time > magicPerSecondCalculationDuration);
+            this.magicPerSecondValues.RemoveAll(magicValue => Time.time - magicValue.time > this.magicPerSecondCalculationDuration);
 
-            magicPerSecond.Value = magicPerSecondValues.Select(value => value.value).Sum() / magicPerSecondValues.Count;
+            this.magicPerSecond.Value = this.magicPerSecondValues.Select(value => value.value).Sum() / this.magicPerSecondValues.Count;
         }
     }
 }

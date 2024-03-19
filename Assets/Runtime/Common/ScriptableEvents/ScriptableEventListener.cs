@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace MystiCorp.Runtime.ScriptableEvents
+namespace MystiCorp.Runtime.Common.ScriptableEvents
 {
     public class ScriptableEventListener : MonoBehaviour
     {

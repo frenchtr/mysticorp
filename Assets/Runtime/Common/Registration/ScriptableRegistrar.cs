@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MystiCorp.Runtime.Registration
+namespace MystiCorp.Runtime.Common.Registration
 {
     public abstract class ScriptableRegistrar<TEntity> : ScriptableObject, IRegistrar<TEntity>
     {

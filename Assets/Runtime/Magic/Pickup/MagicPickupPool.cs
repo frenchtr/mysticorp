@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Magic.Pickup
 {
     [CreateAssetMenu(menuName = "Services/Magic Pickups")]
     public class MagicPickupPool : ScriptableObject
@@ -17,9 +16,9 @@ namespace MystiCorp.Runtime
 
         public MagicPickup SpawnPickup(float value, Vector2 position)
         {
-            if (pool == null) InitializePool();
+            if (this.pool == null) this.InitializePool();
 
-            var pickup = pool.Get();
+            var pickup = this.pool.Get();
 
             pickup.transform.position = position;
             pickup.Value = value;
@@ -32,7 +31,7 @@ namespace MystiCorp.Runtime
             closest = null;
             float closestSqrDistance = Mathf.Infinity;
 
-            foreach (var pickup in activePickups)
+            foreach (var pickup in this.activePickups)
             {
                 float sqrDsistance = (position - (Vector2)pickup.transform.position).sqrMagnitude;
 
@@ -48,27 +47,27 @@ namespace MystiCorp.Runtime
 
         private void InitializePool()
         {
-            poolParent = new GameObject("Magic Pickup Pool").transform;
+            this.poolParent = new GameObject("Magic Pickup Pool").transform;
 
-            activePickups = new();
+            this.activePickups = new();
 
-            pool = new(createFunc: CreatePickup, actionOnGet: GetPickup, actionOnRelease: ReleasePickup);
+            this.pool = new(createFunc: this.CreatePickup, actionOnGet: this.GetPickup, actionOnRelease: this.ReleasePickup);
         }
 
         private MagicPickup CreatePickup()
         {
-            return Instantiate(pickupPrefab, poolParent);
+            return Instantiate(this.pickupPrefab, this.poolParent);
         }
 
         private void GetPickup(MagicPickup pickup)
         {
-            activePickups.Add(pickup);
+            this.activePickups.Add(pickup);
             pickup.gameObject.SetActive(true);
         }
 
         private void ReleasePickup(MagicPickup pickup)
         {
-            activePickups.Remove(pickup);
+            this.activePickups.Remove(pickup);
             pickup.gameObject.SetActive(false);
         }
     }

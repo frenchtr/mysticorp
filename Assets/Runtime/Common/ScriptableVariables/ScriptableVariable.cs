@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using MystiCorp.Runtime.Common;
 
-namespace MystiCorp.Runtime.ScriptableVariables
+namespace MystiCorp.Runtime.Common.ScriptableVariables
 {
     public abstract class ScriptableVariable<TValue> : ScriptableObject
     {
@@ -12,7 +11,7 @@ namespace MystiCorp.Runtime.ScriptableVariables
 
         public TValue Value
         {
-            get => value;
+            get => this.value;
             set
             {
                 var args = new ValueChangedArgs<TValue>
@@ -23,7 +22,7 @@ namespace MystiCorp.Runtime.ScriptableVariables
 
                 this.value = value;
 
-                ValueChanged?.Invoke(args);
+                this.ValueChanged?.Invoke(args);
             }
         }
     }
