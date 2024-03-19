@@ -1,0 +1,18 @@
+{
+    "name": "MystiCorp.Editor",
+    "rootNamespace": "MystiCorp.Editor",
+    "references": [
+        "GUID:e86ac2deb7802eb479d0efd16c6ba4f8"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
