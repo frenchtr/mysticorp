@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using MystiCorp.Runtime.Damage;
 using MystiCorp.Runtime.Common;
+using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Damage
 {
     public class CharacterHealth : MonoBehaviour
     {

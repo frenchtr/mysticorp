@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeWriter.ExpressionParser;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Portal
 {
     public class Portal : MonoBehaviour
     {

@@ -1,7 +1,6 @@
 using UnityEngine;
-using MystiCorp.Runtime.Character;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Character.Critters
 {
     public class CritterBrain : MonoBehaviour
     {

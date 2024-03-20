@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-using MystiCorp.Runtime.Game_Manager;
 
 namespace MystiCorp.Runtime.Magic.Pickup
 {
     [CreateAssetMenu(menuName = "Services/Magic Pickups")]
-    public class MagicPickupPool : GameManager.Manager
+    public class MagicPickupPool : GameManager.GameManager.Manager
     {
         [SerializeField]
         private MagicPickup pickupPrefab;

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UScene = UnityEngine.SceneManagement.Scene;
 
-namespace MystiCorp.Runtime.Game_Manager {
+namespace MystiCorp.Runtime.GameManager {
 
     [CreateAssetMenu(fileName = GameManagerResourceName, menuName = "Services/Game Manager")]
     public class GameManager : ScriptableObject {

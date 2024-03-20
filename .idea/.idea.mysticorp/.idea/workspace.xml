@@ -6,11 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Machine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Machine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Turret.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Turret.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/Resources/Game Manager.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/Resources/Game Manager.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/Portal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/PortalWave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/PortalWave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Scenes/Oliver Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Scenes/Oliver Testing.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,26 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\travi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\travi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\travi\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\travi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\travi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\travi\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Unity.exe" />
@@ -72,10 +82,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26236">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26236" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
