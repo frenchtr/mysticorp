@@ -13,8 +13,8 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private float fieldOfView = 360f;
         
-        public float Radius => this.radius * this.RadiusMultiplier.ModifiedValue;
-        public float FieldOfView => this.fieldOfView * this.FieldOfViewMultiplier.ModifiedValue;
+        public float Radius => radius * RadiusMultiplier.ModifiedValue;
+        public float FieldOfView => fieldOfView * FieldOfViewMultiplier.ModifiedValue;
         
         [field: SerializeField]
         public Attribute RadiusMultiplier { get; private set; }
@@ -23,13 +23,13 @@ namespace MystiCorp.Runtime.Machines
         
         public void ForceRecalculateAll()
         {
-            this.RadiusMultiplier?.ForceRecalculateModifiedValue();
-            this.FieldOfViewMultiplier?.ForceRecalculateModifiedValue();
+            RadiusMultiplier?.ForceRecalculateModifiedValue();
+            FieldOfViewMultiplier?.ForceRecalculateModifiedValue();
         }
 
         private void OnValidate()
         {
-            this.ForceRecalculateAll();
+            ForceRecalculateAll();
         }
     }
 }

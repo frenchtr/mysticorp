@@ -165,16 +165,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMagnitude: 1
+  magnitudeMultiplier:
+    baseValue: 0
+    modifiedValue: 0
+    modifiers: []
   baseCycleTime: 1
+  cycleTimeMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
   cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
-  <MagnitudeMultiplier>k__BackingField:
-    baseValue: 1
-    modifiedValue: 1
-    modifiers: []
-  <CycleTimeMultiplier>k__BackingField:
-    baseValue: 1
-    modifiedValue: 1
-    modifiers: []
 --- !u!114 &4990155510392339685
 MonoBehaviour:
   m_ObjectHideFlags: 0

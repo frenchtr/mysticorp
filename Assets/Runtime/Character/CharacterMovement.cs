@@ -19,18 +19,18 @@ namespace MystiCorp.Runtime.Character
         {
             if (rigidbody.position == position) return;
 
-            this.targetPosition = position;
-            this.Moving = true;
+            targetPosition = position;
+            Moving = true;
         }
 
         public void Stop()
         {
-            this.Moving = false;
+            Moving = false;
         }
 
         private void Update()
         {
-            Vector2 targetDelta = this.targetPosition - (Vector2)this.transform.position;
+            Vector2 targetDelta = targetPosition - (Vector2)transform.position;
             Vector2 direction = targetDelta.normalized;
 
             // if reached target
@@ -41,7 +41,7 @@ namespace MystiCorp.Runtime.Character
                 rigidbody.velocity = Vector2.zero;
             }
 
-            if (this.Moving) this.rigidbody.velocity = direction * this.moveSpeed;
+            if (Moving) rigidbody.velocity = direction * moveSpeed;
         }
     }
 }

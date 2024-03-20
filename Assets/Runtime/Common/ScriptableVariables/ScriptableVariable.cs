@@ -11,7 +11,7 @@ namespace MystiCorp.Runtime.Common.ScriptableVariables
 
         public TValue Value
         {
-            get => this.value;
+            get => value;
             set
             {
                 var args = new ValueChangedArgs<TValue>
@@ -22,7 +22,7 @@ namespace MystiCorp.Runtime.Common.ScriptableVariables
 
                 this.value = value;
 
-                this.ValueChanged?.Invoke(args);
+                ValueChanged?.Invoke(args);
             }
         }
     }

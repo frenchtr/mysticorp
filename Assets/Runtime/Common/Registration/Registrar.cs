@@ -6,11 +6,11 @@ namespace MystiCorp.Runtime.Common.Registration
     public class Registrar<TEntity> : IRegistrar<TEntity>
     {
         protected List<TEntity> Entities { get; }
-        IEnumerable<TEntity> IRegistrar<TEntity>.Entities => this.Entities;
+        IEnumerable<TEntity> IRegistrar<TEntity>.Entities => Entities;
 
         public Registrar()
         {
-            this.Entities = new List<TEntity>();
+            Entities = new List<TEntity>();
         }
 
         public event Action<TEntity> Registered;
@@ -23,13 +23,13 @@ namespace MystiCorp.Runtime.Common.Registration
                 throw new ArgumentNullException(nameof(entity));
             }
 
-            if (this.Entities.Contains(entity))
+            if (Entities.Contains(entity))
             {
                 return;
             }
             
-            this.Entities.Add(entity);
-            this.Registered?.Invoke(entity);
+            Entities.Add(entity);
+            Registered?.Invoke(entity);
         }
 
         public virtual void Deregister(TEntity entity)
@@ -39,13 +39,13 @@ namespace MystiCorp.Runtime.Common.Registration
                 throw new ArgumentNullException(nameof(entity));
             }
             
-            if (!this.Entities.Contains(entity))
+            if (!Entities.Contains(entity))
             {
                 return;
             }
             
-            this.Entities.Remove(entity);
-            this.Deregistered?.Invoke(entity);
+            Entities.Remove(entity);
+            Deregistered?.Invoke(entity);
         }
     }
 }

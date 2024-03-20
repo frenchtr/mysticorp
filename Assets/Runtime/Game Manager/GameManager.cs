@@ -39,17 +39,17 @@ namespace MystiCorp.Runtime.Game_Manager {
 
             public void Init(GameManager gm) {
 
-                SceneManager.activeSceneChanged += (from, to) => this.OnSceneChange?.Invoke(from, to);
+                SceneManager.activeSceneChanged += (from, to) => OnSceneChange?.Invoke(from, to);
 
                 foreach (var manager in gm.managers)
                     manager.GameManagerInitialize(this);
             }
 
-            private void Start              () => this.OnStart               ?.Invoke();
-            private void Update             () => this.OnUpdate              ?.Invoke();
-            private void LateUpdate         () => this.OnLateUpdate          ?.Invoke();
-            private void FixedUpdate        () => this.OnFixedUpdate         ?.Invoke();
-            private void OnApplicationQuit  () => this.OnOnApplicationQuit   ?.Invoke();
+            private void Start              () => OnStart               ?.Invoke();
+            private void Update             () => OnUpdate              ?.Invoke();
+            private void LateUpdate         () => OnLateUpdate          ?.Invoke();
+            private void FixedUpdate        () => OnFixedUpdate         ?.Invoke();
+            private void OnApplicationQuit  () => OnOnApplicationQuit   ?.Invoke();
         }
 
         public class Manager : ScriptableObject {
@@ -58,14 +58,14 @@ namespace MystiCorp.Runtime.Game_Manager {
 
                 var inst = instance as Instance;
 
-                inst.OnStart                    += this.Start;
-                inst.OnUpdate                   += this.Update;
-                inst.OnLateUpdate               += this.LateUpdate;
-                inst.OnFixedUpdate              += this.FixedUpdate;
-                inst.OnSceneChange              += this.OnSceneChange;
-                inst.OnOnApplicationQuit        += this.OnApplicationQuit;
+                inst.OnStart                    += Start;
+                inst.OnUpdate                   += Update;
+                inst.OnLateUpdate               += LateUpdate;
+                inst.OnFixedUpdate              += FixedUpdate;
+                inst.OnSceneChange              += OnSceneChange;
+                inst.OnOnApplicationQuit        += OnApplicationQuit;
 
-                this.RuntimeInitializeOnLoad();
+                RuntimeInitializeOnLoad();
             }
 
             protected static MonoBehaviour Instance => I;
@@ -114,7 +114,7 @@ namespace MystiCorp.Runtime.Game_Manager {
 
                 public override void OnInspectorGUI() {
 
-                    var manager = this.target as Manager;
+                    var manager = target as Manager;
 
                     bool canAdd = !manager.IsAddedToGameManager(out var gameManager, out var log);
 
@@ -129,7 +129,7 @@ namespace MystiCorp.Runtime.Game_Manager {
                         else Debug.LogError(log);
 
                     GUI.enabled = false;
-                    EditorGUILayout.PropertyField(this.serializedObject.FindProperty("gameManager"));
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("gameManager"));
                     GUI.enabled = true;
 
                     base.OnInspectorGUI();

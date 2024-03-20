@@ -16,9 +16,9 @@ namespace MystiCorp.Runtime.Magic.Pickup
 
         public MagicPickup SpawnPickup(float value, Vector2 position)
         {
-            if (this.pool == null) this.InitializePool();
+            if (pool == null) InitializePool();
 
-            var pickup = this.pool.Get();
+            var pickup = pool.Get();
 
             pickup.transform.position = position;
             pickup.Value = value;
@@ -31,7 +31,7 @@ namespace MystiCorp.Runtime.Magic.Pickup
             closest = null;
             float closestSqrDistance = Mathf.Infinity;
 
-            foreach (var pickup in this.activePickups)
+            foreach (var pickup in activePickups)
             {
                 float sqrDsistance = (position - (Vector2)pickup.transform.position).sqrMagnitude;
 
@@ -47,27 +47,27 @@ namespace MystiCorp.Runtime.Magic.Pickup
 
         private void InitializePool()
         {
-            this.poolParent = new GameObject("Magic Pickup Pool").transform;
+            poolParent = new GameObject("Magic Pickup Pool").transform;
 
-            this.activePickups = new();
+            activePickups = new();
 
-            this.pool = new(createFunc: this.CreatePickup, actionOnGet: this.GetPickup, actionOnRelease: this.ReleasePickup);
+            pool = new(createFunc: CreatePickup, actionOnGet: GetPickup, actionOnRelease: ReleasePickup);
         }
 
         private MagicPickup CreatePickup()
         {
-            return Instantiate(this.pickupPrefab, this.poolParent);
+            return Instantiate(pickupPrefab, poolParent);
         }
 
         private void GetPickup(MagicPickup pickup)
         {
-            this.activePickups.Add(pickup);
+            activePickups.Add(pickup);
             pickup.gameObject.SetActive(true);
         }
 
         private void ReleasePickup(MagicPickup pickup)
         {
-            this.activePickups.Remove(pickup);
+            activePickups.Remove(pickup);
             pickup.gameObject.SetActive(false);
         }
     }

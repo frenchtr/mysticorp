@@ -12,17 +12,17 @@ namespace MystiCorp.Runtime.Modifiers
         
         private void OnEnable()
         {
-            if (this.areaOfEffectBehaviour == null)
+            if (areaOfEffectBehaviour == null)
             {
-                this.areaOfEffectBehaviour = this.GetComponentInParent<AreaOfEffectBehaviour>();
+                areaOfEffectBehaviour = GetComponentInParent<AreaOfEffectBehaviour>();
             }
 
-            this.areaOfEffectBehaviour.RadiusMultiplier.AddModifier(this.modifier);
+            areaOfEffectBehaviour.RadiusMultiplier.AddModifier(modifier);
         }
 
         private void OnDisable()
         {
-            this.areaOfEffectBehaviour.RadiusMultiplier.RemoveModifier(this.modifier);
+            areaOfEffectBehaviour.RadiusMultiplier.RemoveModifier(modifier);
         }
     }
 }

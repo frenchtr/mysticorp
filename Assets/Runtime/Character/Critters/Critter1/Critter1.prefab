@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5538469821457630447}
   - component: {fileID: 8569233989221195911}
   - component: {fileID: 2029212131730738605}
+  - component: {fileID: -3862361194684691510}
   m_Layer: 0
   m_Name: Critter1
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 753164405269013940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -109,6 +110,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3862361194684691510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea1e2d3180c4a469f4da057de997bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedEvent: {fileID: 11400000, guid: f9f4ce2b4d4e152448c0b2dc6235bdfd, type: 2}
 --- !u!1 &3099797826468742092
 GameObject:
   m_ObjectHideFlags: 0

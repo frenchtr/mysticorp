@@ -14,8 +14,8 @@ namespace MystiCorp.Runtime.Common.ScriptableEvents
 
         public void Raise()
         {
-            this.raised?.Invoke();
-            this.Raised?.Invoke();
+            raised?.Invoke();
+            Raised?.Invoke();
         }
     }
 
@@ -28,8 +28,8 @@ namespace MystiCorp.Runtime.Common.ScriptableEvents
 
         public void Raise(TData data)
         {
-            this.raised?.Invoke(data);
-            this.Raised?.Invoke(data);
+            raised?.Invoke(data);
+            Raised?.Invoke(data);
         }
     }
 }

@@ -12,17 +12,17 @@ namespace MystiCorp.Runtime.Common.ScriptableEvents
 
         protected virtual void Awake()
         {
-            this.@event.Raised += this.OnEventRaised;
+            @event.Raised += OnEventRaised;
         }
         
         protected virtual void OnDestroy()
         {
-            this.@event.Raised -= this.OnEventRaised;
+            @event.Raised -= OnEventRaised;
         }
 
         private void OnEventRaised()
         {
-            this.response?.Invoke();
+            response?.Invoke();
         }
     }
 
@@ -35,17 +35,17 @@ namespace MystiCorp.Runtime.Common.ScriptableEvents
 
         protected virtual void Awake()
         {
-            this.@event.Raised += this.OnEventRaised;
+            @event.Raised += OnEventRaised;
         }
         
         protected virtual void OnDestroy()
         {
-            this.@event.Raised -= this.OnEventRaised;
+            @event.Raised -= OnEventRaised;
         }
 
         private void OnEventRaised(TData data)
         {
-            this.response?.Invoke(data);
+            response?.Invoke(data);
         }
     }
 }

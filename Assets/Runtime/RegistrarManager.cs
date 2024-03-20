@@ -11,7 +11,7 @@ namespace MystiCorp.Runtime
 
         private void Awake()
         {
-            foreach (var registrar in this.registrars)
+            foreach (var registrar in registrars)
             {
                 registrar.Setup();
             }
