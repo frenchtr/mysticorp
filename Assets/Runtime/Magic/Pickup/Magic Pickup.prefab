@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbc8d78bdd704998b26cb39cabe4842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Value: 0
 --- !u!58 &933258411905087105
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -91,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3725440800325127340}
   - component: {fileID: 4991101679637723193}
+  - component: {fileID: 7967536232724048176}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -165,3 +167,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7967536232724048176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685423811068348334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e60676f2a694b72b64e2a3e423de35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeSpeed: {fileID: 11400000, guid: 92ffadb7035e44715b2844c1d5b0e0e4, type: 2}
+  saturation: {fileID: 11400000, guid: 97e7fc0c5707543669aaf29ded3adcde, type: 2}
+  value: {fileID: 11400000, guid: 619b2720e441244dd87e526a5d182b42, type: 2}
