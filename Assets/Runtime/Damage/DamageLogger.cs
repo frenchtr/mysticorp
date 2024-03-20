@@ -19,7 +19,7 @@ namespace MystiCorp.Runtime.Damage
 
         private void OnDamaged(DamageArgs args)
         {
-            Debug.Log($"{args.Receiver} took {args.Amount} damage!");
+            Debug.Log($"{args.Receiver.gameObject.name} took {args.Amount} damage!");
         }
     }
 }
