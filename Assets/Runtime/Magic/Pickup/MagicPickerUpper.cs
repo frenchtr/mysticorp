@@ -18,12 +18,11 @@ namespace MystiCorp.Runtime.Magic.Pickup
 
         public void Pickup(int count)
         {
-            for (int i = 0; i > count && i < touchingPickups.Count; i++)
+            for (int i = 0; i < count && i < touchingPickups.Count; i++)
             {
                 var pickup = touchingPickups[touchingPickups.Count - i - 1];
 
-                magicAmount.Value += pickup.Value;
-                Destroy(pickup.gameObject);
+                magicAmount.Value += pickup.Pickup();
 
                 touchingPickups.Remove(pickup);
             }

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using MystiCorp.Runtime.Game_Manager;
 
 namespace MystiCorp.Runtime.Magic.Pickup
 {
     [CreateAssetMenu(menuName = "Services/Magic Pickups")]
-    public class MagicPickupPool : ScriptableObject
+    public class MagicPickupPool : GameManager.Manager
     {
         [SerializeField]
         private MagicPickup pickupPrefab;
@@ -14,16 +15,23 @@ namespace MystiCorp.Runtime.Magic.Pickup
         private ObjectPool<MagicPickup> pool;
         private List<MagicPickup> activePickups;
 
+        protected override void RuntimeInitializeOnLoad()
+        {
+            InitializePool();
+        }
+
         public MagicPickup SpawnPickup(float value, Vector2 position)
         {
-            if (pool == null) InitializePool();
-
             var pickup = pool.Get();
 
-            pickup.transform.position = position;
-            pickup.Value = value;
+            pickup.Spawn(value, position, this);
 
             return pickup;
+        }
+
+        public void DespawnPickup(MagicPickup pickup)
+        {
+            pool.Release(pickup);
         }
 
         public bool TryGetClosestPickup(Vector2 position, out MagicPickup closest)

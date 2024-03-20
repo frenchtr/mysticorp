@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 4661539504369384028}
   - component: {fileID: 5538469821457630447}
   - component: {fileID: 8569233989221195911}
-  - component: {fileID: 2029212131730738605}
   - component: {fileID: -3862361194684691510}
+  - component: {fileID: 1775191691038315516}
+  - component: {fileID: 2980842177935860025}
+  - component: {fileID: 2029212131730738605}
+  - component: {fileID: 3107245231781015941}
   m_Layer: 0
   m_Name: Critter1
   m_TagString: Untagged
@@ -34,7 +37,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8602797097793661189}
   - {fileID: 7408682897657315370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,6 +85,49 @@ MonoBehaviour:
   moveSpeed: 2
   positionPrecision: 0.1
   rigidbody: {fileID: 2029212131730738605}
+--- !u!114 &-3862361194684691510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea1e2d3180c4a469f4da057de997bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalDamagedEvent: {fileID: 11400000, guid: f9f4ce2b4d4e152448c0b2dc6235bdfd, type: 2}
+--- !u!114 &1775191691038315516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98399ec2ba3f4e48bf3e80d6fd14401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  destroyOnDeath: 1
+  damageReceiver: {fileID: -3862361194684691510}
+--- !u!114 &2980842177935860025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ec2b249254e47b7a50acdfa9d48528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicValue: 10
+  health: {fileID: 1775191691038315516}
+  magicPickupPool: {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
 --- !u!50 &2029212131730738605
 Rigidbody2D:
   serializedVersion: 4
@@ -110,58 +155,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-3862361194684691510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753164405269013940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea1e2d3180c4a469f4da057de997bcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagedEvent: {fileID: 11400000, guid: f9f4ce2b4d4e152448c0b2dc6235bdfd, type: 2}
---- !u!1 &3099797826468742092
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8602797097793661189}
-  - component: {fileID: 1064847907600848752}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8602797097793661189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3099797826468742092}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5918746191246316384}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1064847907600848752
+--- !u!58 &3107245231781015941
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3099797826468742092}
+  m_GameObject: {fileID: 753164405269013940}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
