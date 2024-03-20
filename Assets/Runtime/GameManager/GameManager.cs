@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UScene = UnityEngine.SceneManagement.Scene;
 
 namespace MystiCorp.Runtime.GameManager {
 
@@ -34,7 +33,7 @@ namespace MystiCorp.Runtime.GameManager {
             public event Action OnUpdate;
             public event Action OnLateUpdate;
             public event Action OnFixedUpdate;
-            public event Action<UScene, UScene> OnSceneChange;
+            public event Action<Scene, Scene> OnSceneChange;
             public event Action OnOnApplicationQuit;
 
             public void Init(GameManager gm) {
@@ -75,7 +74,7 @@ namespace MystiCorp.Runtime.GameManager {
             protected virtual void Update() { }
             protected virtual void LateUpdate() { }
             protected virtual void FixedUpdate() { }
-            protected virtual void OnSceneChange(UScene from, UScene to) { }
+            protected virtual void OnSceneChange(Scene from, Scene to) { }
             protected virtual void OnApplicationQuit() { }
             protected virtual void OnValidate() { }
 
@@ -85,12 +84,17 @@ namespace MystiCorp.Runtime.GameManager {
             // displayed in editor for easy access
             [SerializeField, HideInInspector] private GameManager gameManager;
 
-            private bool IsAddedToGameManager(out GameManager gameManager, out string log) {
+            private bool IsAddedToGameManager(out GameManager found, out string log) {
 
                 var gameManagerGUIDs = AssetDatabase.FindAssets("t:GameManager");
 
-                gameManager = null;
+                found = null;
                 log = "";
+
+                if (gameManager != null) {
+                    found = gameManager;
+                    return gameManager.managers.Contains(this);
+                }
 
                 if (gameManagerGUIDs.Length == 0) {
                     log = "No Game Managers Found!";
@@ -104,9 +108,9 @@ namespace MystiCorp.Runtime.GameManager {
 
                 string gameManagerGUID = gameManagerGUIDs[0],
                        gameManagerPath = AssetDatabase.GUIDToAssetPath(gameManagerGUID);
-                gameManager = AssetDatabase.LoadAssetAtPath<GameManager>(gameManagerPath);
+                found = AssetDatabase.LoadAssetAtPath<GameManager>(gameManagerPath);
 
-                return gameManager.managers.Contains(this);
+                return found.managers.Contains(this);
             }
 
             [CustomEditor(typeof(Manager), true)]
@@ -116,17 +120,19 @@ namespace MystiCorp.Runtime.GameManager {
 
                     var manager = target as Manager;
 
-                    bool canAdd = !manager.IsAddedToGameManager(out var gameManager, out var log);
+                    if (!manager.IsAddedToGameManager(out var gameManager, out var log)
+                        && GUILayout.Button("Add to Game Manager")) {
 
-                    if ((canAdd || log != "") && GUILayout.Button("Add to Game Manager"))
-                        if (canAdd) {
-                            gameManager.managers.Add(manager);
-                            manager.gameManager = gameManager;
+                        gameManager.managers.Add(manager);
+                        manager.gameManager = gameManager;
 
-                            EditorUtility.SetDirty(manager);
-                            AssetDatabase.SaveAssets();
-                        }
-                        else Debug.LogError(log);
+                        EditorUtility.SetDirty(manager);
+                        EditorUtility.SetDirty(gameManager);
+                        AssetDatabase.SaveAssets();
+
+                    } else if (log != "") {
+                        EditorGUILayout.HelpBox(log, MessageType.Error, true);
+                    }
 
                     GUI.enabled = false;
                     EditorGUILayout.PropertyField(serializedObject.FindProperty("gameManager"));

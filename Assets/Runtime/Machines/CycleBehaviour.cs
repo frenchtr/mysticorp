@@ -13,14 +13,14 @@ namespace MystiCorp.Runtime.Machines
         private float baseMagnitude = 1f;
         [Tooltip("The multiplier which effects the calculated Magnitude.")]
         [SerializeField]
-        private Attribute magnitudeMultiplier;
+        private Attribute magnitudeMultiplier = new() { BaseValue = 1 };
         [Header("Cycle Time")]
         [Tooltip("How many times does this entity activate per second?")]
         [SerializeField]
         private float baseCycleTime = 1f;
         [Tooltip("The multiplier which effects the calculated CylceTime.")]
         [SerializeField]
-        private Attribute cycleTimeMultiplier;
+        private Attribute cycleTimeMultiplier = new() { BaseValue = 1 };
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;

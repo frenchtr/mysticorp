@@ -13,7 +13,7 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private Transform shootOrigin;
         [SerializeField]
-        private LineRenderer bullet;
+        private LineRenderer bulletTrail;
         [SerializeField]
         private float duration = 0.15f;
         [Header("Events")]
@@ -55,17 +55,17 @@ namespace MystiCorp.Runtime.Machines
             receiver.TakeDamage(amount);
             
             // Show the bullet
-            bullet.positionCount = 2;
-            bullet.SetPosition(0, shootOrigin.position);
-            bullet.SetPosition(1, target.transform.position);
-            bullet.gameObject.SetActive(true);
+            bulletTrail.positionCount = 2;
+            bulletTrail.SetPosition(0, shootOrigin.position);
+            bulletTrail.SetPosition(1, target.transform.position);
+            bulletTrail.gameObject.SetActive(true);
             StartCoroutine(HideBulletAfterSeconds(duration));
         }
 
         private IEnumerator HideBulletAfterSeconds(float seconds)
         {
             yield return new WaitForSeconds(seconds);
-            bullet.gameObject.SetActive(false);
+            bulletTrail.gameObject.SetActive(false);
         }
 
         private void GetDependencies()

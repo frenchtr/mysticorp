@@ -15,7 +15,7 @@ namespace MystiCorp.Runtime.Machines
         private float baseFieldOfView = 360f;
         [Header("GameObject Detection")]
         [SerializeField]
-        private LayerMask layerMask;
+        private LayerMask layerMask = 1;
         [SerializeField]
         private float minDepth = 0;
         [SerializeField]

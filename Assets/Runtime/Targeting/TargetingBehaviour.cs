@@ -10,9 +10,7 @@ namespace MystiCorp.Runtime.Targeting
     {
         [SerializeField]
         private GameObject currentTarget;
-        [Header("Dependencies")]
-        [SerializeField]
-        private CharacterRegistrar registrar;
+
         private AreaOfEffectBehaviour areaOfEffectBehaviour;
         
         public GameObject CurrentTarget
@@ -29,7 +27,6 @@ namespace MystiCorp.Runtime.Targeting
         private void Reset()
         {
             GetDependencies();
-            areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
         }
 
         private void Update()
@@ -41,8 +38,7 @@ namespace MystiCorp.Runtime.Targeting
 
         private GameObject GetTarget()
         {
-            var thisTransform = transform;
-            var from = thisTransform.position;
+            var from = transform.position;
             var charactersToEvaluate = areaOfEffectBehaviour
                 .GetGameObjectsInAreaOfEffect()
                 .Select(gameObj => gameObj.GetComponent<CharacterIdentity>())
