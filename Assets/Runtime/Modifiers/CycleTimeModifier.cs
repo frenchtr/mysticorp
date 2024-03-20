@@ -9,7 +9,17 @@ namespace MystiCorp.Runtime.Modifiers
         [SerializeField]
         private AttributeModifier modifier;
         private CycleBehaviour cycleBehaviour;
-        
+
+        private void Awake()
+        {
+            GetDependencies();
+        }
+
+        private void Reset()
+        {
+            GetDependencies();
+        }
+
         private void OnEnable()
         {
             if (cycleBehaviour == null)
@@ -23,6 +33,14 @@ namespace MystiCorp.Runtime.Modifiers
         private void OnDisable()
         {
             cycleBehaviour.CycleTimeMultiplier.RemoveModifier(modifier);
+        }
+
+        private void GetDependencies()
+        {
+            if (cycleBehaviour == null)
+            {
+                cycleBehaviour = GetComponent<CycleBehaviour>();
+            }
         }
     }
 }

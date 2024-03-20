@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Machines
 {
+    [RequireComponent(typeof(CycleBehaviour))]
     [RequireComponent(typeof(TargetingBehaviour))]
     public class OnCycledShootAtCurrentTargetBehaviour : MonoBehaviour
     {
@@ -15,14 +16,21 @@ namespace MystiCorp.Runtime.Machines
         private LineRenderer bullet;
         [SerializeField]
         private float duration = 0.15f;
-        [Header("Components")]
-        [SerializeField]
-        private TargetingBehaviour targetingBehaviour;
-        [SerializeField]
-        private CycleBehaviour cycleBehaviour;
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
+        private TargetingBehaviour targetingBehaviour;
+        private CycleBehaviour cycleBehaviour;
+
+        private void Awake()
+        {
+            GetDependencies();
+        }
+
+        private void Reset()
+        {
+            GetDependencies();
+        }
 
         private void OnEnable()
         {
@@ -32,23 +40,6 @@ namespace MystiCorp.Runtime.Machines
         private void OnDisable()
         {
             cycledEvent.Raised -= OnCycled;
-        }
-
-        private void OnCycled(GameObject obj)
-        {
-            if (obj != gameObject)
-            {
-                return;
-            }
-
-            var currentTarget = targetingBehaviour.CurrentTarget;
-
-            if (currentTarget == null)
-            {
-                return;
-            }
-            
-            ShootAt(currentTarget);
         }
 
         private void ShootAt(GameObject target)
@@ -75,6 +66,36 @@ namespace MystiCorp.Runtime.Machines
         {
             yield return new WaitForSeconds(seconds);
             bullet.gameObject.SetActive(false);
+        }
+
+        private void GetDependencies()
+        {
+            if (cycleBehaviour == null)
+            {
+                cycleBehaviour = GetComponent<CycleBehaviour>();
+            }
+
+            if (targetingBehaviour == null)
+            {
+                targetingBehaviour = GetComponent<TargetingBehaviour>();
+            }
+        }
+        
+        private void OnCycled(GameObject obj)
+        {
+            if (obj != gameObject)
+            {
+                return;
+            }
+
+            var currentTarget = targetingBehaviour.CurrentTarget;
+
+            if (currentTarget == null)
+            {
+                return;
+            }
+            
+            ShootAt(currentTarget);
         }
     }
 }

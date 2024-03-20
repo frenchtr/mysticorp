@@ -1,3 +1,4 @@
+using System;
 using MystiCorp.Runtime.Common;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace MystiCorp.Runtime.Damage
         private float maxHealth;
         [SerializeField]
         private bool destroyOnDeath;
+        private DamageReceiver damageReceiver;
         [SerializeField]
         private DamageArgsEvent damagedEvent;
 
@@ -33,22 +35,35 @@ namespace MystiCorp.Runtime.Damage
             }
         }
 
-        public event System.Action<ValueChangedArgs<float>> HealthChanged;
-        public event System.Action Death;
+        public event Action<ValueChangedArgs<float>> HealthChanged;
+        public event Action Death;
 
         private void OnEnable()
         {
+            GetDependencies();
+            
             damagedEvent.Raised += OnDamagedEvent;
         }
 
+<<<<<<< HEAD
         private void OnDisable()
         {
             damagedEvent.Raised -= OnDamagedEvent;
+=======
+        private void Reset()
+        {
+            GetDependencies();
+>>>>>>> 4f59ca93255b36c583830b3b90b40f3849136253
         }
 
         private void Start()
         {
             Health = maxHealth;
+        }
+
+        private void GetDependencies()
+        {
+            
         }
 
         private void OnDamagedEvent(DamageArgs args)

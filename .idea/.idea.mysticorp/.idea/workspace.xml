@@ -5,27 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mono_crash.0.0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/Resources/Game Manager.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Game Manager/Resources/Game Manager.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/MagicManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/Portal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/PortalWave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/PortalWave.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Scenes/Oliver Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Scenes/Oliver Testing.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10871f9e312b442cb78b9b97db88fdcb172a00/11/b183a851/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../color-clash/Assets/Runtime/AI/PencilPusherAIBrain.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Editor/RemoveAdditionalDataUtils.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Editor/SerializedPropertyExtension.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Editor/Volume/VolumeGizmoDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Runtime/Camera/CameraSwitcher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2dtIupZyqgsgDfOz6D2exIIbKj8" />
   <component name="ProjectLevelVcsManager">
@@ -113,24 +115,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs</url>
-          <line>41</line>
-          <properties documentPath="C:\Users\travi\Projects\mysticorp\Assets\Runtime\Targeting\TargetingBehaviour.cs" initialLine="41" containingFunctionPresentation="Method 'GetTarget'">
-            <startOffsets>
-              <option value="1410" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1623" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

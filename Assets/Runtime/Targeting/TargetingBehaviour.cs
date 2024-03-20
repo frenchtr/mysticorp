@@ -13,7 +13,6 @@ namespace MystiCorp.Runtime.Targeting
         [Header("Dependencies")]
         [SerializeField]
         private CharacterRegistrar registrar;
-        [SerializeField]
         private AreaOfEffectBehaviour areaOfEffectBehaviour;
         
         public GameObject CurrentTarget
@@ -22,8 +21,14 @@ namespace MystiCorp.Runtime.Targeting
             private set => currentTarget = value;
         }
 
+        private void Awake()
+        {
+            GetDependencies();
+        }
+
         private void Reset()
         {
+            GetDependencies();
             areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
         }
 
@@ -48,6 +53,14 @@ namespace MystiCorp.Runtime.Targeting
                 .OrderBy(character => Vector2.Distance(from, character.transform.position))
                 .Select(character => character.gameObject)
                 .FirstOrDefault();
+        }
+
+        private void GetDependencies()
+        {
+            if (areaOfEffectBehaviour == null)
+            {
+                areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
+            }
         }
     }
 }

@@ -9,7 +9,6 @@ namespace MystiCorp.Runtime.Portal
         private List<PortalWave> handcraftedWaves;
         [SerializeField]
         private Transform spawnpoint;
-
         private List<GameObject> activeCritters;
 
         private int waveIndex;

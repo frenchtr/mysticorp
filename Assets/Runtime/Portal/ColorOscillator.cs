@@ -14,7 +14,12 @@ namespace MystiCorp.Runtime.Portal
 
         private void Awake()
         {
-            renderer = GetComponent<SpriteRenderer>();
+            GetDependencies();
+        }
+
+        private void Reset()
+        {
+            GetDependencies();
         }
 
         private void Update()
@@ -23,6 +28,14 @@ namespace MystiCorp.Runtime.Portal
             hue %= 1;
 
             renderer.color = Color.HSVToRGB(hue, saturation.Value, value.Value);
+        }
+
+        private void GetDependencies()
+        {
+            if (renderer == null)
+            {
+                renderer = GetComponent<SpriteRenderer>();
+            }
         }
     }
 }

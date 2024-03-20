@@ -9,7 +9,17 @@ namespace MystiCorp.Runtime.Modifiers
         [SerializeField]
         private AttributeModifier modifier;
         private AreaOfEffectBehaviour areaOfEffectBehaviour;
-        
+
+        private void Awake()
+        {
+            GetDependencies();
+        }
+
+        private void Reset()
+        {
+            GetDependencies();
+        }
+
         private void OnEnable()
         {
             if (areaOfEffectBehaviour == null)
@@ -23,6 +33,14 @@ namespace MystiCorp.Runtime.Modifiers
         private void OnDisable()
         {
             areaOfEffectBehaviour.RadiusMultiplier.RemoveModifier(modifier);
+        }
+
+        private void GetDependencies()
+        {
+            if (areaOfEffectBehaviour == null)
+            {
+                areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
+            }
         }
     }
 }
