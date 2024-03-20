@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Portal
 {
     [CreateAssetMenu]
     public class PortalWave : ScriptableObject

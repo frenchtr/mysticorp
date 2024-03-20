@@ -1,7 +1,7 @@
 using MystiCorp.Runtime.Common.ScriptableVariables;
 using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Portal
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class ColorOscillator : MonoBehaviour

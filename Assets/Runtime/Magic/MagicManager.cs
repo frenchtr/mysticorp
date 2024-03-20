@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using MystiCorp.Runtime.Common.ScriptableVariables;
-using MystiCorp.Runtime.Game_Manager;
 using UnityEngine;
 
 namespace MystiCorp.Runtime.Magic
 {
     [CreateAssetMenu(menuName = "Services/Magic Manager")]
-    public class MagicManager : GameManager.Manager
+    public class MagicManager : GameManager.GameManager.Manager
     {
         [SerializeField]
         private FloatVariable magicAmount;
