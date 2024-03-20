@@ -36,9 +36,14 @@ namespace MystiCorp.Runtime.Damage
         public event System.Action<ValueChangedArgs<float>> HealthChanged;
         public event System.Action Death;
 
-        private void Awake()
+        private void OnEnable()
         {
             damagedEvent.Raised += OnDamagedEvent;
+        }
+
+        private void OnDisable()
+        {
+            damagedEvent.Raised -= OnDamagedEvent;
         }
 
         private void Start()
