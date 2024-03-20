@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageLogger.cs" afterDir="false" />
-    </list>
+    <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710821177778</updated>
       <workItem from="1710821179656" duration="1251000" />
-      <workItem from="1710878113596" duration="16677000" />
+      <workItem from="1710878113596" duration="17020000" />
     </task>
     <servers />
   </component>
