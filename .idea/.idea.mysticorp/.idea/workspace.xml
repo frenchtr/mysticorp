@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mono_crash.0.0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageArgs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageArgs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledShootAtCurrentTargetBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledShootAtCurrentTargetBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/RotateTransformTowardCurrentTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/RotateTransformTowardCurrentTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Modifiers/CycleTimeModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Modifiers/CycleTimeModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Modifiers/FieldOfViewModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Modifiers/FieldOfViewModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Modifiers/MagnitudeModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Modifiers/MagnitudeModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Modifiers/RadiusModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Modifiers/RadiusModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/Portal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/RegistrarManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/RegistrarManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/RegistrarManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/RegistrarManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Scenes/Oliver Testing.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Scenes/Oliver Testing.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

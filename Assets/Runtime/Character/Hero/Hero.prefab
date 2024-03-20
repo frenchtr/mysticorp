@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6146125408248757976}
   - component: {fileID: 7074881132304228636}
   - component: {fileID: 7505141384297705099}
+  - component: {fileID: 8849165682635088436}
+  - component: {fileID: 1336169947970983322}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Hero
@@ -156,6 +158,48 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &8849165682635088436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008346371277099712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b55d7fc5ffa43f0bc2715ad099f5524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseRadius: 1
+  baseFieldOfView: 360
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  minDepth: 0
+  maxDepth: 3.4028235e+38
+  <RadiusMultiplier>k__BackingField:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  <FieldOfViewMultiplier>k__BackingField:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+--- !u!114 &1336169947970983322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008346371277099712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1867c407ade44efb8b765f0412c1900a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  registrar: {fileID: 11400000, guid: 7144c148204e5174a9214c63b16d06e2, type: 2}
+  areaOfEffectBehaviour: {fileID: 8849165682635088436}
 --- !u!1 &8640596767404795167
 GameObject:
   m_ObjectHideFlags: 0

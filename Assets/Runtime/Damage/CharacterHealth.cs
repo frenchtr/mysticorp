@@ -11,6 +11,8 @@ namespace MystiCorp.Runtime.Damage
         [SerializeField]
         private bool destroyOnDeath;
         private DamageReceiver damageReceiver;
+        [SerializeField]
+        private DamageArgsEvent damagedEvent;
 
         [SerializeField]
         [InspectorName("Current Health")]
@@ -40,7 +42,7 @@ namespace MystiCorp.Runtime.Damage
         {
             GetDependencies();
             
-            damageReceiver.DamagedEvent += OnDamagedEvent;
+            damagedEvent.Raised += OnDamagedEvent;
         }
 
         private void Reset()
@@ -60,6 +62,8 @@ namespace MystiCorp.Runtime.Damage
 
         private void OnDamagedEvent(DamageArgs args)
         {
+            if (args.Receiver.gameObject != gameObject) return;
+
             Health = Mathf.MoveTowards(Health, 0, args.Amount);
 
             if (Health == 0)

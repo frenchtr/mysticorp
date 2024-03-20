@@ -1,3 +1,14 @@
 fileFormatVersion: 2
 guid: 1867c407ade44efb8b765f0412c1900a
-timeCreated: 1710881361
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - currentTarget: {instanceID: 0}
+  - registrar: {fileID: 11400000, guid: 7144c148204e5174a9214c63b16d06e2, type: 2}
+  - areaOfEffectBehaviour: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -29,6 +29,7 @@ namespace MystiCorp.Runtime.Targeting
         private void Reset()
         {
             GetDependencies();
+            areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
         }
 
         private void Update()

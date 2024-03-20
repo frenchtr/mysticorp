@@ -6,9 +6,7 @@ namespace MystiCorp.Runtime.Damage
     {
         [Header("Events")]
         [SerializeField]
-        private DamageArgsEvent globalDamagedEvent;
-
-        public event System.Action<DamageArgs> DamagedEvent;
+        private DamageArgsEvent damagedEvent;
 
         public void TakeDamage(float amount)
         {
@@ -18,8 +16,7 @@ namespace MystiCorp.Runtime.Damage
                 Amount = amount,
             };
 
-            DamagedEvent?.Invoke(args);
-            globalDamagedEvent.Raise(args);
+            damagedEvent.Raise(args);
         }
     }
 }
