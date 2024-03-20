@@ -3,7 +3,9 @@ guid: 13ec2b249254e47b7a50acdfa9d48528
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - health: {instanceID: 0}
+  - magicPickupPool: {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

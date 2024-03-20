@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mono_crash.0.0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterIdentity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterIdentity.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageLogger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageLogger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleBehaviour.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,3 +1,14 @@
 fileFormatVersion: 2
 guid: e02321704b954f5f9f92543f8ea72ef3
-timeCreated: 1710887909
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shootOrigin: {instanceID: 0}
+  - bullet: {instanceID: 0}
+  - cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
