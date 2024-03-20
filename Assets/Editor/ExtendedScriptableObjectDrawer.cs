@@ -18,7 +18,7 @@ using UnityEditor;
 public class ExtendedScriptableObjectDrawer : PropertyDrawer {
 
 	// Styling
-	private const int buttonWidth = 66;
+	private const float buttonWidth = 66;
 	private const float verticalContentBuffer = 8;
 	private static readonly GUIStyle ContentStyle = EditorStyles.helpBox;
 
