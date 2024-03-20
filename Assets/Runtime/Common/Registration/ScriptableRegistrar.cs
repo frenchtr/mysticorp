@@ -14,26 +14,22 @@ namespace MystiCorp.Runtime.Common.Registration
     public abstract class ScriptableRegistrar<TEntity> : ScriptableRegistrar, IRegistrar<TEntity>
     {
         private Registrar<TEntity> registrar;
-        
-        public IEnumerable<TEntity> Entities => ((IRegistrar<TEntity>)registrar).Entities;
+        private Registrar<TEntity> Registrar => registrar ??= new();
+
+        public IEnumerable<TEntity> Entities => ((IRegistrar<TEntity>)Registrar).Entities;
 
         public event Action<TEntity> Registered
         {
-            add => registrar.Registered += value;
-            remove => registrar.Registered -= value;
+            add => Registrar.Registered += value;
+            remove => Registrar.Registered -= value;
         }
         public event Action<TEntity> Deregistered
         {
-            add => registrar.Deregistered += value;
-            remove => registrar.Deregistered -= value;
+            add => Registrar.Deregistered += value;
+            remove => Registrar.Deregistered -= value;
         }
 
-        public override void Setup()
-        {
-            registrar = new Registrar<TEntity>();
-        }
-
-        public virtual void Register(TEntity entity) => registrar.Register(entity);
-        public virtual void Deregister(TEntity entity) => registrar.Deregister(entity);
+        public virtual void Register(TEntity entity) => Registrar.Register(entity);
+        public virtual void Deregister(TEntity entity) => Registrar.Deregister(entity);
     }
 }

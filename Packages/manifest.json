@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.codewriter.expression-parser": "https://github.com/codewriter-packages/Expression-Parser.git",
     "com.travisrfrench.attributes": "https://github.com/frenchtr/attributes.git",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.device-simulator.devices": "1.0.0",
