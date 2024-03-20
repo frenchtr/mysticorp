@@ -10,8 +10,6 @@ namespace MystiCorp.Runtime.Machines
     public class OnCycledShootAtCurrentTargetBehaviour : MonoBehaviour
     {
         [SerializeField]
-        private float damageAmount = 1f;
-        [SerializeField]
         private Transform shootOrigin;
         [SerializeField]
         private LineRenderer bullet;
@@ -20,6 +18,8 @@ namespace MystiCorp.Runtime.Machines
         [Header("Components")]
         [SerializeField]
         private TargetingBehaviour targetingBehaviour;
+        [SerializeField]
+        private CycleBehaviour cycleBehaviour;
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
@@ -59,8 +59,9 @@ namespace MystiCorp.Runtime.Machines
             {
                 return;
             }
-            
-            receiver.TakeDamage(damageAmount);
+
+            var amount = cycleBehaviour.Magnitude;
+            receiver.TakeDamage(amount);
             
             // Show the bullet
             bullet.positionCount = 2;

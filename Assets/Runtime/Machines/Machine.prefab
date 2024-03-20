@@ -166,8 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMagnitude: 1
   magnitudeMultiplier:
-    baseValue: 0
-    modifiedValue: 0
+    baseValue: 1
+    modifiedValue: 1
     modifiers: []
   baseCycleTime: 1
   cycleTimeMultiplier:
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b55d7fc5ffa43f0bc2715ad099f5524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  fieldOfView: 360
+  baseRadius: 1
+  baseFieldOfView: 360
   <RadiusMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1
