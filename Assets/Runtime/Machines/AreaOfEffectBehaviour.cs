@@ -1,6 +1,5 @@
 using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace MystiCorp.Runtime.Machines
 {
@@ -15,7 +14,8 @@ namespace MystiCorp.Runtime.Machines
         private float baseFieldOfView = 360f;
         
         public float Radius => baseRadius * RadiusMultiplier.ModifiedValue;
-        public float FieldOfView => baseFieldOfView * FieldOfViewMultiplier.ModifiedValue;
+        public float FieldOfView => 
+            Mathf.Clamp(baseFieldOfView * FieldOfViewMultiplier.ModifiedValue, 0f, 360f);
         
         [field: SerializeField]
         public Attribute RadiusMultiplier { get; private set; }

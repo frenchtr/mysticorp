@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using MystiCorp.Runtime.Common.ScriptableVariables;
 using UnityEngine;
 
