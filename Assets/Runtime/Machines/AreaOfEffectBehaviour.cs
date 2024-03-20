@@ -27,9 +27,9 @@ namespace MystiCorp.Runtime.Machines
             Mathf.Clamp(baseFieldOfView * FieldOfViewMultiplier.ModifiedValue, 0f, 360f);
         
         [field: SerializeField]
-        public Attribute RadiusMultiplier { get; private set; }
+        public Attribute RadiusMultiplier { get; private set; } = new() { BaseValue = 1 };
         [field: SerializeField]
-        public Attribute FieldOfViewMultiplier { get; private set; }
+        public Attribute FieldOfViewMultiplier { get; private set; } = new() { BaseValue = 1 };
 
         public IEnumerable<GameObject> GetGameObjectsInAreaOfEffect()
         {

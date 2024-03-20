@@ -22,6 +22,11 @@ namespace MystiCorp.Runtime.Targeting
             private set => currentTarget = value;
         }
 
+        private void Reset()
+        {
+            areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
+        }
+
         private void Update()
         {
             // Probably in the future we want to have this happen at a specified interval rather than every frame since
