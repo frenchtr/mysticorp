@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="" />
+    <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/AreaOfEffectBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Machine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Machine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Turret.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Turret.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710821177778</updated>
       <workItem from="1710821179656" duration="1251000" />
-      <workItem from="1710878113596" duration="18088000" />
+      <workItem from="1710878113596" duration="22151000" />
     </task>
     <servers />
   </component>
@@ -96,5 +103,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Runtime/Targeting/TargetingBehaviour.cs</url>
+          <line>41</line>
+          <properties documentPath="C:\Users\travi\Projects\mysticorp\Assets\Runtime\Targeting\TargetingBehaviour.cs" initialLine="41" containingFunctionPresentation="Method 'GetTarget'">
+            <startOffsets>
+              <option value="1410" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1623" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

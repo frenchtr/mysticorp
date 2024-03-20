@@ -189,6 +189,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseRadius: 1
   baseFieldOfView: 360
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  minDepth: 0
+  maxDepth: 3.4028235e+38
   <RadiusMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1

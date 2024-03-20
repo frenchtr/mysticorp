@@ -31,47 +31,18 @@ namespace MystiCorp.Runtime.Targeting
 
         private GameObject GetTarget()
         {
-            GameObject nearest = null;
-            var nearestDistance = Mathf.Infinity;
             var thisTransform = transform;
-            var facingDirection = thisTransform.up;
             var from = thisTransform.position;
-            var radius = areaOfEffectBehaviour.Radius;
-            var fieldOfView = areaOfEffectBehaviour.FieldOfView;
-            var charactersToEvaluate = registrar.Entities
+            var charactersToEvaluate = areaOfEffectBehaviour
+                .GetGameObjectsInAreaOfEffect()
+                .Select(gameObj => gameObj.GetComponent<CharacterIdentity>())
+                .Where(character => character != null)
                 .Where(character => !character.CompareTag("Hero"));
 
-            foreach (var character in charactersToEvaluate)
-            {
-                var to = character.transform.position;
-                var distance = Vector2.Distance(from, to);
-                var directionToCharacter = (to - from).normalized;
-                
-                // Exclude targets outside our radius
-                if (distance > radius)
-                {
-                    continue;
-                }
-
-                // Exclude targets outside our field of view
-                var angleToCharacter = Vector2.Angle(facingDirection, directionToCharacter);
-
-                if (angleToCharacter > fieldOfView / 2f)
-                {
-                    continue;
-                }
-
-                if (nearest != null && distance > nearestDistance)
-                {
-                    continue;
-                }
-                
-                // Set the current character's GameObject as the nearest and record it's distance as the nearest
-                nearest = character.gameObject;
-                nearestDistance = distance;
-            }
-            
-            return nearest;
+            return charactersToEvaluate
+                .OrderBy(character => Vector2.Distance(from, character.transform.position))
+                .Select(character => character.gameObject)
+                .FirstOrDefault();
         }
     }
 }
