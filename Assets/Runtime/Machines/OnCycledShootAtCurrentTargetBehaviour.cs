@@ -1,3 +1,4 @@
+using System.Collections;
 using MystiCorp.Runtime.Common.ScriptableEvents;
 using MystiCorp.Runtime.Damage;
 using MystiCorp.Runtime.Targeting;
@@ -13,7 +14,9 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private Transform shootOrigin;
         [SerializeField]
-        private ContactFilter2D filter;
+        private LineRenderer bullet;
+        [SerializeField]
+        private float duration = 0.15f;
         [Header("Components")]
         [SerializeField]
         private TargetingBehaviour targetingBehaviour;
@@ -58,6 +61,19 @@ namespace MystiCorp.Runtime.Machines
             }
             
             receiver.TakeDamage(damageAmount);
+            
+            // Show the bullet
+            bullet.positionCount = 2;
+            bullet.SetPosition(0, shootOrigin.position);
+            bullet.SetPosition(1, target.transform.position);
+            bullet.gameObject.SetActive(true);
+            StartCoroutine(HideBulletAfterSeconds(duration));
+        }
+
+        private IEnumerator HideBulletAfterSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            bullet.gameObject.SetActive(false);
         }
     }
 }
