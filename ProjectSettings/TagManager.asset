@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Placement UI
+    uniqueID: 729645927
+    locked: 0
+  - name: Placing Machine
+    uniqueID: 1286101251
+    locked: 0
