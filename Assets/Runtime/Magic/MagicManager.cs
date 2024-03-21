@@ -6,7 +6,7 @@ using UnityEngine;
 namespace MystiCorp.Runtime.Magic
 {
     [CreateAssetMenu(menuName = "Services/Magic Manager")]
-    public class MagicManager : GameManager.GameManager.Manager
+    public class MagicManager : GameManager.GameServiceManager.Service
     {
         [SerializeField]
         private FloatVariable magicAmount;
@@ -14,12 +14,13 @@ namespace MystiCorp.Runtime.Magic
         private FloatVariable magicPerSecond;
         [SerializeField]
         private float magicPerSecondCalculationDuration;
+        [SerializeField] private float f1, f2, f3;
 
         private float previousMagicAmount;
 
         private List<(float value, float time)> magicPerSecondValues = new();
 
-        protected override void Update()
+        protected override void LateUpdate()
         {
             float magicDelta = magicAmount.Value - previousMagicAmount;
             previousMagicAmount = magicAmount.Value;

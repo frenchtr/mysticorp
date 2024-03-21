@@ -1,6 +1,6 @@
 // Developed by Tom Kail at Inkle
 // Released under the MIT Licence as held at https://opensource.org/licenses/MIT
-// Modified by Oliver Beebe
+// Modified by Oliver Beebe (original from https://gist.github.com/tomkail/ba4136e6aa990f4dc94e0d39ec6a058c)
 
 // Must be placed within a folder named "Editor"
 
@@ -75,7 +75,7 @@ public class ExtendedScriptableObjectDrawer : PropertyDrawer {
 		// but both code paths seem to need to be a foldout or 
 		// the object field control goes weird when the codepath changes.
 		// I guess because foldout is an interactable control of its own and throws off the controlID?
-		GUIStyle foldoutStyle = subPropVisible ? EditorStyles.foldout : EditorStyles.label;
+		var foldoutStyle = subPropVisible ? EditorStyles.foldout : EditorStyles.label;
 
 		// Create foldout
 		var guiContent = new GUIContent(property.displayName);
@@ -89,11 +89,8 @@ public class ExtendedScriptableObjectDrawer : PropertyDrawer {
 		var propertyRect = new Rect(position.x + offset, position.y, position.width - offset - Spacing / 2f, LineHeight);
 
 		// Make space for "Create" button if necessary
-		if ((!property.hasMultipleDifferentValues
-            && property.serializedObject.targetObject != null
-            && property.serializedObject.targetObject is ScriptableObject)
-			|| property.objectReferenceValue == null)
-			propertyRect.width -= buttonWidth + Spacing;
+		bool showButton = property.objectReferenceValue == null && !type.IsAbstract && GUI.enabled;
+        if (showButton) propertyRect.width -= buttonWidth + Spacing;
 
 		// Create field for object reference
 		EditorGUI.ObjectField(propertyRect, property, type, GUIContent.none);
@@ -106,7 +103,7 @@ public class ExtendedScriptableObjectDrawer : PropertyDrawer {
         if (propertyExists && property.isExpanded) {
 
 			// Draw a background that shows us clearly which fields are part of the ScriptableObject
-			var backgroundRect = new Rect(0, position.y + LineHeight + Spacing, position.width - Spacing, position.height - LineHeight - Spacing);
+			var backgroundRect = new Rect(position.x, position.y + LineHeight + Spacing, position.width - Spacing, position.height - LineHeight - Spacing);
 			GUI.Box(backgroundRect, "", ContentStyle);
 
 			// Iterate over all the values and draw them
@@ -136,7 +133,7 @@ public class ExtendedScriptableObjectDrawer : PropertyDrawer {
 
 		// Display create button
 		var buttonRect = new Rect(position.x + position.width - buttonWidth, position.y, buttonWidth, LineHeight);
-		if (!propertyExists && GUI.Button(buttonRect, "Create")) {
+		if (!propertyExists && showButton && GUI.Button(buttonRect, "Create")) {
 
 			// Create a new ScriptableObject in the open Project window folder
 			var asset = ScriptableObject.CreateInstance(type);

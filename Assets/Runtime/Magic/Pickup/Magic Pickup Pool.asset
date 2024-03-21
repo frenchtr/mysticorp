@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3467b18fcc5d49749877756fcea9b53, type: 3}
   m_Name: Magic Pickup Pool
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 11400000, guid: fadfadf4c94b54654ad090c41b434d09, type: 2}
+  gameServiceManager: {fileID: 11400000, guid: fadfadf4c94b54654ad090c41b434d09, type: 2}
   pickupPrefab: {fileID: 1739979136611800567, guid: 91afd1bd5051044658086d8e0dd53598, type: 3}

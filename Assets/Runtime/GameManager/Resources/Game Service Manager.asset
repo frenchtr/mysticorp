@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 196a0089c59c4450b98030bce673c6c0, type: 3}
-  m_Name: Game Manager
+  m_Name: Game Service Manager
   m_EditorClassIdentifier: 
-  managers:
-  - {fileID: 11400000, guid: e456b736e301e42109a5a60d99ffda50, type: 2}
+  services:
   - {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
+  - {fileID: 11400000, guid: e456b736e301e42109a5a60d99ffda50, type: 2}
