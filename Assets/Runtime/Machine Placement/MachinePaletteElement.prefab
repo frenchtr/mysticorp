@@ -55,6 +55,7 @@ MonoBehaviour:
   iconParent: {fileID: 7384554159635932789}
   iconSortingLayer: Placement UI
   iconSortingOrder: 10
+  button: {fileID: 3053077438523022553}
 --- !u!222 &2516223525884910167
 CanvasRenderer:
   m_ObjectHideFlags: 0
