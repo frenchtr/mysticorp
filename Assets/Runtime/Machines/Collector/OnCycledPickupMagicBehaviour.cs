@@ -7,7 +7,7 @@ using MystiCorp.Runtime.Machines;
 
 namespace MystiCorp.Runtime
 {
-    [RequireComponent(typeof(MagicCollector))]
+    [RequireComponent(typeof(Collector))]
     [RequireComponent(typeof(CycleBehaviour))]
     [RequireComponent(typeof(MagnitudeBehaviour))]
     public class OnCycledPickupMagicBehaviour : MonoBehaviour
@@ -15,7 +15,7 @@ namespace MystiCorp.Runtime
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
-        private MagicCollector magicPickerUpper;
+        private Collector magicPickerUpper;
         private CycleBehaviour cycleBehaviour;
         private MagnitudeBehaviour magnitudeBehaviour;
 
@@ -43,7 +43,7 @@ namespace MystiCorp.Runtime
         {
             if (magicPickerUpper == null)
             {
-                magicPickerUpper = GetComponent<MagicCollector>();
+                magicPickerUpper = GetComponent<Collector>();
             }
 
             if (cycleBehaviour == null)
@@ -64,7 +64,7 @@ namespace MystiCorp.Runtime
                 return;
             }
 
-            magicPickerUpper.Pickup(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
+            magicPickerUpper.Collect(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
         }
     }
 }

@@ -7,7 +7,7 @@ namespace MystiCorp.Runtime.Common.Pooling
     public abstract class ObjectPoolService : ScriptableObject
     {
         [SerializeField]
-        private GameObject prefab;
+        protected GameObject prefab;
 
         [System.NonSerialized]
         private Transform poolParent;
@@ -50,7 +50,7 @@ namespace MystiCorp.Runtime.Common.Pooling
             pool?.Dispose();
 
             // initialize
-            poolParent = new GameObject(GetType().Name).transform;
+            poolParent = new GameObject(name).transform;
             activeObjects = new();
             pool = new(
                 createFunc: CreateObject,

@@ -7,21 +7,21 @@ namespace MystiCorp.Runtime.Character.Hero
     public class HeroBrain : MonoBehaviour
     {
         [SerializeField]
-        private MagicPickupPool pickupPool;
+        private CollectiblePool pickupPool;
         [SerializeField]
         private CharacterMovement movement;
         [SerializeField]
-        private MagicCollector pickerUpper;
+        private Collector pickerUpper;
         [SerializeField]
         private Attractor attractor;
 
         private void Update()
         {
-            pickerUpper.Pickup(10);
+            pickerUpper.Collect(10);
 
             attractor.AttractAllNearby();
 
-            if (pickupPool.TryGetClosestPickup(transform.position, out var closestPickup))
+            if (pickupPool.TryGetClosestCollectible(transform.position, out var closestPickup))
             {
                 movement.MoveTo(closestPickup.transform.position);
             }

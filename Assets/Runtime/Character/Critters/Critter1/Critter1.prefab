@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicValue: 10
+  playerMagicAmount: {fileID: 11400000, guid: afbe7d026423f4ac099fb1573a4d5ec5, type: 2}
   magicPickupPool: {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
 --- !u!50 &2029212131730738605
 Rigidbody2D:
@@ -228,11 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbeebe823284968b65f075f0d6d1441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMagnitude: 1
-  magnitudeMultiplier:
-    baseValue: 1
-    modifiedValue: 1
-    modifiers: []
   baseCycleTime: 1
   cycleTimeMultiplier:
     baseValue: 1

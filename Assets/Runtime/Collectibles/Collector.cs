@@ -7,10 +7,8 @@ using System.Linq;
 namespace MystiCorp.Runtime.Magic.Pickup
 {
     [RequireComponent(typeof(AreaOfEffectBehaviour))]
-    public class MagicCollector : MonoBehaviour
+    public class Collector : MonoBehaviour
     {
-        [SerializeField]
-        private FloatVariable magicAmount;
         [SerializeField]
         private AreaOfEffectBehaviour areaOfEffectBehaviour;
 
@@ -32,23 +30,19 @@ namespace MystiCorp.Runtime.Magic.Pickup
             }
         }
 
-        public void Pickup(int count)
+        public void Collect(int count)
         {
-            List<MagicPickup> pickups = new();
+            int collected = 0;
 
             foreach (var gameObject in areaOfEffectBehaviour.GetGameObjectsInAreaOfEffect())
             {
-                if (gameObject.TryGetComponent(out MagicPickup pickup))
+                if (gameObject.TryGetComponent(out Collectible collectible))
                 {
-                    pickups.Add(pickup);
+                    collectible.Collect();
+                    collected++;
                 }
 
-                if (pickups.Count == count) break;
-            }
-
-            foreach (var pickup in pickups)
-            {
-                magicAmount.Value += pickup.Pickup();
+                if (collected == count) break;
             }
         }
     }

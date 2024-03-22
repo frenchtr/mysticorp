@@ -754,10 +754,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
-    - target: {fileID: 4341511521379525979, guid: 443be5d4801c74dd6a5fdc8ffb12d748, type: 3}
-      propertyPath: baseRadius
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5013079728536148018, guid: 443be5d4801c74dd6a5fdc8ffb12d748, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -797,10 +793,6 @@ PrefabInstance:
     - target: {fileID: 5013079728536148018, guid: 443be5d4801c74dd6a5fdc8ffb12d748, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5615172399236092492, guid: 443be5d4801c74dd6a5fdc8ffb12d748, type: 3}
-      propertyPath: moveSpeed
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
