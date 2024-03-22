@@ -50,6 +50,11 @@ namespace MystiCorp.Runtime
             {
                 cycleBehaviour = GetComponent<CycleBehaviour>();
             }
+
+            if (magnitudeBehaviour == null)
+            {
+                magnitudeBehaviour = GetComponent<MagnitudeBehaviour>();
+            }
         }
 
         private void OnCycled(GameObject gameObj)
