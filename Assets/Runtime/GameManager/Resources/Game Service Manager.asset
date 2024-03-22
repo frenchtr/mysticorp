@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: Game Service Manager
   m_EditorClassIdentifier: 
   services:
-  - {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
   - {fileID: 11400000, guid: e456b736e301e42109a5a60d99ffda50, type: 2}
-  - {fileID: 11400000, guid: 70e0eb0ee7ec04c26a064f139eff60b8, type: 2}
