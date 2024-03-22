@@ -10,7 +10,9 @@ namespace MystiCorp.Runtime.Magic.Pickup
         {
             var pickup = GetObject().GetComponent<MagicPickup>();
 
-            pickup.Spawn(args, this);
+            pickup.PickedUp += Despawn;
+
+            pickup.Spawn(args);
         }
 
         public bool TryGetClosestPickup(Vector2 position, out GameObject closest)

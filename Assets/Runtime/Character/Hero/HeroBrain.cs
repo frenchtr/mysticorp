@@ -7,18 +7,10 @@ namespace MystiCorp.Runtime.Character.Hero
     {
         [SerializeField]
         private MagicPickupPool pickupPool;
+        [SerializeField]
         private CharacterMovement movement;
+        [SerializeField]
         private MagicPickerUpper pickerUpper;
-
-        private void Awake()
-        {
-            GetDependencies();
-        }
-
-        private void Reset()
-        {
-            GetDependencies();
-        }
 
         private void Update()
         {
@@ -27,19 +19,6 @@ namespace MystiCorp.Runtime.Character.Hero
             if (pickupPool.TryGetClosestPickup(transform.position, out var closestPickup))
             {
                 movement.MoveTo(closestPickup.transform.position);
-            }
-        }
-
-        private void GetDependencies()
-        {
-            if (movement == null)
-            {
-                movement = GetComponent<CharacterMovement>();
-            }
-
-            if (pickerUpper == null)
-            {
-                pickerUpper = GetComponent<MagicPickerUpper>();
             }
         }
     }

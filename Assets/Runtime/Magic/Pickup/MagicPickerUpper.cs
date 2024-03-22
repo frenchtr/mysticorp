@@ -1,46 +1,54 @@
 using System.Collections.Generic;
 using MystiCorp.Runtime.Common.ScriptableVariables;
 using UnityEngine;
+using MystiCorp.Runtime.Machines;
+using System.Linq;
 
 namespace MystiCorp.Runtime.Magic.Pickup
 {
+    [RequireComponent(typeof(AreaOfEffectBehaviour))]
     public class MagicPickerUpper : MonoBehaviour
     {
         [SerializeField]
         private FloatVariable magicAmount;
-
-        private List<MagicPickup> touchingPickups;
+        [SerializeField]
+        private AreaOfEffectBehaviour areaOfEffectBehaviour;
 
         private void Awake()
         {
-            touchingPickups = new();
+            GetDependencies();
+        }
+
+        private void Reset()
+        {
+            GetDependencies();
+        }
+
+        private void GetDependencies()
+        {
+            if (areaOfEffectBehaviour == null)
+            {
+                areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
+            }
         }
 
         public void Pickup(int count)
         {
-            for (int i = 0; i < count && i < touchingPickups.Count; i++)
-            {
-                var pickup = touchingPickups[touchingPickups.Count - i - 1];
+            List<MagicPickup> pickups = new();
 
+            foreach (var gameObject in areaOfEffectBehaviour.GetGameObjectsInAreaOfEffect())
+            {
+                if (gameObject.TryGetComponent(out MagicPickup pickup))
+                {
+                    pickups.Add(pickup);
+                }
+
+                if (pickups.Count == count) break;
+            }
+
+            foreach (var pickup in pickups)
+            {
                 magicAmount.Value += pickup.Pickup();
-
-                touchingPickups.Remove(pickup);
-            }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.TryGetComponent(out MagicPickup pickup) && !touchingPickups.Contains(pickup))
-            {
-                touchingPickups.Add(pickup);
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if (collision.TryGetComponent(out MagicPickup pickup) && touchingPickups.Contains(pickup))
-            {
-                touchingPickups.Remove(pickup);
             }
         }
     }

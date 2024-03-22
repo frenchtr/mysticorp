@@ -4,19 +4,22 @@ namespace MystiCorp.Runtime.Magic.Pickup
 {
     public class MagicPickup : MonoBehaviour
     {
-        private MagicPickupPool pool;
+        [SerializeField]
         private float value;
 
-        public void Spawn(MagicPickupSpawnArgs args, MagicPickupPool pool)
+        public event System.Action<GameObject> PickedUp;
+
+        public void Spawn(MagicPickupSpawnArgs args)
         {
             value = args.value;
             transform.position = args.position;
-            this.pool = pool;
         }
 
         public float Pickup()
         {
-            pool.Despawn(gameObject);
+            PickedUp?.Invoke(gameObject);
+            PickedUp = null;
+
             return value;
         }
     }
