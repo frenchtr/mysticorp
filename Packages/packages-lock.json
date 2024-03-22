@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "6760d50b3ad1e963a690ea25882c2eb37dec6388"
     },
+    "com.oliverbeebe.unityutilities": {
+      "version": "https://github.com/Brevillo/Oliver-Unity-Utilities.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ffa2da3aa1a628792d4849176959d3daf9159a0e"
+    },
     "com.travisrfrench.attributes": {
       "version": "https://github.com/frenchtr/attributes.git",
       "depth": 0,
@@ -178,6 +185,15 @@
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.6.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
