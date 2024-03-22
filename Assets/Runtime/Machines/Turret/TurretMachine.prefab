@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
-  registrar: {fileID: 11400000, guid: 7144c148204e5174a9214c63b16d06e2, type: 2}
 --- !u!114 &2259370177324766838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,8 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootOrigin: {fileID: 3077472726313788078}
-  bulletTrail: {fileID: 246515304678968012}
-  duration: 0.05
+  bulletPool: {fileID: 11400000, guid: 70e0eb0ee7ec04c26a064f139eff60b8, type: 2}
   cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
 --- !u!114 &7898047230267441998
 MonoBehaviour:

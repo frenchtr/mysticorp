@@ -26,7 +26,10 @@ namespace MystiCorp.Runtime.Character.Critters
 
         private void OnDeath()
         {
-            magicPickupPool.SpawnPickup(magicValue, transform.position);
+            magicPickupPool.Spawn(new() {
+                value = magicValue,
+                position = transform.position
+            });
         }
 
         private void GetDependencies()

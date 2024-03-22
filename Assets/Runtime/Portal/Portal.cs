@@ -17,7 +17,7 @@ namespace MystiCorp.Runtime.Portal
         {
             waveIndex++;
 
-            if (waveIndex >= handcraftedWaves.Count) return;
+            if (waveIndex >= handcraftedWaves.Count) waveIndex = handcraftedWaves.Count - 1;
 
             var wave = handcraftedWaves[waveIndex];
 

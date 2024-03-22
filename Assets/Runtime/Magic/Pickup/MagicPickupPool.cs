@@ -4,41 +4,22 @@ using UnityEngine.Pool;
 
 namespace MystiCorp.Runtime.Magic.Pickup
 {
-    [CreateAssetMenu(menuName = "Services/Magic Pickups")]
-    public class MagicPickupPool : GameManager.GameServiceManager.Service
+    [CreateAssetMenu(menuName = "Services/Pools/Magic Pickup Pool")]
+    public class MagicPickupPool : ObjectPoolService
     {
-        [SerializeField]
-        private MagicPickup pickupPrefab;
-
-        private Transform poolParent;
-        private ObjectPool<MagicPickup> pool;
-        private List<MagicPickup> activePickups;
-
-        protected override void RuntimeInitializeOnLoad()
+        public void Spawn(MagicPickupSpawnArgs args)
         {
-            InitializePool();
+            var pickup = GetObject().GetComponent<MagicPickup>();
+
+            pickup.Spawn(args, this);
         }
 
-        public MagicPickup SpawnPickup(float value, Vector2 position)
-        {
-            var pickup = pool.Get();
-
-            pickup.Spawn(value, position, this);
-
-            return pickup;
-        }
-
-        public void DespawnPickup(MagicPickup pickup)
-        {
-            pool.Release(pickup);
-        }
-
-        public bool TryGetClosestPickup(Vector2 position, out MagicPickup closest)
+        public bool TryGetClosestPickup(Vector2 position, out GameObject closest)
         {
             closest = null;
             float closestSqrDistance = Mathf.Infinity;
 
-            foreach (var pickup in activePickups)
+            foreach (var pickup in activeObjects)
             {
                 float sqrDsistance = (position - (Vector2)pickup.transform.position).sqrMagnitude;
 
@@ -50,32 +31,6 @@ namespace MystiCorp.Runtime.Magic.Pickup
             }
 
             return closest != null;
-        }
-
-        private void InitializePool()
-        {
-            poolParent = new GameObject("Magic Pickup Pool").transform;
-
-            activePickups = new();
-
-            pool = new(createFunc: CreatePickup, actionOnGet: GetPickup, actionOnRelease: ReleasePickup);
-        }
-
-        private MagicPickup CreatePickup()
-        {
-            return Instantiate(pickupPrefab, poolParent);
-        }
-
-        private void GetPickup(MagicPickup pickup)
-        {
-            activePickups.Add(pickup);
-            pickup.gameObject.SetActive(true);
-        }
-
-        private void ReleasePickup(MagicPickup pickup)
-        {
-            activePickups.Remove(pickup);
-            pickup.gameObject.SetActive(false);
         }
     }
 }

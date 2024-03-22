@@ -7,16 +7,16 @@ namespace MystiCorp.Runtime.Magic.Pickup
         private MagicPickupPool pool;
         private float value;
 
-        public void Spawn(float value, Vector2 position, MagicPickupPool pool)
+        public void Spawn(MagicPickupSpawnArgs args, MagicPickupPool pool)
         {
-            this.value = value;
-            transform.position = position;
+            value = args.value;
+            transform.position = args.position;
             this.pool = pool;
         }
 
         public float Pickup()
         {
-            pool.DespawnPickup(this);
+            pool.Despawn(gameObject);
             return value;
         }
     }

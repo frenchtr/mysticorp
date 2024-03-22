@@ -13,9 +13,7 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private Transform shootOrigin;
         [SerializeField]
-        private LineRenderer bulletTrail;
-        [SerializeField]
-        private float duration = 0.15f;
+        private BulletPool bulletPool;
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
@@ -54,18 +52,7 @@ namespace MystiCorp.Runtime.Machines
             var amount = cycleBehaviour.Magnitude;
             receiver.TakeDamage(amount);
             
-            // Show the bullet
-            bulletTrail.positionCount = 2;
-            bulletTrail.SetPosition(0, shootOrigin.position);
-            bulletTrail.SetPosition(1, target.transform.position);
-            bulletTrail.gameObject.SetActive(true);
-            StartCoroutine(HideBulletAfterSeconds(duration));
-        }
-
-        private IEnumerator HideBulletAfterSeconds(float seconds)
-        {
-            yield return new WaitForSeconds(seconds);
-            bulletTrail.gameObject.SetActive(false);
+            bulletPool.Spawn(shootOrigin.position, receiver.transform.position);
         }
 
         private void GetDependencies()
