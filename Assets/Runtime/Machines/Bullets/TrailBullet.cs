@@ -9,9 +9,14 @@ namespace MystiCorp.Runtime
         [SerializeField]
         private LineRenderer line;
         [SerializeField]
+        private float width;
+        [SerializeField]
+        private AnimationCurve widthOverLifetime;
+        [SerializeField]
         private float duration;
 
         private BulletPool pool;
+        private float lifetime;
 
         public void Spawn(Vector2 start, Vector2 end, BulletPool pool)
         {
@@ -20,7 +25,17 @@ namespace MystiCorp.Runtime
 
             Invoke(nameof(Despawn), duration);
 
+            lifetime = 0;
+
             this.pool = pool;
+        }
+
+        private void Update()
+        {
+            lifetime += Time.deltaTime;
+
+            float lifetimePercent = lifetime / duration;
+            line.widthMultiplier = width * widthOverLifetime.Evaluate(lifetimePercent);
         }
 
         private void Despawn()
