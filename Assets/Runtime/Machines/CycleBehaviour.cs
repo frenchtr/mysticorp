@@ -18,7 +18,7 @@ namespace MystiCorp.Runtime.Machines
         [Tooltip("How many times does this entity activate per second?")]
         [SerializeField]
         private float baseCycleTime = 1f;
-        [Tooltip("The multiplier which effects the calculated CylceTime.")]
+        [Tooltip("The multiplier which effects the calculated CycleTime.")]
         [SerializeField]
         private Attribute cycleTimeMultiplier = new() { BaseValue = 1 };
         [Header("Events")]
