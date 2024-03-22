@@ -6,16 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterIdentity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/CharacterIdentity.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/CritterBrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/CharacterHealth.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageLogger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageLogger.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Damage/DamageReceiver.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/Critter1/Critter1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/Hero.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/Pooling/ObjectPoolService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/Pooling/ObjectPoolService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/RegistrarManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Common/Registration/RegistrarManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Debug Canvas/DebugCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Debug Canvas/DebugCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/Draggable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/MachineData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/MachineData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/MachinePalette.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/MachinePalette.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/MachinePaletteElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machine Placement/MachinePaletteElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Bullets/BulletPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Bullets/BulletPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Bullets/TrailBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Bullets/TrailBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledShootAtCurrentTargetBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledShootAtCurrentTargetBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/Magic Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/Magic Pickup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Pickup/MagicPickupPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/AutoBalanceGridLayoutGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/UI/AutoBalanceGridLayoutGroup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +112,7 @@
       <updated>1710821177778</updated>
       <workItem from="1710821179656" duration="1251000" />
       <workItem from="1710878113596" duration="22151000" />
+      <workItem from="1711081300786" duration="3970000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,5 @@
-using System.Collections.Generic;
+using MystiCorp.Runtime.Common.Pooling;
 using UnityEngine;
-using UnityEngine.Pool;
 
 namespace MystiCorp.Runtime.Magic.Pickup
 {

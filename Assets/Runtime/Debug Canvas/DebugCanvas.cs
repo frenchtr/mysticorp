@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using System.Linq;
 using System.Reflection;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Debug_Canvas
 {
     public class DebugCanvas : MonoBehaviour
     {

@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 1336169947970983322}
   - component: {fileID: 7646484466460201519}
   - component: {fileID: 5324898124777392153}
+  - component: {fileID: 8082270198195422547}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Hero
@@ -371,6 +372,18 @@ MonoBehaviour:
   shootOrigin: {fileID: 6344427688923521767}
   bulletPool: {fileID: 11400000, guid: 70e0eb0ee7ec04c26a064f139eff60b8, type: 2}
   cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
+--- !u!114 &8082270198195422547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008346371277099712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a99c10246941f6937c87556aeb7c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4856318388055746283
 GameObject:
   m_ObjectHideFlags: 0

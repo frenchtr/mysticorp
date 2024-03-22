@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Common.Pooling
 {
     public abstract class ObjectPoolService : ScriptableObject
     {

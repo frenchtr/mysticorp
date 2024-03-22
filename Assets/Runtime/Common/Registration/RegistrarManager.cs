@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using MystiCorp.Runtime.Common.Registration;
 using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Common.Registration
 {
     public class RegistrarManager : MonoBehaviour
     {

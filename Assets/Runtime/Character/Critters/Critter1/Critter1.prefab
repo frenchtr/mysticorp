@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 2980842177935860025}
   - component: {fileID: 2029212131730738605}
   - component: {fileID: 3107245231781015941}
+  - component: {fileID: -5275197664655524499}
+  - component: {fileID: -8638764612824172057}
+  - component: {fileID: 9106683489348831408}
   m_Layer: 0
   m_Name: Critter1
   m_TagString: Untagged
@@ -65,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f3e332b92374df9a1eca5f66a82b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 8569233989221195911}
   minWanderDistance: 2
   maxWanderDistance: 4
   minWanderInterval: 0.5
@@ -84,7 +86,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   positionPrecision: 0.1
-  rigidbody: {fileID: 2029212131730738605}
 --- !u!114 &-3862361194684691510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicValue: 10
-  health: {fileID: 1775191691038315516}
   magicPickupPool: {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
 --- !u!50 &2029212131730738605
 Rigidbody2D:
@@ -191,6 +191,93 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-5275197664655524499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b55d7fc5ffa43f0bc2715ad099f5524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseRadius: 1
+  baseFieldOfView: 360
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  minDepth: 0
+  maxDepth: 3.4028235e+38
+  <RadiusMultiplier>k__BackingField:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  <FieldOfViewMultiplier>k__BackingField:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+--- !u!114 &-8638764612824172057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbeebe823284968b65f075f0d6d1441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMagnitude: 1
+  magnitudeMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  baseCycleTime: 1
+  cycleTimeMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
+--- !u!114 &9106683489348831408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5f66f4110d46c489d808ddb601b563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6188190343870930284
 GameObject:
   m_ObjectHideFlags: 0
