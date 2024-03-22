@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -5275197664655524499}
   - component: {fileID: -8638764612824172057}
   - component: {fileID: 9106683489348831408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Critter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,8 +208,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  minDepth: 0
-  maxDepth: 3.4028235e+38
   <RadiusMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1
@@ -288,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7408682897657315370}
   - component: {fileID: 7143054308770684345}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,8 +11,9 @@ namespace MystiCorp.Runtime.Magic.Pickup
             var pickup = GetObject().GetComponent<MagicPickup>();
 
             pickup.PickedUp += Despawn;
-
             pickup.Spawn(args);
+
+            pickup.gameObject.SetActive(true);
         }
 
         public bool TryGetClosestPickup(Vector2 position, out GameObject closest)
@@ -20,7 +21,7 @@ namespace MystiCorp.Runtime.Magic.Pickup
             closest = null;
             float closestSqrDistance = Mathf.Infinity;
 
-            foreach (var pickup in ActiveObjects)
+            foreach (var pickup in ActiveObjects.ToArray())
             {
                 float sqrDsistance = (position - (Vector2)pickup.transform.position).sqrMagnitude;
 

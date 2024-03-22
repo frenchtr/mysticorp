@@ -14,6 +14,10 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private float baseFieldOfView = 360f;
 
+        [Header("Object Detection")]
+        [SerializeField]
+        private LayerMask layerMask = ~0;
+
         public float Radius => baseRadius * RadiusMultiplier.ModifiedValue;
         public float FieldOfView => 
             Mathf.Clamp(baseFieldOfView * FieldOfViewMultiplier.ModifiedValue, 0f, 360f);
@@ -31,7 +35,8 @@ namespace MystiCorp.Runtime.Machines
             var facingDirection = thisTransform.up;
             var colliders = Physics2D.OverlapCircleAll(
                 from,
-                Radius);
+                Radius,
+                layerMask);
 
             foreach (var cldr in colliders)
             {

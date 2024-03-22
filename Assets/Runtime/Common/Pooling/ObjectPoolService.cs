@@ -9,8 +9,10 @@ namespace MystiCorp.Runtime.Common.Pooling
         [SerializeField]
         private GameObject prefab;
 
+        [System.NonSerialized]
         private Transform poolParent;
         private ObjectPool<GameObject> pool;
+        [System.NonSerialized]
         private List<GameObject> activeObjects;
 
         protected List<GameObject> ActiveObjects
@@ -28,7 +30,6 @@ namespace MystiCorp.Runtime.Common.Pooling
 
             var obj = pool.Get();
 
-            obj.SetActive(true);
             ActiveObjects.Add(obj);
 
             return obj;

@@ -8,7 +8,7 @@ namespace MystiCorp.Runtime.Modifiers
     {
         [SerializeField]
         private AttributeModifier modifier;
-        private CycleBehaviour cycleBehaviour;
+        private MagnitudeBehaviour mangnitudeBehaviour;
 
         private void Awake()
         {
@@ -22,24 +22,24 @@ namespace MystiCorp.Runtime.Modifiers
 
         private void OnEnable()
         {
-            if (cycleBehaviour == null)
+            if (mangnitudeBehaviour == null)
             {
-                cycleBehaviour = GetComponentInParent<CycleBehaviour>();
+                mangnitudeBehaviour = GetComponentInParent<MagnitudeBehaviour>();
             }
 
-            cycleBehaviour.MagnitudeMultiplier.AddModifier(modifier);
+            mangnitudeBehaviour.MagnitudeMultiplier.AddModifier(modifier);
         }
 
         private void OnDisable()
         {
-            cycleBehaviour.MagnitudeMultiplier.RemoveModifier(modifier);
+            mangnitudeBehaviour.MagnitudeMultiplier.RemoveModifier(modifier);
         }
 
         private void GetDependencies()
         {
-            if (cycleBehaviour == null)
+            if (mangnitudeBehaviour == null)
             {
-                cycleBehaviour = GetComponent<CycleBehaviour>();
+                mangnitudeBehaviour = GetComponent<MagnitudeBehaviour>();
             }
         }
     }

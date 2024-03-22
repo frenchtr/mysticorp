@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 7520465246532945980}
   - component: {fileID: 7045993082409545641}
   - component: {fileID: 4990155510392339685}
+  - component: {fileID: -1621816070577970261}
   m_Layer: 0
   m_Name: Machine
   m_TagString: Untagged
@@ -164,11 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbeebe823284968b65f075f0d6d1441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMagnitude: 1
-  magnitudeMultiplier:
-    baseValue: 1
-    modifiedValue: 1
-    modifiers: []
   baseCycleTime: 1
   cycleTimeMultiplier:
     baseValue: 1
@@ -191,14 +187,29 @@ MonoBehaviour:
   baseFieldOfView: 360
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
-  minDepth: 0
-  maxDepth: 3.4028235e+38
+    m_Bits: 4294967295
   <RadiusMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1
     modifiers: []
   <FieldOfViewMultiplier>k__BackingField:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+--- !u!114 &-1621816070577970261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7880318427873394131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81ef17f6970440a498a30cd42f67323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMagnitude: 1
+  magnitudeMultiplier:
     baseValue: 1
     modifiedValue: 1
     modifiers: []

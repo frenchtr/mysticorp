@@ -36,12 +36,18 @@ namespace MystiCorp.Runtime.Attraction
             this.attractor = attractor;
             from = transform.position;
             to = attractor.transform.position;
+            time = 0;
         }
 
         public void StopAttracting()
         {
             IsAttracting = false;
             attractor = null;
+        }
+
+        private void OnDisable()
+        {
+            StopAttracting();
         }
 
         private void Update()

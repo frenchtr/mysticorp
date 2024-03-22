@@ -8,6 +8,7 @@ namespace MystiCorp.Runtime.Machines
 {
     [RequireComponent(typeof(CycleBehaviour))]
     [RequireComponent(typeof(TargetingBehaviour))]
+    [RequireComponent(typeof(MagnitudeBehaviour))]
     public class OnCycledShootAtCurrentTargetBehaviour : MonoBehaviour
     {
         [SerializeField]
@@ -18,7 +19,7 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private GameObjectEvent cycledEvent;
         private TargetingBehaviour targetingBehaviour;
-        private CycleBehaviour cycleBehaviour;
+        private MagnitudeBehaviour magnitudeBehaviour;
 
         private void Awake()
         {
@@ -49,7 +50,7 @@ namespace MystiCorp.Runtime.Machines
                 return;
             }
 
-            var amount = cycleBehaviour.Magnitude;
+            var amount = magnitudeBehaviour.Magnitude;
             receiver.TakeDamage(amount);
             
             bulletPool.Spawn(shootOrigin.position, receiver.transform.position);
@@ -57,9 +58,9 @@ namespace MystiCorp.Runtime.Machines
 
         private void GetDependencies()
         {
-            if (cycleBehaviour == null)
+            if (magnitudeBehaviour == null)
             {
-                cycleBehaviour = GetComponent<CycleBehaviour>();
+                magnitudeBehaviour = GetComponent<MagnitudeBehaviour>();
             }
 
             if (targetingBehaviour == null)

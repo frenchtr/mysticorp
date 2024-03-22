@@ -101,6 +101,7 @@ MonoBehaviour:
   pickupPool: {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
   movement: {fileID: 5615172399236092492}
   pickerUpper: {fileID: 4542310092656524551}
+  attractor: {fileID: 3262463108252360039}
 --- !u!114 &5615172399236092492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +189,8 @@ GameObject:
   - component: {fileID: 5720888922160192922}
   - component: {fileID: 4341511521379525979}
   - component: {fileID: 8063355287355394735}
-  - component: {fileID: 2392688393228413064}
   - component: {fileID: 3262463108252360039}
+  - component: {fileID: 5792959005816139420}
   m_Layer: 0
   m_Name: Attractor
   m_TagString: Untagged
@@ -226,6 +227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseRadius: 1
   baseFieldOfView: 360
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   <RadiusMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1
@@ -246,29 +250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbeebe823284968b65f075f0d6d1441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMagnitude: 1
-  magnitudeMultiplier:
-    baseValue: 1
-    modifiedValue: 1
-    modifiers: []
   baseCycleTime: 1
   cycleTimeMultiplier:
     baseValue: 1
     modifiedValue: 1
     modifiers: []
-  cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
---- !u!114 &2392688393228413064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621325553219408701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c48ed7c6bd4ee79b9385fbf9e272e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
 --- !u!114 &3262463108252360039
 MonoBehaviour:
@@ -282,6 +268,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a99c10246941f6937c87556aeb7c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5792959005816139420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2621325553219408701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81ef17f6970440a498a30cd42f67323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMagnitude: 1
+  magnitudeMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
 --- !u!1 &3681811389992729413
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +297,7 @@ GameObject:
   - component: {fileID: 9191055382919477334}
   - component: {fileID: 3134911973002177346}
   - component: {fileID: 7994936224455877731}
+  - component: {fileID: 2951758430447680766}
   - component: {fileID: 4339141230256711370}
   m_Layer: 0
   m_Name: Shooter
@@ -331,6 +335,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseRadius: 999999
   baseFieldOfView: 360
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   <RadiusMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1
@@ -364,17 +371,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbeebe823284968b65f075f0d6d1441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMagnitude: 1
-  magnitudeMultiplier:
-    baseValue: 1
-    modifiedValue: 1
-    modifiers: []
   baseCycleTime: 1
   cycleTimeMultiplier:
     baseValue: 1
     modifiedValue: 1
     modifiers: []
   cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
+--- !u!114 &2951758430447680766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681811389992729413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81ef17f6970440a498a30cd42f67323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMagnitude: 1
+  magnitudeMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
 --- !u!114 &4339141230256711370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseRadius: 0.25
   baseFieldOfView: 360
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   <RadiusMultiplier>k__BackingField:
     baseValue: 1
     modifiedValue: 1

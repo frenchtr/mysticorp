@@ -11,6 +11,7 @@ namespace MystiCorp.Runtime.Machines.Bullets
             var bullet = GetObject().GetComponent<TrailBullet>();
 
             bullet.Spawn(start, end, this);
+            bullet.gameObject.SetActive(true);
         }
     }
 }

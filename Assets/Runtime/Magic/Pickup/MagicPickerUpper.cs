@@ -7,7 +7,7 @@ using System.Linq;
 namespace MystiCorp.Runtime.Magic.Pickup
 {
     [RequireComponent(typeof(AreaOfEffectBehaviour))]
-    public class MagicPickerUpper : MonoBehaviour
+    public class MagicCollector : MonoBehaviour
     {
         [SerializeField]
         private FloatVariable magicAmount;

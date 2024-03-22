@@ -5,11 +5,11 @@ using UnityEngine;
 namespace MystiCorp.Runtime.Attraction
 {
     [RequireComponent(typeof(AreaOfEffectBehaviour))]
-    [RequireComponent(typeof(CycleBehaviour))]
+    [RequireComponent(typeof(MagnitudeBehaviour))]
     public class Attractor : MonoBehaviour
     {
         private AreaOfEffectBehaviour areaOfEffectBehaviour;
-        private CycleBehaviour cycleBehaviour;
+        private MagnitudeBehaviour magnitudeBehaviour;
 
         private void Awake()
         {
@@ -30,7 +30,7 @@ namespace MystiCorp.Runtime.Attraction
                     obj.transform.position))
                 .Select(obj => obj.GetComponent<Attractable>())
                 .Where(attractor => attractor != null);
-            var count = Mathf.FloorToInt(cycleBehaviour.Magnitude);
+            var count = Mathf.FloorToInt(magnitudeBehaviour.Magnitude);
             
             foreach (var attractable in attractables.Take(count))
             {
@@ -45,9 +45,9 @@ namespace MystiCorp.Runtime.Attraction
                 areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
             }
 
-            if (cycleBehaviour == null)
+            if (magnitudeBehaviour == null)
             {
-                cycleBehaviour = GetComponent<CycleBehaviour>();
+                magnitudeBehaviour = GetComponent<MagnitudeBehaviour>();
             }
         }
     }
