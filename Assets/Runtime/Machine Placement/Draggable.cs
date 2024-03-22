@@ -7,7 +7,7 @@ namespace MystiCorp.Runtime.Machine_Placement
         private new Camera camera;
 
         private Vector2 dragOffset;
-        private bool dragging;
+        private System.Action actionOnRelease;
 
         private Vector2 mousePosition => camera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -16,22 +16,24 @@ namespace MystiCorp.Runtime.Machine_Placement
             camera = FindObjectOfType<Camera>();
         }
 
-        public void StartDragging()
-        {
-            dragging = true;
+        public static void Drag(Transform drag, System.Action actionOnRelease = null) => new GameObject("Draggable").AddComponent<Draggable>().Initialize(drag, actionOnRelease);
 
-            dragOffset = mousePosition - (Vector2)transform.position;
+        private void Initialize(Transform drag, System.Action actionOnRelease)
+        {
+            drag.SetParent(transform, true);
+            this.actionOnRelease = actionOnRelease;
+            dragOffset = (Vector2)transform.position - mousePosition;
         }
 
         private void Update()
         {
-            if (!dragging) return;
-
             transform.position = mousePosition + dragOffset;
 
             if (Input.GetMouseButtonUp(0))
             {
-                dragging = false;
+                transform.DetachChildren();
+                actionOnRelease?.Invoke();
+                Destroy(gameObject);
             }
         }
     }

@@ -11,7 +11,16 @@ namespace MystiCorp.Runtime.Common.Pooling
 
         private Transform poolParent;
         private ObjectPool<GameObject> pool;
-        protected List<GameObject> activeObjects;
+        private List<GameObject> activeObjects;
+
+        protected List<GameObject> ActiveObjects
+        {
+            get
+            {
+                if (activeObjects == null) InitializePool();
+                return activeObjects;
+            }
+        }
 
         protected GameObject GetObject()
         {
@@ -20,7 +29,7 @@ namespace MystiCorp.Runtime.Common.Pooling
             var obj = pool.Get();
 
             obj.SetActive(true);
-            activeObjects.Add(obj);
+            ActiveObjects.Add(obj);
 
             return obj;
         }
@@ -28,7 +37,7 @@ namespace MystiCorp.Runtime.Common.Pooling
         public virtual void Despawn(GameObject obj)
         {
             obj.SetActive(false);
-            activeObjects.Remove(obj);
+            ActiveObjects.Remove(obj);
 
             pool.Release(obj);
         }

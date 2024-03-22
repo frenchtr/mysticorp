@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66581f6ac19f4496dac40d0b4a137473, type: 3}
   m_Name: TurretData
   m_EditorClassIdentifier: 
-  iconPrefab: {fileID: 6294474893892908311, guid: dfe380b0334df47d5be4221a601bec93, type: 3}
+  iconPrefab: {fileID: 8812064051588134255, guid: 7f2865d190373496f8910fc24fb8b6c7, type: 3}
   functionalPrefab: {fileID: 2346106477739697124, guid: 9758df84c4f3fb54cab4dd7ec9f97753, type: 3}
