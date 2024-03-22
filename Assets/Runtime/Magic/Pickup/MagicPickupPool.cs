@@ -19,7 +19,7 @@ namespace MystiCorp.Runtime.Magic.Pickup
             closest = null;
             float closestSqrDistance = Mathf.Infinity;
 
-            foreach (var pickup in activeObjects)
+            foreach (var pickup in ActiveObjects)
             {
                 float sqrDsistance = (position - (Vector2)pickup.transform.position).sqrMagnitude;
 

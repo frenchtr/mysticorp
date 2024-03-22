@@ -8,6 +8,10 @@ namespace MystiCorp.Runtime
     {
         [SerializeField]
         private Transform iconParent;
+        [SerializeField]
+        private string iconSortingLayer;
+        [SerializeField]
+        private int iconSortingOrder;
 
         private MachineData machine;
 
@@ -19,6 +23,12 @@ namespace MystiCorp.Runtime
 
             icon.transform.parent = iconParent;
             icon.transform.localPosition = Vector2.zero;
+
+            foreach (var renderer in icon.GetComponentsInChildren<Renderer>())
+            {
+                renderer.sortingLayerName = iconSortingLayer;
+                renderer.sortingOrder = iconSortingOrder;
+            }
         }
     }
 }
