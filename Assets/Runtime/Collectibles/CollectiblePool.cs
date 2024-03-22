@@ -8,7 +8,7 @@ namespace MystiCorp.Runtime.Magic.Pickup
     {
         private void OnValidate()
         {
-            if (prefab != null && !prefab.TryGetComponent(out Collectible collectible))
+            if (prefab != null && !prefab.TryGetComponent(out Collectible _))
             {
                 prefab = null;
                 Debug.LogError("Prefab must have collectible component!");
