@@ -42,7 +42,7 @@ namespace MystiCorp.Runtime.Machines.MagnetMachine
 
         private void OnCycled(GameObject gameObj)
         {
-            if (gameObj != this.gameObject)
+            if (gameObj != gameObject)
             {
                 return;
             }
