@@ -51,7 +51,6 @@ namespace MystiCorp.Runtime.UI
 
         private void Update()
         {
-            var pointerScreenPosition
         }
     }
 }
