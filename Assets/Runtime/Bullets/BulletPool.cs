@@ -1,7 +1,7 @@
 using MystiCorp.Runtime.Common.Pooling;
 using UnityEngine;
 
-namespace MystiCorp.Runtime.Machines.Bullets
+namespace MystiCorp.Runtime.Bullets
 {
     [CreateAssetMenu(menuName = "Services/Pools/Bullet Pool")]
     public class BulletPool : ObjectPoolService

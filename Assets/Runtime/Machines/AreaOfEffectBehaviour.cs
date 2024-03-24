@@ -63,6 +63,21 @@ namespace MystiCorp.Runtime.Machines
             return results;
         }
 
+        public IEnumerable<TComponent> GetComponentsInAreaOfEffect<TComponent>()
+        {
+            var components = new List<TComponent>();
+
+            foreach (var obj in GetGameObjectsInAreaOfEffect())
+            {
+                if (obj.TryGetComponent(out TComponent component))
+                {
+                    components.Add(component);
+                }
+            }
+
+            return components;
+        }
+
         public void ForceRecalculateAll()
         {
             RadiusMultiplier?.ForceRecalculateModifiedValue();

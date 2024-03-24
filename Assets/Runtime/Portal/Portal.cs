@@ -25,7 +25,7 @@ namespace MystiCorp.Runtime.Portal
 
             foreach (var critter in wave.critters)
             {
-                var newCritter = Instantiate(critter, spawnpoint.position, Quaternion.identity);
+                var newCritter = Instantiate(critter, spawnpoint.position, Quaternion.identity, spawnpoint);
                 activeCritters.Add(newCritter);
             }
         }

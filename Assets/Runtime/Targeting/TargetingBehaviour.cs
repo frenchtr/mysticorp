@@ -40,9 +40,7 @@ namespace MystiCorp.Runtime.Targeting
         {
             var from = transform.position;
             var charactersToEvaluate = areaOfEffectBehaviour
-                .GetGameObjectsInAreaOfEffect()
-                .Select(gameObj => gameObj.GetComponent<CharacterIdentity>())
-                .Where(character => character != null)
+                .GetComponentsInAreaOfEffect<CharacterIdentity>()
                 .Where(character => !character.CompareTag("Hero"));
 
             return charactersToEvaluate

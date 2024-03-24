@@ -18,7 +18,9 @@ namespace MystiCorp.Runtime.Machines
         private GameObjectEvent cycledEvent;
 
         public float CycleTime => baseCycleTime * CycleTimeMultiplier.ModifiedValue;
-        
+
+        private float cycleTimer;
+
         public Attribute CycleTimeMultiplier
         {
             get => cycleTimeMultiplier;
@@ -30,26 +32,21 @@ namespace MystiCorp.Runtime.Machines
             CycleTimeMultiplier?.ForceRecalculateModifiedValue();
         }
 
-        private void OnEnable()
+        private void Update()
         {
-            StartCoroutine(WaitForNextCycle());
-        }
+            cycleTimer += Time.deltaTime;
 
-        private void OnDisable()
-        {
-            StopAllCoroutines();
+            if (cycleTimer >= CycleTime)
+            {
+                cycleTimer = 0;
+
+                Cycle();
+            }
         }
 
         private void OnValidate()
         {
             ForceRecalculateAll();
-        }
-
-        private IEnumerator WaitForNextCycle()
-        {
-            yield return new WaitForSeconds(CycleTime);
-            Cycle();
-            yield return WaitForNextCycle();
         }
 
         private void Cycle()

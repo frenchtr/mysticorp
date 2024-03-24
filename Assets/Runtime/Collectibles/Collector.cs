@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using MystiCorp.Runtime.Common.ScriptableVariables;
 using UnityEngine;
 using MystiCorp.Runtime.Machines;
 using System.Linq;
@@ -32,17 +30,12 @@ namespace MystiCorp.Runtime.Magic.Pickup
 
         public void Collect(int count)
         {
-            int collected = 0;
+            var collectibles = areaOfEffectBehaviour
+                .GetComponentsInAreaOfEffect<Collectible>();
 
-            foreach (var gameObject in areaOfEffectBehaviour.GetGameObjectsInAreaOfEffect())
+            foreach (var collectible in collectibles.Take(count))
             {
-                if (gameObject.TryGetComponent(out Collectible collectible))
-                {
-                    collectible.Collect();
-                    collected++;
-                }
-
-                if (collected == count) break;
+                collectible.Collect();
             }
         }
     }

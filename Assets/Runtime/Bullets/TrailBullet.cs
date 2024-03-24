@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MystiCorp.Runtime.Machines.Bullets
+namespace MystiCorp.Runtime.Bullets
 {
     public class TrailBullet : MonoBehaviour
     {

@@ -24,12 +24,10 @@ namespace MystiCorp.Runtime.Attraction
         public void AttractAllNearby()
         {
             var attractables = areaOfEffectBehaviour
-                .GetGameObjectsInAreaOfEffect()
+                .GetComponentsInAreaOfEffect<Attractable>()
                 .OrderByDescending(obj => Vector2.Distance(
                     transform.position, 
-                    obj.transform.position))
-                .Select(obj => obj.GetComponent<Attractable>())
-                .Where(attractor => attractor != null);
+                    obj.transform.position));
             var count = Mathf.FloorToInt(magnitudeBehaviour.Magnitude);
             
             foreach (var attractable in attractables.Take(count))

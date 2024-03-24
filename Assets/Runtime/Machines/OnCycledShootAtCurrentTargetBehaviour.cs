@@ -1,6 +1,6 @@
 using MystiCorp.Runtime.Common.ScriptableEvents;
 using MystiCorp.Runtime.Damage;
-using MystiCorp.Runtime.Machines.Bullets;
+using MystiCorp.Runtime.Bullets;
 using MystiCorp.Runtime.Targeting;
 using UnityEngine;
 
