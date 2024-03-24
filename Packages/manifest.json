@@ -1,12 +1,14 @@
 {
   "dependencies": {
     "com.codewriter.expression-parser": "https://github.com/codewriter-packages/Expression-Parser.git",
+    "com.oliverbeebe.unityutilities": "https://github.com/Brevillo/Oliver-Unity-Utilities.git",
     "com.travisrfrench.attributes": "https://github.com/frenchtr/attributes.git",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.device-simulator.devices": "1.0.0",
     "com.unity.feature.2d": "2.0.0",
     "com.unity.ide.rider": "3.0.24",
     "com.unity.ide.visualstudio": "2.0.18",
+    "com.unity.inputsystem": "1.6.3",
     "com.unity.render-pipelines.universal": "14.0.8",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
