@@ -3,6 +3,7 @@ using MystiCorp.Runtime.Damage;
 using MystiCorp.Runtime.Bullets;
 using MystiCorp.Runtime.Targeting;
 using UnityEngine;
+using OliverBeebe.UnityUtilities.Runtime;
 
 namespace MystiCorp.Runtime.Machines
 {
@@ -18,6 +19,9 @@ namespace MystiCorp.Runtime.Machines
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
+        [SerializeField]
+        private SoundEffect shootSound;
+
         private TargetingBehaviour targetingBehaviour;
         private MagnitudeBehaviour magnitudeBehaviour;
 
@@ -52,7 +56,8 @@ namespace MystiCorp.Runtime.Machines
 
             var amount = magnitudeBehaviour.Magnitude;
             receiver.TakeDamage(amount);
-            
+
+            shootSound.Play(this);
             bulletPool.Spawn(shootOrigin.position, receiver.transform.position);
         }
 

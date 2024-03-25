@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -5275197664655524499}
   - component: {fileID: -8638764612824172057}
   - component: {fileID: 9106683489348831408}
+  - component: {fileID: 2945579792477097125}
   m_Layer: 7
   m_Name: Critter1
   m_TagString: Untagged
@@ -128,6 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicValue: 10
+  minMagicSize: 1
+  maxMagicSize: 3
+  maxDrops: 4
+  dropRange: 1.5
   playerMagicAmount: {fileID: 11400000, guid: afbe7d026423f4ac099fb1573a4d5ec5, type: 2}
   magicPickupPool: {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
 --- !u!50 &2029212131730738605
@@ -272,6 +277,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2945579792477097125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830a44ab0008c4d69b0a873bfed7e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
 --- !u!1 &6188190343870930284
 GameObject:
   m_ObjectHideFlags: 0
