@@ -10,6 +10,8 @@ namespace MystiCorp.Runtime.Magic
         [SerializeField]
         private FloatVariable magicAmount;
         [SerializeField]
+        private string suffix;
+        [SerializeField]
         private TextMeshProUGUI amountDisplay;
 
         private void OnEnable()
@@ -24,7 +26,7 @@ namespace MystiCorp.Runtime.Magic
 
         private void OnMagicAmountChanged(ValueChangedArgs<float> args)
         {
-            amountDisplay.text = $"{args.To:n}";
+            amountDisplay.text = $"{args.To:n} {suffix}";
         }
     }
 }
