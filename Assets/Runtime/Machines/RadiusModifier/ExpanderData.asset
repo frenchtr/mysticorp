@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66581f6ac19f4496dac40d0b4a137473, type: 3}
-  m_Name: Expander
+  m_Name: ExpanderData
   m_EditorClassIdentifier: 
   iconPrefab: {fileID: 6676451079694859586, guid: 15d36a1c5817a4cd39246b71a4da135a, type: 3}
   functionalPrefab: {fileID: 6363513562214766622, guid: dd15ae65d6ab1431fa244cce4f2a3c8d, type: 3}
