@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Collectibles
 {
-    [CreateAssetMenu(menuName = "Services/Pools/Collectible")]
+    [CreateAssetMenu(menuName = "Scriptables/Pools/Collectible")]
     public class CollectiblePool : ObjectPoolService
     {
         private void OnValidate()

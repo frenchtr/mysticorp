@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 753164405269013940, guid: c8b1b8bc957db4feda2df0b5cf838b2e, type: 3}
   firstPortalLevel: 0
-  baseCrittersPerSecond: 10
-  scaleValue: 1.5
+  baseCrittersPerSecond: 0.25
+  scaleValue: 1.05

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace MystiCorp.Runtime.GameManager {
 
-    [CreateAssetMenu(fileName = GameServiceManagerResourceName, menuName = "Services/" + GameServiceManagerResourceName)]
+    [CreateAssetMenu(fileName = GameServiceManagerResourceName, menuName = "Scriptables/Services/" + GameServiceManagerResourceName)]
     public class GameServiceManager : ScriptableObject {
 
         [SerializeField] private List<Service> services;

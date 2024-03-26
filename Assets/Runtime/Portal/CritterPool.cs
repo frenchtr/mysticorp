@@ -4,7 +4,7 @@ using MystiCorp.Runtime.Common.Pooling;
 
 namespace MystiCorp.Runtime.Portal
 {
-    [CreateAssetMenu(menuName = "Services/Pools/Critter")]
+    [CreateAssetMenu(menuName = "Scriptables/Pools/Critter")]
     public class CritterPool : ObjectPoolService
     {
         [SerializeField]
