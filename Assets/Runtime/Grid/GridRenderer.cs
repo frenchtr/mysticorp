@@ -11,6 +11,9 @@ namespace MystiCorp.Runtime
         private float spacing;
         [SerializeField]
         private Vector2Int cellExtents;
+        [SerializeField]
+        private Material material;
+
         [Header("References")]
         [SerializeField]
         private GridData gridData;
@@ -19,6 +22,36 @@ namespace MystiCorp.Runtime
         [SerializeField]
         private MeshRenderer meshRenderer;
 
+        private List<Collider2D> highlightColliders;
+        private List<Material> highlightMaterials;
+
+        public void AddHighlight(Collider2D collider, Material material)
+        {
+            highlightColliders.Add(collider);
+            highlightMaterials.Add(material);
+        }
+
+        public void RemoveSubGrid(Collider2D collider)
+        {
+            int index = highlightColliders.IndexOf(collider);
+
+            if (index == -1) return;
+
+            highlightColliders.RemoveAt(index);
+            highlightMaterials.RemoveAt(index + 1);
+        }
+
+        private void Awake()
+        {
+            highlightColliders = new();
+            highlightMaterials = new() { material };
+
+            meshFilter.mesh = new()
+            {
+                name = "Grid Mesh",
+            };
+        }
+
         private void Update()
         {
             GenerateMesh();
@@ -26,10 +59,14 @@ namespace MystiCorp.Runtime
 
         private void GenerateMesh()
         {
-            var triangles = new List<int>();
             var vertices = new List<Vector3>();
+            var triangles = new List<int>[highlightColliders.Count + 1];
+            for (int i = 0; i < triangles.Length; i++)
+            {
+                triangles[i] = new();
+            }
 
-            Vector2 topRight    = gridData.CellSize / 2f - Vector2.one * spacing / 2f,
+            Vector3 topRight    = gridData.CellSize / 2f - Vector2.one * spacing / 2f,
                     topLeft     = new(-topRight.x, topRight.y),
                     bottomRight = new(topRight.x, -topRight.y),
                     bottomLeft  = -topRight;
@@ -37,42 +74,54 @@ namespace MystiCorp.Runtime
             Vector2Int start = gridData.WorldToGridPoint(transform.position) - cellExtents / 2;
             Vector2Int position = start;
 
-            int index = 0;
-
             for (int x = 0; x < cellExtents.x; x++)
             {
                 for (int y = 0; y < cellExtents.y; y++)
                 {
-                    Vector2 center = gridData.GridToWorldPoint(position) - (Vector2)transform.position;
-
-                    vertices.Add(center + bottomLeft);
-                    vertices.Add(center + topLeft);
-                    vertices.Add(center + topRight);
-                    vertices.Add(center + bottomRight);
-
-                    triangles.Add(index + 0);
-                    triangles.Add(index + 1);
-                    triangles.Add(index + 2);
-
-                    triangles.Add(index + 0);
-                    triangles.Add(index + 2);
-                    triangles.Add(index + 3);
-
-                    index += 4;
+                    Vector3 worldCenter = gridData.GridToWorldPoint(position);
 
                     position.y++;
+
+                    Vector3 localCenter = worldCenter - transform.position;
+                    vertices.AddRange(new[]
+                    {
+                        localCenter + bottomLeft,
+                        localCenter + topLeft,
+                        localCenter + topRight,
+                        localCenter + bottomRight,
+                    });
+
+                    int subMesh = 1 + highlightColliders.FindIndex(collider => collider.OverlapPoint(worldCenter));
+                    int index = vertices.Count - 4;
+
+                    triangles[subMesh].AddRange(new[]
+                    {
+                        index + 0,
+                        index + 1,
+                        index + 2,
+
+                        index + 0,
+                        index + 2,
+                        index + 3,
+                    });
                 }
 
                 position.x++;
                 position.y = start.y;
             }
 
-            meshFilter.mesh = new()
+            meshRenderer.SetMaterials(highlightMaterials);
+
+            var mesh = meshFilter.mesh;
+
+            mesh.Clear();
+            mesh.subMeshCount = triangles.Length;
+            mesh.SetVertices(vertices);
+            for (int i = 0; i < triangles.Length; i++)
             {
-                name = "Grid Mesh",
-                vertices = vertices.ToArray(),
-                triangles = triangles.ToArray(),
-            };
+                mesh.SetTriangles(triangles[i], i);
+            }
+
         }
     }
 }

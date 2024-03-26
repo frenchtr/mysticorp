@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spacing: 0.1
   cellExtents: {x: 30, y: 30}
+  material: {fileID: 2100000, guid: 033156d0c0f124357839e527e9e29f8c, type: 2}
   gridData: {fileID: 11400000, guid: ec6d6b9d61ac946cd8a2144700dae0d5, type: 2}
   meshFilter: {fileID: 3686908220903029305}
   meshRenderer: {fileID: 6320081083624812182}
@@ -79,8 +80,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 033156d0c0f124357839e527e9e29f8c, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
