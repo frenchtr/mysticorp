@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4056d6f401f468c8a609af8c20843d, type: 3}
-  m_Name: ColorOscillationSaturation
+  m_Script: {fileID: 11500000, guid: 66581f6ac19f4496dac40d0b4a137473, type: 3}
+  m_Name: MagnetData
   m_EditorClassIdentifier: 
-  value: 0.8
+  iconPrefab: {fileID: 8812064051588134255, guid: 03d07192e3c0dd944bb033a309bc80d2, type: 3}
+  functionalPrefab: {fileID: 8892624499467553084, guid: d9a6c36efed47ac408da84c8b4c7f36d, type: 3}

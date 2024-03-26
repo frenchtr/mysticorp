@@ -7,7 +7,7 @@ namespace MystiCorp.Runtime.Portal
     public class ColorOscillator : MonoBehaviour
     {
         [SerializeField]
-        private FloatVariable colorChangeSpeed, saturation, value;
+        private float colorChangeSpeed = 0.5f, saturation = 0.8f, value = 1;
 
         private float hue;
         private new SpriteRenderer renderer;
@@ -24,10 +24,10 @@ namespace MystiCorp.Runtime.Portal
 
         private void Update()
         {
-            hue += colorChangeSpeed.Value * Time.deltaTime;
+            hue += colorChangeSpeed * Time.deltaTime;
             hue %= 1;
 
-            renderer.color = Color.HSVToRGB(hue, saturation.Value, value.Value);
+            renderer.color = Color.HSVToRGB(hue, saturation, value);
         }
 
         private void GetDependencies()

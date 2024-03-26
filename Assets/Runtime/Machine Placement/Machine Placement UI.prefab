@@ -129,8 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   machines:
-  - {fileID: 11400000, guid: 0ae64830aabad4df0a96cdef628d9ecd, type: 2}
-  - {fileID: 11400000, guid: 0ae64830aabad4df0a96cdef628d9ecd, type: 2}
+  - {fileID: 11400000, guid: bdbdbd032c59848859620cced5f93d0e, type: 2}
+  - {fileID: 11400000, guid: d09ed1de7d5f14aa3bc5c2bfd8c1e0cc, type: 2}
+  - {fileID: 11400000, guid: 7b1fe1daccd2649bcba815f19a4f3e8d, type: 2}
+  - {fileID: 11400000, guid: a34d51c9e00694aeda0d838cebe37eb4, type: 2}
+  - {fileID: 11400000, guid: 994bd4781575f4c39b0a02fe364725af, type: 2}
   - {fileID: 11400000, guid: 0ae64830aabad4df0a96cdef628d9ecd, type: 2}
   elementPrefab: {fileID: 5895424470555596261, guid: 7d8528b7e46064b88aa034df5ccccc6b, type: 3}
   elementsGridParent: {fileID: 1447740210130584289}

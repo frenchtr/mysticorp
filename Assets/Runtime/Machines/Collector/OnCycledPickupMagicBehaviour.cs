@@ -3,16 +3,24 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Machines.Collector
 {
+<<<<<<< HEAD
     [RequireComponent(typeof(Collectibles.Collector))]
     [RequireComponent(typeof(CycleBehaviour))]
+=======
+    [RequireComponent(typeof(Collector))]
+>>>>>>> a82af700d7b38448a27cf3c5278946653b13519c
     [RequireComponent(typeof(MagnitudeBehaviour))]
-    public class OnCycledPickupMagicBehaviour : MonoBehaviour
+    public class OnCycledPickupMagicBehaviour : OnCycledBehaviourBase
     {
+<<<<<<< HEAD
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
         private Collectibles.Collector magicPickerUpper;
         private CycleBehaviour cycleBehaviour;
+=======
+        private Collector collector;
+>>>>>>> a82af700d7b38448a27cf3c5278946653b13519c
         private MagnitudeBehaviour magnitudeBehaviour;
 
         private void Awake()
@@ -25,26 +33,20 @@ namespace MystiCorp.Runtime.Machines.Collector
             GetDependencies();
         }
 
-        private void OnEnable()
-        {
-            cycledEvent.Raised += OnCycled;
-        }
-
-        private void OnDisable()
-        {
-            cycledEvent.Raised -= OnCycled;
-        }
-
         private void GetDependencies()
         {
-            if (magicPickerUpper == null)
+            if (collector == null)
             {
+<<<<<<< HEAD
                 magicPickerUpper = GetComponent<Collectibles.Collector>();
             }
 
             if (cycleBehaviour == null)
             {
                 cycleBehaviour = GetComponent<CycleBehaviour>();
+=======
+                collector = GetComponent<Collector>();
+>>>>>>> a82af700d7b38448a27cf3c5278946653b13519c
             }
 
             if (magnitudeBehaviour == null)
@@ -53,14 +55,9 @@ namespace MystiCorp.Runtime.Machines.Collector
             }
         }
 
-        private void OnCycled(GameObject gameObj)
+        protected override void OnCycled()
         {
-            if (gameObj != gameObject)
-            {
-                return;
-            }
-
-            magicPickerUpper.Collect(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
+            collector.Collect(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
         }
     }
 }

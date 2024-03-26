@@ -32,7 +32,6 @@ namespace MystiCorp.Runtime.Machine_Placement
             foreach (var renderer in uiIcon.GetComponentsInChildren<Renderer>())
             {
                 renderer.sortingLayerName = iconSortingLayer;
-                renderer.sortingOrder = iconSortingOrder;
             }
 
             button.onClick.AddListener(BuyMachine);
