@@ -28,11 +28,10 @@ namespace MystiCorp.Runtime.Attraction
                 .OrderByDescending(obj => Vector2.Distance(
                     transform.position, 
                     obj.transform.position));
-            var count = Mathf.FloorToInt(magnitudeBehaviour.Magnitude);
             
-            foreach (var attractable in attractables.Take(count))
+            foreach (var attractable in attractables)
             {
-                attractable.AttractTo(this);
+                attractable.AttractTo(transform.position, magnitudeBehaviour.Magnitude);
             }
         }
 

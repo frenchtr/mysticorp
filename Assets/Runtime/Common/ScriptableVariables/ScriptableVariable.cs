@@ -4,7 +4,6 @@ namespace MystiCorp.Runtime.Common.ScriptableVariables
 {
     public abstract class ScriptableVariable<TValue> : ScriptableObject
     {
-        [SerializeField]
         private TValue value;
 
         public event System.Action<ValueChangedArgs<TValue>> ValueChanged;

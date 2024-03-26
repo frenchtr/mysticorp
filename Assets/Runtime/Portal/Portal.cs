@@ -6,44 +6,19 @@ namespace MystiCorp.Runtime.Portal
     public class Portal : MonoBehaviour
     {
         [SerializeField]
-        private List<PortalWave> handcraftedWaves;
+        private List<CritterPool> critterPool;
         [SerializeField]
         private Transform spawnpoint;
-        private List<GameObject> activeCritters;
 
-        private int waveIndex;
+        private int level;
 
-        private void StartNextWave()
-        {
-            waveIndex++;
-
-            if (waveIndex >= handcraftedWaves.Count) waveIndex = handcraftedWaves.Count - 1;
-
-            var wave = handcraftedWaves[waveIndex];
-
-            activeCritters.Clear();
-
-            foreach (var critter in wave.critters)
-            {
-                var newCritter = Instantiate(critter, spawnpoint.position, Quaternion.identity, spawnpoint);
-                activeCritters.Add(newCritter);
-            }
-        }
-
-        private void Start()
-        {
-            activeCritters = new();
-
-            waveIndex = -1;
-            StartNextWave();
-        }
+        public void Upgrade() => level++;
 
         private void Update()
         {
-            // if no active critters exist
-            if (!activeCritters.Exists(critter => critter != null))
+            foreach (var pool in critterPool)
             {
-                StartNextWave();
+                pool.UpdateSpawner(level, spawnpoint);
             }
         }
     }

@@ -12,7 +12,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ffa2da3aa1a628792d4849176959d3daf9159a0e"
+      "hash": "2f7c241297f387a548e8947b5947c1ca23ce1e9c"
     },
     "com.travisrfrench.attributes": {
       "version": "https://github.com/frenchtr/attributes.git",

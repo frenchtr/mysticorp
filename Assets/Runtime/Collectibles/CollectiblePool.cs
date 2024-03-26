@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Magic.Pickup
 {
-    [CreateAssetMenu(menuName = "Services/Pools/Collectible Pool")]
+    [CreateAssetMenu(menuName = "Services/Pools/Collectible")]
     public class CollectiblePool : ObjectPoolService
     {
         private void OnValidate()

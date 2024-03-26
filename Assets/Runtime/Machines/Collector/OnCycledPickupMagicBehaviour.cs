@@ -8,15 +8,10 @@ using MystiCorp.Runtime.Machines;
 namespace MystiCorp.Runtime
 {
     [RequireComponent(typeof(Collector))]
-    [RequireComponent(typeof(CycleBehaviour))]
     [RequireComponent(typeof(MagnitudeBehaviour))]
-    public class OnCycledPickupMagicBehaviour : MonoBehaviour
+    public class OnCycledPickupMagicBehaviour : OnCycledBehaviourBase
     {
-        [Header("Events")]
-        [SerializeField]
-        private GameObjectEvent cycledEvent;
-        private Collector magicPickerUpper;
-        private CycleBehaviour cycleBehaviour;
+        private Collector collector;
         private MagnitudeBehaviour magnitudeBehaviour;
 
         private void Awake()
@@ -29,26 +24,11 @@ namespace MystiCorp.Runtime
             GetDependencies();
         }
 
-        private void OnEnable()
-        {
-            cycledEvent.Raised += OnCycled;
-        }
-
-        private void OnDisable()
-        {
-            cycledEvent.Raised -= OnCycled;
-        }
-
         private void GetDependencies()
         {
-            if (magicPickerUpper == null)
+            if (collector == null)
             {
-                magicPickerUpper = GetComponent<Collector>();
-            }
-
-            if (cycleBehaviour == null)
-            {
-                cycleBehaviour = GetComponent<CycleBehaviour>();
+                collector = GetComponent<Collector>();
             }
 
             if (magnitudeBehaviour == null)
@@ -57,14 +37,9 @@ namespace MystiCorp.Runtime
             }
         }
 
-        private void OnCycled(GameObject gameObj)
+        protected override void OnCycled()
         {
-            if (gameObj != gameObject)
-            {
-                return;
-            }
-
-            magicPickerUpper.Collect(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
+            collector.Collect(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
         }
     }
 }
