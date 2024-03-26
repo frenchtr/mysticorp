@@ -1,26 +1,19 @@
 using MystiCorp.Runtime.Common.ScriptableEvents;
+using MystiCorp.Runtime.Collectibles;
 using UnityEngine;
 
 namespace MystiCorp.Runtime.Machines.Collector
 {
-<<<<<<< HEAD
     [RequireComponent(typeof(Collectibles.Collector))]
     [RequireComponent(typeof(CycleBehaviour))]
-=======
-    [RequireComponent(typeof(Collector))]
->>>>>>> a82af700d7b38448a27cf3c5278946653b13519c
-    [RequireComponent(typeof(MagnitudeBehaviour))]
     public class OnCycledPickupMagicBehaviour : OnCycledBehaviourBase
     {
-<<<<<<< HEAD
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
         private Collectibles.Collector magicPickerUpper;
         private CycleBehaviour cycleBehaviour;
-=======
-        private Collector collector;
->>>>>>> a82af700d7b38448a27cf3c5278946653b13519c
+        private Collectibles.Collector collector;
         private MagnitudeBehaviour magnitudeBehaviour;
 
         private void Awake()
@@ -37,16 +30,13 @@ namespace MystiCorp.Runtime.Machines.Collector
         {
             if (collector == null)
             {
-<<<<<<< HEAD
                 magicPickerUpper = GetComponent<Collectibles.Collector>();
             }
 
             if (cycleBehaviour == null)
             {
                 cycleBehaviour = GetComponent<CycleBehaviour>();
-=======
-                collector = GetComponent<Collector>();
->>>>>>> a82af700d7b38448a27cf3c5278946653b13519c
+                collector = GetComponent<Collectibles.Collector>();
             }
 
             if (magnitudeBehaviour == null)
