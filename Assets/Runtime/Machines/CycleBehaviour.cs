@@ -1,4 +1,3 @@
-using System.Collections;
 using MystiCorp.Runtime.Common.ScriptableEvents;
 using UnityEngine;
 using Attribute = TravisRFrench.Attributes.Runtime.Attribute;

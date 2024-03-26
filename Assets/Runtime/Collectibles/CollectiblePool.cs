@@ -1,7 +1,7 @@
 using MystiCorp.Runtime.Common.Pooling;
 using UnityEngine;
 
-namespace MystiCorp.Runtime.Magic.Pickup
+namespace MystiCorp.Runtime.Collectibles
 {
     [CreateAssetMenu(menuName = "Services/Pools/Collectible Pool")]
     public class CollectiblePool : ObjectPoolService

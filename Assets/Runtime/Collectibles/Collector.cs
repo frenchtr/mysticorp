@@ -1,8 +1,8 @@
-using UnityEngine;
-using MystiCorp.Runtime.Machines;
 using System.Linq;
+using MystiCorp.Runtime.Machines;
+using UnityEngine;
 
-namespace MystiCorp.Runtime.Magic.Pickup
+namespace MystiCorp.Runtime.Collectibles
 {
     [RequireComponent(typeof(AreaOfEffectBehaviour))]
     public class Collector : MonoBehaviour

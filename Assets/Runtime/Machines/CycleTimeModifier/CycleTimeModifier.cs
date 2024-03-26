@@ -1,6 +1,6 @@
 using TravisRFrench.Attributes.Runtime;
 
-namespace MystiCorp.Runtime.Machines
+namespace MystiCorp.Runtime.Machines.CycleTimeModifier
 {
     public class CycleTimeModifier : ModifierBase<CycleBehaviour>
     {

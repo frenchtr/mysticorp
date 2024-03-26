@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using MystiCorp.Runtime.Magic.Pickup;
 using MystiCorp.Runtime.Common.ScriptableEvents;
-using MystiCorp.Runtime.Machines;
+using UnityEngine;
 
-namespace MystiCorp.Runtime
+namespace MystiCorp.Runtime.Machines.Collector
 {
-    [RequireComponent(typeof(Collector))]
+    [RequireComponent(typeof(Collectibles.Collector))]
     [RequireComponent(typeof(CycleBehaviour))]
     [RequireComponent(typeof(MagnitudeBehaviour))]
     public class OnCycledPickupMagicBehaviour : MonoBehaviour
@@ -15,7 +11,7 @@ namespace MystiCorp.Runtime
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
-        private Collector magicPickerUpper;
+        private Collectibles.Collector magicPickerUpper;
         private CycleBehaviour cycleBehaviour;
         private MagnitudeBehaviour magnitudeBehaviour;
 
@@ -43,7 +39,7 @@ namespace MystiCorp.Runtime
         {
             if (magicPickerUpper == null)
             {
-                magicPickerUpper = GetComponent<Collector>();
+                magicPickerUpper = GetComponent<Collectibles.Collector>();
             }
 
             if (cycleBehaviour == null)

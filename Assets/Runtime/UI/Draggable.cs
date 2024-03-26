@@ -1,56 +1,68 @@
-using System;
+using MystiCorp.Runtime.Common.ScriptableVariables;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace MystiCorp.Runtime.UI
 {
-    public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    [RequireComponent(typeof(DragHandler))]
+    public class Draggable : MonoBehaviour
     {
-        private static Vector3 pointerPosition;
-        
-        [Header("Event Callbacks")]
+        private Vector3 pointerPosition;
+
         [SerializeField]
-        private UnityEvent<PointerEventData> dragStarted;
+        private CameraVariable mainCameraVariable;
         [SerializeField]
-        private UnityEvent<PointerEventData> dragStopped;
+        private DragHandler dragHandler;
+        private Vector2 pointerOffset;
 
-        public bool IsDragging { get; private set; }
-        
-        public event Action<PointerEventData> DragStarted;
-        public event Action<PointerEventData> DragStopped;
-
-        public void StartDragging(PointerEventData eventData = null)
+        private void Awake()
         {
-            IsDragging = true;
-            DragStarted?.Invoke(eventData);
-            dragStarted?.Invoke(eventData);
+            GetDependencies();
         }
 
-        public void StopDragging(PointerEventData eventData = null)
+        private void Reset()
         {
-            IsDragging = false;
-            DragStopped?.Invoke(eventData);
-            dragStopped?.Invoke(eventData);
-        }
-        
-        void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
-        {
-            StartDragging(eventData);
+            GetDependencies();
         }
 
-        void IDragHandler.OnDrag(PointerEventData eventData)
+        private void OnEnable()
         {
-            pointerPosition = eventData.position;
+            dragHandler.Dragged += OnDragged;
         }
 
-        void IEndDragHandler.OnEndDrag(PointerEventData eventData)
+        private void OnDisable()
         {
-            StopDragging(eventData);
+            dragHandler.Dragged -= OnDragged;
         }
 
         private void Update()
         {
+            if (dragHandler.IsDragging)
+            {
+                var rectTransform = gameObject.GetComponent<RectTransform>();
+                var mainCamera = mainCameraVariable.Value;
+                var pointerWorldPosition = mainCamera.ScreenToWorldPoint(pointerPosition);
+            
+                rectTransform.position = new Vector3()
+                {
+                    x = pointerWorldPosition.x,
+                    y = pointerWorldPosition.y,
+                    z = rectTransform.position.z,
+                };
+            }
+        }
+
+        private void GetDependencies()
+        {
+            if (dragHandler == null)
+            {
+                dragHandler = GetComponent<DragHandler>();
+            }
+        }
+        
+        private void OnDragged(PointerEventData eventData)
+        {
+            pointerPosition = eventData.position;
         }
     }
 }

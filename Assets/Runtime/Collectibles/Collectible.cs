@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MystiCorp.Runtime.Magic.Pickup
+namespace MystiCorp.Runtime.Collectibles
 {
     public class Collectible : MonoBehaviour
     {

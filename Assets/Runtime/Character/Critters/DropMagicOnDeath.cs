@@ -1,8 +1,8 @@
 using MystiCorp.Runtime.Damage;
-using MystiCorp.Runtime.Magic.Pickup;
 using UnityEngine;
 using MystiCorp.Runtime.Common.ScriptableVariables;
 using System.Linq;
+using MystiCorp.Runtime.Collectibles;
 
 namespace MystiCorp.Runtime.Character.Critters
 {

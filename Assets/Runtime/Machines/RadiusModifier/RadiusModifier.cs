@@ -1,6 +1,6 @@
 using TravisRFrench.Attributes.Runtime;
 
-namespace MystiCorp.Runtime.Machines
+namespace MystiCorp.Runtime.Machines.RadiusModifier
 {
     public class RadiusModifier : ModifierBase<AreaOfEffectBehaviour>
     {

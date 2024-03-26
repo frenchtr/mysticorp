@@ -1,6 +1,6 @@
-using MystiCorp.Runtime.Magic.Pickup;
 using UnityEngine;
 using MystiCorp.Runtime.Attraction;
+using MystiCorp.Runtime.Collectibles;
 
 namespace MystiCorp.Runtime.Character.Hero
 {

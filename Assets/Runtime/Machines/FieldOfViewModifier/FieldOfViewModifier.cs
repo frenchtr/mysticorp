@@ -1,7 +1,6 @@
 using TravisRFrench.Attributes.Runtime;
-using UnityEngine;
 
-namespace MystiCorp.Runtime.Machines
+namespace MystiCorp.Runtime.Machines.FieldOfViewModifier
 {
     public class FieldOfViewModifier : ModifierBase<AreaOfEffectBehaviour>
     {

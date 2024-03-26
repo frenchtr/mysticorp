@@ -6,7 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Magic/Magic Counter UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Magic/Magic Counter UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DespawnAfterTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DespawnAfterTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Critters/DropMagicOnDeath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Character/Hero/HeroBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Collectibles/Collectible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Collectibles/Collectible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Collectibles/CollectiblePool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Collectibles/CollectiblePool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Collectibles/Collector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Collectibles/Collector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Collector/OnCycledPickupMagicBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Collector/OnCycledPickupMagicBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleTimeModifier/CycleTimeModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/CycleTimeModifier/CycleTimeModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/FieldOfViewModifier/FieldOfViewModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/FieldOfViewModifier/FieldOfViewModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Magnet/OnCycledAttractBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Magnet/OnCycledAttractBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/MagnitudeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/MagnitudeBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/MagnitudeModifier/MagnitudeModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/MagnitudeModifier/MagnitudeModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/ModifierBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/ModifierBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/RadiusModifier/RadiusModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/RadiusModifier/RadiusModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Mysticorp.Runtime.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Mysticorp.Runtime.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/UI/Draggable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/MachineCatalogHUD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/MachineCatalogHUD/MachineCatalogElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/MachineCatalogHUD/MachineCatalogElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/MachineCatalogHUD/MachineCatalogHUD.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/MachineCatalogHUD/MachineCatalogHUD.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/UI/OptionsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/UI/OptionsMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +125,9 @@
       <workItem from="1711081300786" duration="12861000" />
       <workItem from="1711147367047" duration="9311000" />
       <workItem from="1711240401800" duration="1369000" />
+      <workItem from="1711341326132" duration="8879000" />
+      <workItem from="1711405992918" duration="1957000" />
+      <workItem from="1711410863407" duration="909000" />
     </task>
     <servers />
   </component>

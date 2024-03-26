@@ -2,7 +2,7 @@ using MystiCorp.Runtime.Attraction;
 using MystiCorp.Runtime.Common.ScriptableEvents;
 using UnityEngine;
 
-namespace MystiCorp.Runtime.Machines.MagnetMachine
+namespace MystiCorp.Runtime.Machines.Magnet
 {
     [RequireComponent(typeof(Attractor))]
     public class OnCycledAttractBehaviour : MonoBehaviour
