@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb82c765cc8a344008489958a8d30e5a, type: 3}
-  m_Name: Critter1Pool
+  m_Script: {fileID: 11500000, guid: 4f4056d6f401f468c8a609af8c20843d, type: 3}
+  m_Name: ColorOscillationSaturation
   m_EditorClassIdentifier: 
-  prefab: {fileID: 753164405269013940, guid: c8b1b8bc957db4feda2df0b5cf838b2e, type: 3}
-  firstPortalLevel: 0
-  baseCrittersPerSecond: 10
-  scaleValue: 1.5
+  value: 0.8

@@ -6,14 +6,14 @@ namespace MystiCorp.Runtime.Machines.Collector
 {
     [RequireComponent(typeof(Collectibles.Collector))]
     [RequireComponent(typeof(CycleBehaviour))]
-    public class OnCycledPickupMagicBehaviour : OnCycledBehaviourBase
+    [RequireComponent(typeof(MagnitudeBehaviour))]
+    public class OnCycledPickupMagicBehaviour : MonoBehaviour
     {
         [Header("Events")]
         [SerializeField]
         private GameObjectEvent cycledEvent;
         private Collectibles.Collector magicPickerUpper;
         private CycleBehaviour cycleBehaviour;
-        private Collectibles.Collector collector;
         private MagnitudeBehaviour magnitudeBehaviour;
 
         private void Awake()
@@ -26,9 +26,19 @@ namespace MystiCorp.Runtime.Machines.Collector
             GetDependencies();
         }
 
+        private void OnEnable()
+        {
+            cycledEvent.Raised += OnCycled;
+        }
+
+        private void OnDisable()
+        {
+            cycledEvent.Raised -= OnCycled;
+        }
+
         private void GetDependencies()
         {
-            if (collector == null)
+            if (magicPickerUpper == null)
             {
                 magicPickerUpper = GetComponent<Collectibles.Collector>();
             }
@@ -36,7 +46,6 @@ namespace MystiCorp.Runtime.Machines.Collector
             if (cycleBehaviour == null)
             {
                 cycleBehaviour = GetComponent<CycleBehaviour>();
-                collector = GetComponent<Collectibles.Collector>();
             }
 
             if (magnitudeBehaviour == null)
@@ -45,9 +54,14 @@ namespace MystiCorp.Runtime.Machines.Collector
             }
         }
 
-        protected override void OnCycled()
+        private void OnCycled(GameObject gameObj)
         {
-            collector.Collect(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
+            if (gameObj != gameObject)
+            {
+                return;
+            }
+
+            magicPickerUpper.Collect(Mathf.FloorToInt(magnitudeBehaviour.Magnitude));
         }
     }
 }

@@ -3,38 +3,71 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Attraction
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     public class Attractable : MonoBehaviour
     {
+        private float time;
         [SerializeField]
-        private new Rigidbody2D rigidbody;
+        private float duration = 2f;
+        [SerializeField]
+        private AnimationCurve curve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+        private Attractor attractor;
+        private Vector2 from;
+        private Vector2 to;
         
-        private void Awake()
+        public bool IsAttracting { get; private set; }
+        public bool HasArrived { get; private set; }
+
+        public float Duration
         {
-            GetDependencies();
+            get => duration;
+            set => duration = value;
+        }
+        public AnimationCurve Curve
+        {
+            get => curve;
+            set => curve = value;
         }
 
-        private void Reset()
+        public event Action Arrived;
+
+        public void AttractTo(Attractor attractor)
         {
-            GetDependencies();
+            IsAttracting = true;
+            this.attractor = attractor;
+            from = transform.position;
+            to = attractor.transform.position;
+            time = 0;
         }
 
-        private void GetDependencies()
+        public void StopAttracting()
         {
-            if (rigidbody == null)
+            IsAttracting = false;
+            attractor = null;
+        }
+
+        private void OnDisable()
+        {
+            StopAttracting();
+        }
+
+        private void Update()
+        {
+            if (IsAttracting && attractor != null)
             {
-                rigidbody = GetComponent<Rigidbody2D>();
+                var increment = time + Time.deltaTime;
+                time = Mathf.Clamp(increment, 0f, Duration);
+
+                if (increment > Duration)
+                {
+                    HasArrived = true;
+                    IsAttracting = false;
+                    Arrived?.Invoke();
+                }
+
+                var percentage = Curve.Evaluate(time);
+                transform.position = Vector2.Lerp(from, to, percentage);
             }
-        }
-
-        public void AddVelocity(Vector2 velocity)
-        {
-            rigidbody.velocity += velocity;
-        }
-
-        public void AttractTo(Vector2 target, float speed)
-        {
-            rigidbody.velocity = (target - (Vector2)transform.position).normalized * speed;
+            
         }
     }
 }

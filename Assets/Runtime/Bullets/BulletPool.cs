@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Bullets
 {
-    [CreateAssetMenu(menuName = "Services/Pools/Bullet")]
+    [CreateAssetMenu(menuName = "Services/Pools/Bullet Pool")]
     public class BulletPool : ObjectPoolService
     {
         public void Spawn(Vector2 start, Vector2 end)
