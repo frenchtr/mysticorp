@@ -5,11 +5,8 @@ using UnityEngine;
 namespace MystiCorp.Runtime.Machines.Magnet
 {
     [RequireComponent(typeof(Attractor))]
-    public class OnCycledAttractBehaviour : MonoBehaviour
+    public class OnCycledAttractBehaviour : OnCycledBehaviourBase
     {
-        [Header("Events")]
-        [SerializeField]
-        private GameObjectEvent cycledEvent;
         private Attractor attractor;
 
         private void Awake()
@@ -22,16 +19,6 @@ namespace MystiCorp.Runtime.Machines.Magnet
             GetDependencies();
         }
 
-        private void OnEnable()
-        {
-            cycledEvent.Raised += OnCycled;
-        }
-        
-        private void OnDisable()
-        {
-            cycledEvent.Raised -= OnCycled;
-        }
-
         private void GetDependencies()
         {
             if (attractor == null)
@@ -40,13 +27,8 @@ namespace MystiCorp.Runtime.Machines.Magnet
             }
         }
 
-        private void OnCycled(GameObject gameObj)
+        protected override void OnCycled()
         {
-            if (gameObj != gameObject)
-            {
-                return;
-            }
-            
             attractor.AttractAllNearby();
         }
     }

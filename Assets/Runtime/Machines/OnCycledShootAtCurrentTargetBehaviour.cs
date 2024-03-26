@@ -7,18 +7,14 @@ using OliverBeebe.UnityUtilities.Runtime;
 
 namespace MystiCorp.Runtime.Machines
 {
-    [RequireComponent(typeof(CycleBehaviour))]
     [RequireComponent(typeof(TargetingBehaviour))]
     [RequireComponent(typeof(MagnitudeBehaviour))]
-    public class OnCycledShootAtCurrentTargetBehaviour : MonoBehaviour
+    public class OnCycledShootAtCurrentTargetBehaviour : OnCycledBehaviourBase
     {
         [SerializeField]
         private Transform shootOrigin;
         [SerializeField]
         private BulletPool bulletPool;
-        [Header("Events")]
-        [SerializeField]
-        private GameObjectEvent cycledEvent;
         [SerializeField]
         private SoundEffect shootSound;
 
@@ -35,25 +31,19 @@ namespace MystiCorp.Runtime.Machines
             GetDependencies();
         }
 
-        private void OnEnable()
+        protected override void OnCycled()
         {
-            cycledEvent.Raised += OnCycled;
-        }
+            var currentTarget = targetingBehaviour.CurrentTarget;
 
-        private void OnDisable()
-        {
-            cycledEvent.Raised -= OnCycled;
-        }
-
-        private void ShootAt(GameObject target)
-        {
-            var receiver = target.GetComponent<DamageReceiver>();
-
-            if (receiver == null)
+            if (currentTarget != null
+                && currentTarget.TryGetComponent(out DamageReceiver receiver))
             {
-                return;
-            }
+                ShootAt(receiver);
+            } 
+        }
 
+        private void ShootAt(DamageReceiver receiver)
+        {
             var amount = magnitudeBehaviour.Magnitude;
             receiver.TakeDamage(amount);
 
@@ -72,23 +62,6 @@ namespace MystiCorp.Runtime.Machines
             {
                 targetingBehaviour = GetComponent<TargetingBehaviour>();
             }
-        }
-        
-        private void OnCycled(GameObject obj)
-        {
-            if (obj != gameObject)
-            {
-                return;
-            }
-
-            var currentTarget = targetingBehaviour.CurrentTarget;
-
-            if (currentTarget == null)
-            {
-                return;
-            }
-            
-            ShootAt(currentTarget);
         }
     }
 }

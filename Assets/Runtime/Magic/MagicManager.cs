@@ -14,7 +14,6 @@ namespace MystiCorp.Runtime.Magic
         private FloatVariable magicPerSecond;
         [SerializeField]
         private float magicPerSecondCalculationDuration;
-        [SerializeField] private float f1, f2, f3;
 
         private float previousMagicAmount;
 
@@ -25,7 +24,7 @@ namespace MystiCorp.Runtime.Magic
             float magicDelta = magicAmount.Value - previousMagicAmount;
             previousMagicAmount = magicAmount.Value;
 
-            magicPerSecondValues.Add((magicDelta, Time.time));
+            magicPerSecondValues.Add((magicDelta / Time.deltaTime, Time.time));
 
             magicPerSecondValues.RemoveAll(magicValue => Time.time - magicValue.time > magicPerSecondCalculationDuration);
 

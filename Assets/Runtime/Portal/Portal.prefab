@@ -177,8 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181e4ecb630664f9d8367a7e83f9b1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handcraftedWaves:
-  - {fileID: 11400000, guid: 204aa4c537ad740baa8cfc43899532fb, type: 2}
-  - {fileID: 11400000, guid: 7945f7838700d4146a4d64011d7e9aa0, type: 2}
-  - {fileID: 11400000, guid: 45b03823492c94a03b6a240797f87775, type: 2}
+  critterPool:
+  - {fileID: 11400000, guid: fdfa9b3ea3640453bad4b2fa32b715f9, type: 2}
   spawnpoint: {fileID: 2381155737660579929}
