@@ -12,6 +12,8 @@ namespace MystiCorp.Runtime.Damage
         private bool destroyOnDeath;
         [SerializeField]
         private DamageArgsEvent damagedEvent;
+        [SerializeField]
+        private DamageTextPool damageTextPool;
 
         [SerializeField]
         [InspectorName("Current Health")]
@@ -57,6 +59,8 @@ namespace MystiCorp.Runtime.Damage
             if (args.Receiver.gameObject != gameObject) return;
 
             Health = Mathf.MoveTowards(Health, 0, args.Amount);
+
+            damageTextPool.Spawn(args.Amount, transform.position);
 
             if (Health == 0)
             {

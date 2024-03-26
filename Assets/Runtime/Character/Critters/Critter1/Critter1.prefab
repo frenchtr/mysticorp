@@ -116,6 +116,7 @@ MonoBehaviour:
   maxHealth: 3
   destroyOnDeath: 1
   damagedEvent: {fileID: 11400000, guid: f9f4ce2b4d4e152448c0b2dc6235bdfd, type: 2}
+  damageTextPool: {fileID: 11400000, guid: d2747dbb2b56549cbb81041fbdf152ca, type: 2}
   health: 0
 --- !u!114 &2980842177935860025
 MonoBehaviour:
@@ -253,31 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5f66f4110d46c489d808ddb601b563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 2
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  rigidbody: {fileID: 0}
 --- !u!114 &2945579792477097125
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f982413e55f408684505c3d0c61cee, type: 3}
+  m_Name: Damage Text Pool
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6158870657586535801, guid: 0d4a5eac24add45758a6770433409a92, type: 3}
+  canvasPrefab: {fileID: 5780046487214959090, guid: 58164076f7c9a422b92cb7d5dc68db9f, type: 3}

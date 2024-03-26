@@ -15,6 +15,8 @@ namespace MystiCorp.Runtime.Common.Pooling
         [System.NonSerialized]
         private List<GameObject> activeObjects;
 
+        protected virtual GameObject InstantiatePoolParent() => new(name);
+
         protected List<GameObject> ActiveObjects
         {
             get
@@ -50,7 +52,7 @@ namespace MystiCorp.Runtime.Common.Pooling
             pool?.Dispose();
 
             // initialize
-            poolParent = new GameObject(name).transform;
+            poolParent = InstantiatePoolParent().transform;
             activeObjects = new();
             pool = new(
                 createFunc: CreateObject,
