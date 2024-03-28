@@ -6,22 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4cfa9356-2ed6-4379-a277-054bf8944243" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mysticorp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Attraction/Attractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Attraction/Attractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Collector/OnCycledPickupMagicBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Collector/OnCycledPickupMagicBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/MachineIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/MachineIdentity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/MachineRegistrar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/MachineRegistrar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/Magnet/OnCycledAttractBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/Magnet/OnCycledAttractBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledBehaviourBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledBehaviourBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledShootAtCurrentTargetBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/OnCycledShootAtCurrentTargetBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Machines/SortByYPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Machines/SortByYPosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/ColorOscillator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Portal/CritterPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Portal/CritterPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Scenes/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Shop.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Shop/ShopItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Shop/ShopItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Shop/ShopService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Shop/ShopService.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
