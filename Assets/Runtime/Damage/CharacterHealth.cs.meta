@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - damagedEvent: {fileID: 11400000, guid: f9f4ce2b4d4e152448c0b2dc6235bdfd, type: 2}
+  - damageTextPool: {fileID: 11400000, guid: d2747dbb2b56549cbb81041fbdf152ca, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

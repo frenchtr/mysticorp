@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Magic
 {
-    [CreateAssetMenu(menuName = "Services/Magic Manager")]
+    [CreateAssetMenu(menuName = "Scriptables/Services/Magic Manager")]
     public class MagicManager : GameManager.GameServiceManager.Service
     {
         [SerializeField]

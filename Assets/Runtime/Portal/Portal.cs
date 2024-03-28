@@ -13,6 +13,7 @@ namespace MystiCorp.Runtime.Portal
         private int level;
 
         public void Upgrade() => level++;
+        public void Downgrade() => level--;
 
         private void Update()
         {

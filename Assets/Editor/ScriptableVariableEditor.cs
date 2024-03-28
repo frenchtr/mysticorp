@@ -13,12 +13,14 @@ namespace MystiCorp.Editor
 
         public override void OnInspectorGUI()
         {
+            base.OnInspectorGUI();
+
+            GUI.enabled = false;
+
             var value = target
                 .GetType()
                 .GetProperty("Value")
                 .GetValue(target);
-
-            GUI.enabled = false;
 
             switch (value)
             {
