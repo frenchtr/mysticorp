@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196a0089c59c4450b98030bce673c6c0, type: 3}
-  m_Name: Game Service Manager
+  m_Script: {fileID: 11500000, guid: ba24d6ac9c25424c9ed84595f81886d9, type: 3}
+  m_Name: ShopMenuElementDragStopped
   m_EditorClassIdentifier: 
-  services:
-  - {fileID: 11400000, guid: e456b736e301e42109a5a60d99ffda50, type: 2}
-  - {fileID: 11400000, guid: ee9e89200c5609c4c9af167c8b79f3e9, type: 2}
+  raised:
+    m_PersistentCalls:
+      m_Calls: []

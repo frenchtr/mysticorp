@@ -1,5 +1,4 @@
 using MystiCorp.Runtime.Attraction;
-using MystiCorp.Runtime.Common.ScriptableEvents;
 using UnityEngine;
 
 namespace MystiCorp.Runtime.Machines.Magnet

@@ -1,4 +1,3 @@
-using MystiCorp.Runtime.Common.ScriptableVariables;
 using UnityEngine;
 
 namespace MystiCorp.Runtime.Portal

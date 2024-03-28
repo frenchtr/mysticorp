@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6523d5a955a46b6aa5802074c77f7eb, type: 3}
+  m_Name: Overclocker
+  m_EditorClassIdentifier: 
+  displayName: Overclocker
+  cost: 150
+  icon: {fileID: 21300000, guid: 45e5ba2aad6ea49cbb4d943bd329c3a7, type: 3}
+  previewPrefab: {fileID: 8945291262475060991, guid: 415f8d50e6f3a49b89577762c9d9a545, type: 3}
+  placePrefab: {fileID: 7332884733429558262, guid: 64d378a2eff8e40eaafd1895ab31db8a, type: 3}

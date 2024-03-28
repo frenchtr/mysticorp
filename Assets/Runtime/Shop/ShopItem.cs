@@ -1,12 +1,46 @@
-using System;
-using MystiCorp.Runtime.Machine_Placement;
+using UnityEngine;
 
 namespace MystiCorp.Runtime.Shop
 {
-    [Serializable]
-    public class ShopItem
+    [CreateAssetMenu(menuName = "Scriptables/Shop Item")]
+    public class ShopItem : ScriptableObject
     {
-        public MachineData MachineData { get; set; }
-        public float Cost { get; set; }
+        [SerializeField]
+        private string displayName;
+        [SerializeField]
+        private float cost;
+        [SerializeField]
+        private Sprite icon;
+        [SerializeField]
+        private GameObject previewPrefab;
+        [SerializeField]
+        private GameObject placePrefab;
+
+        public string DisplayName
+        {
+            get => displayName;
+            set => displayName = value;
+        }
+        public float Cost
+        {
+            get => cost;
+            set => cost = value;
+        }
+        public Sprite Icon
+        {
+            get => icon;
+            set => icon = value;
+        }
+        public GameObject PreviewPrefab
+        {
+            get => previewPrefab;
+            set => previewPrefab = value;
+        }
+
+        public GameObject PlacePrefab
+        {
+            get => placePrefab;
+            set => placePrefab = value;
+        }
     }
 }

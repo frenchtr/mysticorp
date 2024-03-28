@@ -1,5 +1,4 @@
 using MystiCorp.Runtime.Common.ScriptableEvents;
-using MystiCorp.Runtime.Collectibles;
 using UnityEngine;
 
 namespace MystiCorp.Runtime.Machines.Collector
