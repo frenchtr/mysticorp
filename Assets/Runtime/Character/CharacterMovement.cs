@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Character
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterMovement : MonoBehaviour
     {
         [SerializeField]
         private float moveSpeed;
         [SerializeField]
         private float positionPrecision = 0.1f;
+        [SerializeField]
         private new Rigidbody2D rigidbody;
         
         private Vector2 targetPosition;
@@ -28,16 +28,6 @@ namespace MystiCorp.Runtime.Character
             Moving = false;
         }
 
-        private void Awake()
-        {
-            GetDependencies();
-        }
-
-        private void Reset()
-        {
-            GetDependencies();
-        }
-
         private void Update()
         {
             Vector2 targetDelta = targetPosition - (Vector2)transform.position;
@@ -52,14 +42,6 @@ namespace MystiCorp.Runtime.Character
             }
 
             if (Moving) rigidbody.velocity = direction * moveSpeed;
-        }
-
-        private void GetDependencies()
-        {
-            if (rigidbody == null)
-            {
-                rigidbody = GetComponent<Rigidbody2D>();
-            }
         }
     }
 }

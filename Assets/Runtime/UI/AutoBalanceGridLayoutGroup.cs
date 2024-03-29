@@ -4,24 +4,12 @@ using UnityEngine.UI;
 
 namespace MystiCorp.Runtime.UI
 {
-    [ExecuteAlways]
-    [RequireComponent(typeof(GridLayoutGroup))]
     public class AutoBalanceGridLayoutGroup : MonoBehaviour
     {
         [SerializeField]
         private GridLayoutGroup gridLayoutGroup;
 
         private int childCount;
-
-        private void Reset()
-        {
-            GetReferences();
-        }
-
-        private void Awake()
-        {
-            GetReferences();
-        }
 
         private void Update()
         {
@@ -30,11 +18,6 @@ namespace MystiCorp.Runtime.UI
             if (newChildCount != childCount) UpdateGridLayoutGroup();
 
             childCount = gridLayoutGroup.transform.childCount;
-        }
-
-        private void GetReferences()
-        {
-            gridLayoutGroup = GetComponent<GridLayoutGroup>();
         }
 
         private void UpdateGridLayoutGroup()
@@ -51,19 +34,5 @@ namespace MystiCorp.Runtime.UI
             gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
             gridLayoutGroup.constraintCount = Mathf.CeilToInt(Mathf.Sqrt(children));
         }
-
-        #region Editor
-        #if UNITY_EDITOR
-
-        [CustomEditor(typeof(AutoBalanceGridLayoutGroup))]
-        private class AutoBalanceGridLayoutGroupEditor : Editor
-        {
-            public override void OnInspectorGUI()
-            {
-            }
-        }
-
-        #endif
-        #endregion
     }
 }

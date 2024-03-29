@@ -6,8 +6,6 @@ using OliverBeebe.UnityUtilities.Runtime;
 
 namespace MystiCorp.Runtime.Machines
 {
-    [RequireComponent(typeof(TargetingBehaviour))]
-    [RequireComponent(typeof(MagnitudeBehaviour))]
     public class OnCycledShootAtCurrentTargetBehaviour : OnCycledBehaviourBase
     {
         [SerializeField]
@@ -17,18 +15,11 @@ namespace MystiCorp.Runtime.Machines
         [SerializeField]
         private SoundEffect shootSound;
 
+        [Header("Dependencies")]
+        [SerializeField]
         private TargetingBehaviour targetingBehaviour;
+        [SerializeField]
         private MagnitudeBehaviour magnitudeBehaviour;
-
-        private void Awake()
-        {
-            GetDependencies();
-        }
-
-        private void Reset()
-        {
-            GetDependencies();
-        }
 
         protected override void OnCycled()
         {
@@ -48,19 +39,6 @@ namespace MystiCorp.Runtime.Machines
 
             shootSound.Play(this);
             bulletPool.Spawn(new(shootOrigin.position, receiver.transform.position));
-        }
-
-        private void GetDependencies()
-        {
-            if (magnitudeBehaviour == null)
-            {
-                magnitudeBehaviour = GetComponent<MagnitudeBehaviour>();
-            }
-
-            if (targetingBehaviour == null)
-            {
-                targetingBehaviour = GetComponent<TargetingBehaviour>();
-            }
         }
     }
 }

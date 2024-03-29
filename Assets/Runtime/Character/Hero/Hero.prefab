@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   positionPrecision: 0.1
+  rigidbody: {fileID: 7074881132304228636}
 --- !u!50 &7074881132304228636
 Rigidbody2D:
   serializedVersion: 4
@@ -189,8 +190,8 @@ GameObject:
   - component: {fileID: 5720888922160192922}
   - component: {fileID: 4341511521379525979}
   - component: {fileID: 8063355287355394735}
-  - component: {fileID: 3262463108252360039}
   - component: {fileID: 5792959005816139420}
+  - component: {fileID: 3262463108252360039}
   m_Layer: 0
   m_Name: Attractor
   m_TagString: Untagged
@@ -256,18 +257,6 @@ MonoBehaviour:
     modifiedValue: 1
     modifiers: []
   cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
---- !u!114 &3262463108252360039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621325553219408701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a99c10246941f6937c87556aeb7c7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5792959005816139420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +274,20 @@ MonoBehaviour:
     baseValue: 1
     modifiedValue: 1
     modifiers: []
+--- !u!114 &3262463108252360039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2621325553219408701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a99c10246941f6937c87556aeb7c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaOfEffectBehaviour: {fileID: 4341511521379525979}
+  magnitudeBehaviour: {fileID: 5792959005816139420}
 --- !u!1 &3681811389992729413
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
+  areaOfEffectBehaviour: {fileID: 9191055382919477334}
 --- !u!114 &7994936224455877731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,10 +410,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02321704b954f5f9f92543f8ea72ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
   shootOrigin: {fileID: 6344427688923521767}
   bulletPool: {fileID: 11400000, guid: 70e0eb0ee7ec04c26a064f139eff60b8, type: 2}
-  cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
   shootSound: {fileID: 11400000, guid: 827dab5f15bab4fd2bab05bd5d05518b, type: 2}
+  targetingBehaviour: {fileID: 3134911973002177346}
+  magnitudeBehaviour: {fileID: 2951758430447680766}
 --- !u!1 &4856318388055746283
 GameObject:
   m_ObjectHideFlags: 0

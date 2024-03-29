@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5f66f4110d46c489d808ddb601b563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 4126268890484312936}
 --- !u!50 &4126268890484312936
 Rigidbody2D:
   serializedVersion: 4
@@ -237,3 +237,4 @@ MonoBehaviour:
   colorChangeSpeed: 0.5
   saturation: 0.8
   value: 1
+  renderer: {fileID: 4991101679637723193}

@@ -3,22 +3,12 @@ using UnityEngine;
 
 namespace MystiCorp.Runtime.Machines
 {
-    [RequireComponent(typeof(TargetingBehaviour))]
     public class RotateTransformTowardCurrentTarget : MonoBehaviour
     {
         [SerializeField]
         private Transform transformToRotate;
+        [SerializeField]
         private TargetingBehaviour targetingBehaviour;
-
-        private void Awake()
-        {
-            GetDependencies();
-        }
-
-        private void Reset()
-        {
-            GetDependencies();
-        }
 
         private void Update()
         {
@@ -32,14 +22,6 @@ namespace MystiCorp.Runtime.Machines
             var direction = (to - from).normalized;
             
             transformToRotate.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        }
-
-        private void GetDependencies()
-        {
-            if (targetingBehaviour == null)
-            {
-                targetingBehaviour = GetComponent<TargetingBehaviour>();
-            }
         }
     }
 }

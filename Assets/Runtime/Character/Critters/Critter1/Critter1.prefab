@@ -75,6 +75,7 @@ MonoBehaviour:
   maxWanderDistance: 4
   minWanderInterval: 0.5
   maxWanderInterval: 2
+  movement: {fileID: 8569233989221195911}
 --- !u!114 &8569233989221195911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   positionPrecision: 0.1
+  rigidbody: {fileID: 2029212131730738605}
 --- !u!114 &-3862361194684691510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5f66f4110d46c489d808ddb601b563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 2029212131730738605}
 --- !u!114 &2945579792477097125
 MonoBehaviour:
   m_ObjectHideFlags: 0

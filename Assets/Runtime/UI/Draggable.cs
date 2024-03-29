@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 namespace MystiCorp.Runtime.UI
 {
-    [RequireComponent(typeof(DragHandler))]
     public class Draggable : MonoBehaviour
     {
         private Vector3 pointerPosition;
@@ -14,16 +13,6 @@ namespace MystiCorp.Runtime.UI
         [SerializeField]
         private DragHandler dragHandler;
         private Vector2 pointerOffset;
-
-        private void Awake()
-        {
-            GetDependencies();
-        }
-
-        private void Reset()
-        {
-            GetDependencies();
-        }
 
         private void OnEnable()
         {
@@ -49,14 +38,6 @@ namespace MystiCorp.Runtime.UI
                     y = pointerWorldPosition.y,
                     z = rectTransform.position.z,
                 };
-            }
-        }
-
-        private void GetDependencies()
-        {
-            if (dragHandler == null)
-            {
-                dragHandler = GetComponent<DragHandler>();
             }
         }
         

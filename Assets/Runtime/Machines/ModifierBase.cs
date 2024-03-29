@@ -5,7 +5,6 @@ using System.Linq;
 
 namespace MystiCorp.Runtime.Machines
 {
-    [RequireComponent(typeof(AreaOfEffectBehaviour))]
     public abstract class ModifierBase<TComponent> : MonoBehaviour
     {
         [SerializeField]
@@ -20,14 +19,7 @@ namespace MystiCorp.Runtime.Machines
 
         private void Awake()
         {
-            GetDependencies();
-
             effectedMachines = new();
-        }
-
-        private void Reset()
-        {
-            GetDependencies();
         }
 
         private void Update()
@@ -76,14 +68,5 @@ namespace MystiCorp.Runtime.Machines
 
             effectedMachines.Clear();
         }
-
-        private void GetDependencies()
-        {
-            if (areaOfEffectBehaviour == null)
-            {
-                areaOfEffectBehaviour = GetComponent<AreaOfEffectBehaviour>();
-            }
-        }
-
     }
 }

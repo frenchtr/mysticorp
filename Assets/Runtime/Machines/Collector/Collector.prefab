@@ -113,6 +113,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cycledEvent: {fileID: 11400000, guid: 27f551f2786c136488e46b584f98f3b6, type: 2}
+  magicPickerUpper: {fileID: 1074458478065579858}
+  magnitudeBehaviour: {fileID: 9025732476863117815}
+--- !u!114 &9025732476863117815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1621816070577970261, guid: dd68da5352a2f8c44a88adb6b6ed1e5a, type: 3}
+  m_PrefabInstance: {fileID: 1459150054744906332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746961232064702351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81ef17f6970440a498a30cd42f67323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4995518922251638851
 PrefabInstance:
   m_ObjectHideFlags: 0
