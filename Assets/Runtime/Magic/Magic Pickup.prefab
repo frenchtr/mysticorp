@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 933258411905087105}
   - component: {fileID: -3691554084785043661}
   - component: {fileID: 4126268890484312936}
+  - component: {fileID: -5285047071234280534}
   m_Layer: 6
   m_Name: Magic Pickup
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbc8d78bdd704998b26cb39cabe4842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolable: {fileID: -5285047071234280534}
 --- !u!58 &933258411905087105
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -123,6 +125,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5285047071234280534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017553560703573859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc446b070f7449518c2ee6da60a0f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7685423811068348334
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e60676f2a694b72b64e2a3e423de35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorChangeSpeed: {fileID: 11400000, guid: 92ffadb7035e44715b2844c1d5b0e0e4, type: 2}
-  saturation: {fileID: 11400000, guid: 97e7fc0c5707543669aaf29ded3adcde, type: 2}
-  value: {fileID: 11400000, guid: 619b2720e441244dd87e526a5d182b42, type: 2}
+  colorChangeSpeed: 0.5
+  saturation: 0.8
+  value: 1

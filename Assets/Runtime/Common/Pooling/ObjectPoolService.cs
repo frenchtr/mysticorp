@@ -7,17 +7,17 @@ namespace MystiCorp.Runtime.Common.Pooling
     public abstract class ObjectPoolService : ScriptableObject
     {
         [SerializeField]
-        protected GameObject prefab;
+        protected Poolable prefab;
 
         [System.NonSerialized]
         private Transform poolParent;
-        private ObjectPool<GameObject> pool;
+        private ObjectPool<Poolable> pool;
         [System.NonSerialized]
-        private List<GameObject> activeObjects;
+        private List<Poolable> activeObjects;
 
         protected virtual GameObject InstantiatePoolParent() => new(name);
 
-        protected List<GameObject> ActiveObjects
+        protected List<Poolable> ActiveObjects
         {
             get
             {
@@ -26,29 +26,33 @@ namespace MystiCorp.Runtime.Common.Pooling
             }
         }
 
-        protected GameObject GetObject()
+        protected Poolable Spawn()
         {
             if (pool == null || poolParent == null) InitializePool();
 
-            var obj = pool.Get();
+            var poolable = pool.Get();
 
-            ActiveObjects.Add(obj);
+            ActiveObjects.Add(poolable);
 
-            return obj;
+            poolable.ReturnToPool += () => Despawn(poolable);
+
+            return poolable;
         }
 
-        public virtual void Despawn(GameObject obj)
+        protected void Despawn(Poolable poolable)
         {
-            obj.SetActive(false);
-            ActiveObjects.Remove(obj);
+            poolable.gameObject.SetActive(false);
 
-            pool.Release(obj);
+            ActiveObjects.Remove(poolable);
+
+            pool.Release(poolable);
         }
 
         private void InitializePool()
         {
             // dispose if active
             if (poolParent != null) Destroy(poolParent.gameObject);
+            pool?.Clear();
             pool?.Dispose();
 
             // initialize
@@ -59,14 +63,14 @@ namespace MystiCorp.Runtime.Common.Pooling
                 actionOnDestroy: DestroyObject);
         }
 
-        protected virtual GameObject CreateObject()
+        protected virtual Poolable CreateObject()
         {
             return Instantiate(prefab, poolParent);
         }
 
-        protected virtual void DestroyObject(GameObject obj)
+        protected virtual void DestroyObject(Poolable poolable)
         {
-            Destroy(obj);
+            Destroy(poolable.gameObject);
         }
     }
 }

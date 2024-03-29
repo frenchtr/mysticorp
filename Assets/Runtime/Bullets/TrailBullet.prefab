@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5138999361647710463}
   - component: {fileID: -5076744079508075103}
   - component: {fileID: -2854441231341214329}
+  - component: {fileID: -5638194949269198097}
   m_Layer: 0
   m_Name: TrailBullet
   m_TagString: Untagged
@@ -45,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76099397b0a80467fa0749812e9ee998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  line: {fileID: -2854441231341214329}
   width: 0.1
   widthOverLifetime:
     serializedVersion: 2
@@ -81,6 +81,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   duration: 0.1
+  line: {fileID: -2854441231341214329}
+  poolable: {fileID: -5638194949269198097}
 --- !u!120 &-2854441231341214329
 LineRenderer:
   serializedVersion: 2
@@ -185,3 +187,15 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-5638194949269198097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889512899444770296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc446b070f7449518c2ee6da60a0f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

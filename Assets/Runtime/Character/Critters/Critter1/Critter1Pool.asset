@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb82c765cc8a344008489958a8d30e5a, type: 3}
   m_Name: Critter1Pool
   m_EditorClassIdentifier: 
-  prefab: {fileID: 753164405269013940, guid: c8b1b8bc957db4feda2df0b5cf838b2e, type: 3}
+  prefab: {fileID: 5583480711413808444, guid: c8b1b8bc957db4feda2df0b5cf838b2e, type: 3}
   firstPortalLevel: 0
   baseCrittersPerSecond: 0.25
   scaleValue: 1.05

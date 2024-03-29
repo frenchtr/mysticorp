@@ -5,6 +5,15 @@ using MystiCorp.Runtime.Common.Pooling;
 
 namespace MystiCorp.Runtime.Damage
 {
+    public readonly struct DamageTextSpawnArgs
+    {
+        public DamageTextSpawnArgs(float value, Vector2 position)
+            => (this.value, this.position) = (value, position);
+
+        public readonly float value;
+        public readonly Vector2 position;
+    }
+
     [CreateAssetMenu(menuName = "Scriptables/Pools/Damage Text")]
     public class DamageTextPool : ObjectPoolService
     {
@@ -13,16 +22,9 @@ namespace MystiCorp.Runtime.Damage
 
         protected override GameObject InstantiatePoolParent() => Instantiate(canvasPrefab);
 
-        public void Spawn(float value, Vector3 position)
-        {
-            var obj = GetObject();
-            obj.SetActive(true);
-
-            obj.transform.position = position;
-
-            var damageText = obj.GetComponent<DamageText>();
-            damageText.Initialize(value);
-            damageText.BehaviourComplete += () => Despawn(damageText.gameObject);
-        }
+        public void Spawn(DamageTextSpawnArgs spawnArgs)
+            => Spawn()
+            .GetComponent<DamageText>()
+            .Initialize(spawnArgs);
     }
 }

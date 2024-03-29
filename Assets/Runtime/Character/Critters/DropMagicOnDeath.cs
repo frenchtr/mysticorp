@@ -1,7 +1,6 @@
 using MystiCorp.Runtime.Damage;
 using UnityEngine;
 using MystiCorp.Runtime.Common.ScriptableVariables;
-using System.Linq;
 using MystiCorp.Runtime.Collectibles;
 
 namespace MystiCorp.Runtime.Character.Critters
@@ -20,66 +19,48 @@ namespace MystiCorp.Runtime.Character.Critters
         private FloatVariable playerMagicAmount;
         [SerializeField]
         private CollectiblePool magicPickupPool;
+        [SerializeField]
         private CharacterHealth health;
 
         private void Awake()
-        {
-            GetDependencies();
-            
+        {            
             health.Death += OnDeath;
-        }
-
-        private void Reset()
-        {
-            GetDependencies();
         }
 
         private void OnDeath()
         {
             int drops = Random.Range(0, maxDrops) + 1;
             var weights = new float[drops];
+            float total = 0;
 
+            // generate random weights for each magic drop
             for (int i = 0; i < drops; i++)
             {
-                weights[i] = Random.value;
+                float value = Random.value;
+                weights[i] = value;
+                total += value;
             }
-
-            float total = weights.Sum();
-
-            for (int i = 0; i < drops; i++)
-            {
-                weights[i] /= total;
-            }
-
-            float real = 0;
 
             foreach (var weight in weights)
             {
-                SpawnMagic(magicValue * weight);
-                real += magicValue * weight;
+                float percent = weight / total;
+                SpawnMagic(percent);
             }
         }
 
         private void SpawnMagic(float percent)
         {
             float dropDist = Random.Range(0, dropRange);
-            float size = Mathf.Lerp(minMagicSize, maxMagicSize, percent);
             Vector2 dropOffset = Random.insideUnitCircle * dropDist;
+            Vector2 dropPosition = (Vector2)transform.position + dropOffset;
 
-            var magic = magicPickupPool.Spawn((Vector2)transform.position + dropOffset, OnCollected);
+            float value = magicValue * percent;
+            void OnCollected() => playerMagicAmount.Value += value;
 
-            magic.transform.localScale = Vector3.one * size;
+            var magicPickup = magicPickupPool.Spawn(new(dropPosition, OnCollected));
 
-            void OnCollected() => playerMagicAmount.Value += magicValue * percent;
-        }
-
-
-        private void GetDependencies()
-        {
-            if (health == null)
-            {
-                health = GetComponent<CharacterHealth>();
-            }
+            float size = Mathf.Lerp(minMagicSize, maxMagicSize, percent);
+            magicPickup.transform.localScale = Vector3.one * size;
         }
     }
 }

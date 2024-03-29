@@ -1,34 +1,31 @@
 using MystiCorp.Runtime.Common.Pooling;
 using UnityEngine;
+using System;
 
 namespace MystiCorp.Runtime.Collectibles
 {
+    public readonly struct CollectibleSpawnArgs
+    {
+        public CollectibleSpawnArgs(Vector2 position, Action actionOnCollected)
+            => (this.position, this.actionOnCollected) = (position, actionOnCollected);
+
+        public readonly Vector2 position;
+        public readonly Action actionOnCollected;
+    }
+
     [CreateAssetMenu(menuName = "Scriptables/Pools/Collectible")]
     public class CollectiblePool : ObjectPoolService
     {
-        private void OnValidate()
+        public GameObject Spawn(CollectibleSpawnArgs spawnArgs)
         {
-            if (prefab != null && !prefab.TryGetComponent(out Collectible _))
-            {
-                prefab = null;
-                Debug.LogError("Prefab must have collectible component!");
-            }
-        }
+            var collectible = Spawn();
 
-        public GameObject Spawn(Vector2 position, System.Action onCollected)
-        {
-            var collectible = GetObject();
+            collectible.transform.position = spawnArgs.position;
+            collectible.ReturnToPool += spawnArgs.actionOnCollected;
 
-            collectible.transform.position = position;
-            collectible.SetActive(true);
+            collectible.gameObject.SetActive(true);
 
-            collectible.GetComponent<Collectible>().Collected += () =>
-            {
-                Despawn(collectible);
-                onCollected.Invoke();
-            };
-
-            return collectible;
+            return collectible.gameObject;
         }
 
         public bool TryGetClosestCollectible(Vector2 position, out GameObject closest)
@@ -43,7 +40,7 @@ namespace MystiCorp.Runtime.Collectibles
                 if (sqrDsistance < closestSqrDistance)
                 {
                     closestSqrDistance = sqrDsistance;
-                    closest = collectible;
+                    closest = collectible.gameObject;
                 }
             }
 

@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebab3aaab3e44661afd641023046576, type: 3}
   m_Name: Bullet Pool
   m_EditorClassIdentifier: 
-  gameServiceManager: {fileID: 11400000, guid: fadfadf4c94b54654ad090c41b434d09, type: 2}
-  prefab: {fileID: 4889512899444770296, guid: a41cd3303ff9f4467828dd84d50cea98, type: 3}
+  prefab: {fileID: -5638194949269198097, guid: a41cd3303ff9f4467828dd84d50cea98, type: 3}

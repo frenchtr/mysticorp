@@ -4,8 +4,7 @@ namespace MystiCorp.Runtime.Bullets
 {
     public class TrailBullet : MonoBehaviour
     {
-        [SerializeField]
-        private LineRenderer line;
+        [Header("Visuals")]
         [SerializeField]
         private float width;
         [SerializeField]
@@ -13,19 +12,21 @@ namespace MystiCorp.Runtime.Bullets
         [SerializeField]
         private float duration;
 
-        private BulletPool pool;
+        [Header("References")]
+        [SerializeField]
+        private LineRenderer line;
+        [SerializeField]
+        private Poolable poolable;
+
         private float lifetime;
 
-        public void Spawn(Vector2 start, Vector2 end, BulletPool pool)
+        public void Spawn(BulletSpawnArgs spawnArgs)
         {
             line.positionCount = 2;
-            line.SetPositions(new Vector3[] { start, end });
-
-            Invoke(nameof(Despawn), duration);
+            line.SetPositions(new Vector3[] { spawnArgs.start, spawnArgs.end });
+            gameObject.SetActive(true);
 
             lifetime = 0;
-
-            this.pool = pool;
         }
 
         private void Update()
@@ -34,11 +35,11 @@ namespace MystiCorp.Runtime.Bullets
 
             float lifetimePercent = lifetime / duration;
             line.widthMultiplier = width * widthOverLifetime.Evaluate(lifetimePercent);
-        }
 
-        private void Despawn()
-        {
-            pool.Despawn(gameObject);
+            if (lifetimePercent > 1)
+            {
+                poolable.Return();
+            }
         }
     }
 }

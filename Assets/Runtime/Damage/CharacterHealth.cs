@@ -60,7 +60,7 @@ namespace MystiCorp.Runtime.Damage
 
             Health = Mathf.MoveTowards(Health, 0, args.Amount);
 
-            damageTextPool.Spawn(args.Amount, transform.position);
+            damageTextPool.Spawn(new(args.Amount, transform.position));
 
             if (Health == 0)
             {

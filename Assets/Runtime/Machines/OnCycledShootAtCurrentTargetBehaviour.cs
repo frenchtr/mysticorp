@@ -47,7 +47,7 @@ namespace MystiCorp.Runtime.Machines
             receiver.TakeDamage(amount);
 
             shootSound.Play(this);
-            bulletPool.Spawn(shootOrigin.position, receiver.transform.position);
+            bulletPool.Spawn(new(shootOrigin.position, receiver.transform.position));
         }
 
         private void GetDependencies()

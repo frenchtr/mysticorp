@@ -33,7 +33,7 @@ namespace MystiCorp.Runtime.Portal
 
         private void Spawn(Transform spawnPoint)
         {
-            var critter = GetObject();
+            var critter = Spawn();
 
             critter.transform.parent = spawnPoint;
             critter.transform.localPosition = Vector2.zero;

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3467b18fcc5d49749877756fcea9b53, type: 3}
   m_Name: Magic Pickup Pool
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1017553560703573859, guid: 91afd1bd5051044658086d8e0dd53598, type: 3}
+  prefab: {fileID: -5285047071234280534, guid: 91afd1bd5051044658086d8e0dd53598, type: 3}

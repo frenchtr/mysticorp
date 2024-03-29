@@ -15,9 +15,11 @@ namespace MystiCorp.Runtime.Damage
 
         public event System.Action BehaviourComplete;
 
-        public void Initialize(float value)
+        public void Initialize(DamageTextSpawnArgs spawnArgs)
         {
-            textMesh.text = $"{value}";
+            textMesh.text = $"{spawnArgs.value}";
+            gameObject.SetActive(true);
+            transform.position = spawnArgs.position;
 
             StartCoroutine(Behaviour());
         }

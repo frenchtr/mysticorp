@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 9106683489348831408}
   - component: {fileID: 2945579792477097125}
   - component: {fileID: -8728612653282442511}
+  - component: {fileID: 5583480711413808444}
   m_Layer: 7
   m_Name: Critter1
   m_TagString: Untagged
@@ -137,6 +138,7 @@ MonoBehaviour:
   dropRange: 1.5
   playerMagicAmount: {fileID: 11400000, guid: afbe7d026423f4ac099fb1573a4d5ec5, type: 2}
   magicPickupPool: {fileID: 11400000, guid: 6556319ff96e64d76aec610361bdba4b, type: 2}
+  health: {fileID: 1775191691038315516}
 --- !u!50 &2029212131730738605
 Rigidbody2D:
   serializedVersion: 4
@@ -278,6 +280,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 408a10fabef7b4b199d82afd688358be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5583480711413808444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753164405269013940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc446b070f7449518c2ee6da60a0f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6188190343870930284

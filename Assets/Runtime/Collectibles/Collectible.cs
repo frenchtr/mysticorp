@@ -4,12 +4,9 @@ namespace MystiCorp.Runtime.Collectibles
 {
     public class Collectible : MonoBehaviour
     {
-        public event System.Action Collected;
+        [SerializeField]
+        private Poolable poolable;
 
-        public void Collect()
-        {
-            Collected?.Invoke();
-            Collected = null;
-        }
+        public void Collect() => poolable.Return();
     }
 }
