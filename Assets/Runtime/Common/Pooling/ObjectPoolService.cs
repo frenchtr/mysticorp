@@ -32,7 +32,6 @@ namespace MystiCorp.Runtime.Common.Pooling
 
             ActiveObjects.Add(poolable);
 
-            poolable.Despawned += () => Despawn(poolable);
 
             return poolable;
         }
@@ -67,7 +66,9 @@ namespace MystiCorp.Runtime.Common.Pooling
 
         protected virtual Poolable CreateObject()
         {
-            return Instantiate(prefab, poolParent);
+            var poolable = Instantiate(prefab, poolParent);
+            poolable.Returned += () => Despawn(poolable);
+            return poolable;
         }
 
         protected virtual void DestroyObject(Poolable poolable)

@@ -13,7 +13,7 @@ namespace MystiCorp.Runtime.Character.Critters
 
         private void Awake()
         {
-            poolable.Spawned += () => timer = 0;
+            poolable.Retrieved += () => timer = 0;
         }
 
         private void Update()
@@ -22,7 +22,7 @@ namespace MystiCorp.Runtime.Character.Critters
 
             if (timer > duration)
             {
-                poolable.Despawn();
+                poolable.Return();
             }
         }
     }

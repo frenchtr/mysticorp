@@ -117,9 +117,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  destroyOnDeath: 1
   damagedEvent: {fileID: 11400000, guid: f9f4ce2b4d4e152448c0b2dc6235bdfd, type: 2}
   damageTextPool: {fileID: 11400000, guid: d2747dbb2b56549cbb81041fbdf152ca, type: 2}
+  death:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5583480711413808444}
+        m_TargetAssemblyTypeName: MystiCorp.Runtime.Poolable, MystiCorp.Runtime
+        m_MethodName: Despawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   health: 0
 --- !u!114 &2980842177935860025
 MonoBehaviour:

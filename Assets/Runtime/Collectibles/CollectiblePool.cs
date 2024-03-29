@@ -21,7 +21,13 @@ namespace MystiCorp.Runtime.Collectibles
             var collectible = Spawn();
 
             collectible.transform.position = spawnArgs.position;
-            collectible.Despawned += spawnArgs.actionOnCollected;
+            collectible.Returned += OnDespawn;
+
+            void OnDespawn()
+            {
+                spawnArgs.actionOnCollected.Invoke();
+                collectible.Returned -= OnDespawn;
+            }
 
             collectible.gameObject.SetActive(true);
 

@@ -1,6 +1,7 @@
 using System;
 using MystiCorp.Runtime.Common;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MystiCorp.Runtime.Damage
 {
@@ -12,6 +13,8 @@ namespace MystiCorp.Runtime.Damage
         private DamageArgsEvent damagedEvent;
         [SerializeField]
         private DamageTextPool damageTextPool;
+        [SerializeField]
+        private UnityEvent death;
 
         [SerializeField]
         [InspectorName("Current Health")]
@@ -63,6 +66,7 @@ namespace MystiCorp.Runtime.Damage
             if (Health == 0)
             {
                 Death?.Invoke();
+                death.Invoke();
             }
         }
     }
