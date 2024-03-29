@@ -7,12 +7,18 @@ namespace MystiCorp.Runtime
 {
     public class Poolable : MonoBehaviour
     {
-        public event Action ReturnToPool;
+        public event Action Spawned;
+        public event Action Despawned;
 
-        public void Return()
+        public void Spawn()
         {
-            ReturnToPool?.Invoke();
-            ReturnToPool = null;
+            Spawned?.Invoke();
+        }
+
+        public void Despawn()
+        {
+            Despawned?.Invoke();
+            Despawned = null;
         }
     }
 }

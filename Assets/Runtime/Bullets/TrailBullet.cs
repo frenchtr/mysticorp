@@ -38,7 +38,7 @@ namespace MystiCorp.Runtime.Bullets
 
             if (lifetimePercent > 1)
             {
-                poolable.Return();
+                poolable.Despawn();
             }
         }
     }

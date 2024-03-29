@@ -6,10 +6,24 @@ namespace MystiCorp.Runtime.Character.Critters
     {
         [SerializeField]
         private float duration;
+        [SerializeField]
+        private Poolable poolable;
 
-        private void Start()
+        private float timer;
+
+        private void Awake()
         {
-            Destroy(gameObject, duration);
+            poolable.Spawned += () => timer = 0;
+        }
+
+        private void Update()
+        {
+            timer += Time.deltaTime;
+
+            if (timer > duration)
+            {
+                poolable.Despawn();
+            }
         }
     }
 }

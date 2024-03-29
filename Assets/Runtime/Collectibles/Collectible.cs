@@ -7,6 +7,6 @@ namespace MystiCorp.Runtime.Collectibles
         [SerializeField]
         private Poolable poolable;
 
-        public void Collect() => poolable.Return();
+        public void Collect() => poolable.Despawn();
     }
 }

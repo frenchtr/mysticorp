@@ -9,8 +9,6 @@ namespace MystiCorp.Runtime.Damage
         [SerializeField]
         private float maxHealth;
         [SerializeField]
-        private bool destroyOnDeath;
-        [SerializeField]
         private DamageArgsEvent damagedEvent;
         [SerializeField]
         private DamageTextPool damageTextPool;
@@ -65,7 +63,6 @@ namespace MystiCorp.Runtime.Damage
             if (Health == 0)
             {
                 Death?.Invoke();
-                if (destroyOnDeath) Destroy(gameObject);
             }
         }
     }

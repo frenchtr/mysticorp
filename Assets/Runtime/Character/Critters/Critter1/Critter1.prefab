@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  poolable: {fileID: 5583480711413808444}
 --- !u!114 &-8728612653282442511
 MonoBehaviour:
   m_ObjectHideFlags: 0

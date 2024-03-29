@@ -9,13 +9,11 @@ namespace MystiCorp.Runtime.Common.Pooling
         [SerializeField]
         protected Poolable prefab;
 
-        [System.NonSerialized]
         private Transform poolParent;
         private ObjectPool<Poolable> pool;
-        [System.NonSerialized]
         private List<Poolable> activeObjects;
 
-        protected virtual GameObject InstantiatePoolParent() => new(name);
+        protected virtual GameObject PoolParentGameObject => new();
 
         protected List<Poolable> ActiveObjects
         {
@@ -34,7 +32,7 @@ namespace MystiCorp.Runtime.Common.Pooling
 
             ActiveObjects.Add(poolable);
 
-            poolable.ReturnToPool += () => Despawn(poolable);
+            poolable.Despawned += () => Despawn(poolable);
 
             return poolable;
         }
@@ -52,11 +50,15 @@ namespace MystiCorp.Runtime.Common.Pooling
         {
             // dispose if active
             if (poolParent != null) Destroy(poolParent.gameObject);
+            activeObjects?.ForEach(obj => Destroy(obj));
             pool?.Clear();
             pool?.Dispose();
 
             // initialize
-            poolParent = InstantiatePoolParent().transform;
+            poolParent = PoolParentGameObject.transform;
+            poolParent.name = name;
+            poolParent.gameObject.AddComponent<PoolParent>().Initialize(this);
+
             activeObjects = new();
             pool = new(
                 createFunc: CreateObject,

@@ -15,4 +15,4 @@ MonoBehaviour:
   gameServiceManager: {fileID: 11400000, guid: fadfadf4c94b54654ad090c41b434d09, type: 2}
   magicAmount: {fileID: 11400000, guid: afbe7d026423f4ac099fb1573a4d5ec5, type: 2}
   magicPerSecond: {fileID: 11400000, guid: 6b555ef12daee43f4bdc31521773527c, type: 2}
-  magicPerSecondCalculationDuration: 1
+  magicPerSecondCalculationDuration: 3

@@ -35,8 +35,7 @@ namespace MystiCorp.Runtime.Portal
         {
             var critter = Spawn();
 
-            critter.transform.parent = spawnPoint;
-            critter.transform.localPosition = Vector2.zero;
+            critter.transform.position = spawnPoint.position;
         }
 
         private float CalculateSpawnRateAtLevel(int level) => level >= firstPortalLevel
