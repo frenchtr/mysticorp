@@ -20,7 +20,7 @@ namespace MystiCorp.Runtime.Damage
         [SerializeField]
         private GameObject canvasPrefab;
 
-        protected override GameObject PoolParentGameObject => Instantiate(canvasPrefab);
+        protected override GameObject SpawnPoolParentGameObject() => Instantiate(canvasPrefab);
 
         public void Spawn(DamageTextSpawnArgs spawnArgs)
             => Spawn()

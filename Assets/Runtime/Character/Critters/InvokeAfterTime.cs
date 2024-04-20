@@ -1,20 +1,18 @@
 using UnityEngine;
+using System;
+using UnityEngine.Events;
 
 namespace MystiCorp.Runtime.Character.Critters
 {
-    public class DespawnAfterTime : MonoBehaviour
+    public class InvokeAfterTime : MonoBehaviour
     {
         [SerializeField]
         private float duration;
-        [SerializeField]
-        private Poolable poolable;
+        [SerializeField] private UnityEvent action;
+
+        public event Action Action;
 
         private float timer;
-
-        private void Awake()
-        {
-            poolable.Retrieved += () => timer = 0;
-        }
 
         private void Update()
         {
@@ -22,7 +20,8 @@ namespace MystiCorp.Runtime.Character.Critters
 
             if (timer > duration)
             {
-                poolable.Return();
+                Action?.Invoke();
+                action.Invoke();
             }
         }
     }

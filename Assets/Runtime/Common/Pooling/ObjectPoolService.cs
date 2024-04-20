@@ -13,7 +13,7 @@ namespace MystiCorp.Runtime.Common.Pooling
         private ObjectPool<Poolable> pool;
         private List<Poolable> activeObjects;
 
-        protected virtual GameObject PoolParentGameObject => new();
+        protected virtual GameObject SpawnPoolParentGameObject() => new();
 
         protected List<Poolable> ActiveObjects
         {
@@ -32,7 +32,6 @@ namespace MystiCorp.Runtime.Common.Pooling
 
             ActiveObjects.Add(poolable);
 
-
             return poolable;
         }
 
@@ -49,12 +48,12 @@ namespace MystiCorp.Runtime.Common.Pooling
         {
             // dispose if active
             if (poolParent != null) Destroy(poolParent.gameObject);
-            activeObjects?.ForEach(obj => Destroy(obj));
+            activeObjects?.FindAll(poolable => poolable != null).ForEach(poolable => Destroy(poolable.gameObject));
             pool?.Clear();
             pool?.Dispose();
 
             // initialize
-            poolParent = PoolParentGameObject.transform;
+            poolParent = SpawnPoolParentGameObject().transform;
             poolParent.name = name;
             poolParent.gameObject.AddComponent<PoolParent>().Initialize(this);
 

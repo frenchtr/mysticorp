@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5583480711413808444}
         m_TargetAssemblyTypeName: MystiCorp.Runtime.Poolable, MystiCorp.Runtime
-        m_MethodName: Despawn
+        m_MethodName: Return
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -286,7 +286,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
-  poolable: {fileID: 5583480711413808444}
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5583480711413808444}
+        m_TargetAssemblyTypeName: MystiCorp.Runtime.Poolable, MystiCorp.Runtime
+        m_MethodName: Return
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-8728612653282442511
 MonoBehaviour:
   m_ObjectHideFlags: 0
