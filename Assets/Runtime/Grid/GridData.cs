@@ -30,5 +30,10 @@ namespace MystiCorp.Runtime
         {
             return point * cellSize + worldSpaceOffset;
         }
+
+        public Vector2 SnapWorldToGridPoint(Vector2 point)
+        {
+            return GridToWorldPoint(WorldToGridPoint(point));
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace MystiCorp.Runtime.UI
 {
-    public class Draggable : MonoBehaviour
+    public class GridDraggable : MonoBehaviour
     {
         private Vector3 pointerPosition;
 
@@ -12,6 +12,10 @@ namespace MystiCorp.Runtime.UI
         private CameraVariable mainCameraVariable;
         [SerializeField]
         private DragHandler dragHandler;
+        [SerializeField]
+        private GridData gridData;
+        [SerializeField]
+        private GameObject gridRenderer;
         private Vector2 pointerOffset;
 
         private void OnEnable()
@@ -28,19 +32,21 @@ namespace MystiCorp.Runtime.UI
         {
             if (dragHandler.IsDragging)
             {
-                var rectTransform = gameObject.GetComponent<RectTransform>();
                 var mainCamera = mainCameraVariable.Value;
                 var pointerWorldPosition = mainCamera.ScreenToWorldPoint(pointerPosition);
-            
-                rectTransform.position = new Vector3()
+                var gridSnappedPosition = gridData.SnapWorldToGridPoint(pointerWorldPosition);
+
+                transform.position = new Vector3()
                 {
-                    x = pointerWorldPosition.x,
-                    y = pointerWorldPosition.y,
-                    z = rectTransform.position.z,
+                    x = gridSnappedPosition.x,
+                    y = gridSnappedPosition.y,
+                    z = transform.position.z,
                 };
             }
+
+            gridRenderer.SetActive(dragHandler.IsDragging);
         }
-        
+
         private void OnDragged(PointerEventData eventData)
         {
             pointerPosition = eventData.position;
